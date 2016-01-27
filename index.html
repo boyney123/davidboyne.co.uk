@@ -2,11 +2,19 @@
 layout: base
 ---
 <div class="blog-cover" style="background-image:url(/images/{{ site.inc.cover_image }});">
-    
+
+
     <section>
         <div class="container">
-            <h1>{{ site.inc.title }}</h1>
-            {% if site.inc.subtitle %}<h3>{{ site.inc.subtitle }}</h3>{% endif %}
+
+            <div class="profile">
+                <img class="ProfileAvatar-image " src="https://pbs.twimg.com/profile_images/660943257795457030/igA_joVD_400x400.jpg" alt="Isaac Z. Schlueter"/>
+            </div>
+            
+
+            <!-- <h1>{{ site.inc.title }}</h1> -->
+            {% if site.inc.subtitle %}<h3 class="subtitle1">{{ site.inc.subtitle }}</h3>{% endif %}
+            {% if site.inc.subtitle2 %}<h3 class="subtitle2">{{ site.inc.subtitle2 }}</h3>{% endif %}
         
             {% if site.inc.twitter %}
             <a href="https://twitter.com/{{ site.inc.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter"></i></a>
