@@ -42,8 +42,8 @@ inc:
 url:         http://incorporated.sendtoinc.com
 source:      .
 destination: ./_site
-plugins:     ./_plugins
-layouts:     ./_layouts
+plugins_dir:     ./_plugins
+layouts_dir:     ./_layouts
 include:     ['.htaccess']
 exclude:     []
 timezone:    nil
@@ -55,13 +55,13 @@ limit_posts: 0
 #pygments:    true
 highlighter: pygments
 
-relative_permalinks: true
+# relative_permalinks: true
 
-permalink:     pretty
+# permalink:     pretty
 paginate_path: 'page:num'
 paginate: 6
 
-markdown:      maruku
+markdown:      kramdown
 markdown_ext:  markdown,mkd,mkdn,md
 textile_ext:   textile
 
@@ -72,13 +72,6 @@ host:        0.0.0.0
 port:        4000
 baseurl:     /
 lsi:         false
-
-maruku:
-  use_tex:    false
-  use_divs:   false
-  png_engine: blahtex
-  png_dir:    images/latex
-  png_url:    /images/latex
 
 rdiscount:
   extensions: []
@@ -92,7 +85,7 @@ kramdown:
   entity_output: as_char
   toc_levels: 1..6
   smart_quotes: lsquo,rsquo,ldquo,rdquo
-  use_coderay: false
+  enable_coderay: false
 
   coderay:
     coderay_wrap: div
@@ -104,6 +97,10 @@ kramdown:
 
 redcloth:
   hard_breaks: true
+
+ftp_host: 'automation@davidboyne.co.uk'
+ftp_dir: '/www'
+ftp_passive: false
 
 #
 # jekyll-assets: see more at https://github.com/ixti/jekyll-assets
