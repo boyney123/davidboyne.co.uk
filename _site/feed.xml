@@ -1,0 +1,369 @@
+<?xml version="1.0"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title></title>
+    <link>http://incorporated.sendtoinc.com</link>
+    <atom:link href="http://incorporated.sendtoinc.com/feed.xml" rel="self" type="application/rss+xml" />
+    <description></description>
+    <language>en-us</language>
+    <pubDate>Thu, 28 Jan 2016 21:29:09 +0000</pubDate>
+    <lastBuildDate>Thu, 28 Jan 2016 21:29:09 +0000</lastBuildDate>
+
+    
+    
+    <item>
+      <title>Standups - Moving from people to stories</title>
+      <link>http://incorporated.sendtoinc.com/2015/01/01/moving-to-people-not-stories.html</link>
+      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://incorporated.sendtoinc.com/2015/01/01/moving-to-people-not-stories</guid>
+      <description>&lt;blockquote&gt;
+  &lt;p&gt;We spent too much time focusing on people and their days rather than focusing on the stories.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Every working day for the last year and a half at work I have attended morning stand-ups. We speak about what we have done yesterday and what we plan to do today. Only recently I realised that this sucks and I will explain why in this blog post.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-process&quot;&gt;The process&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://c2.staticflickr.com/6/5538/10034579444_60a0fdc982_c.jpg&quot; alt=&quot;&quot; /&gt; I turn up for work and about 30 minutes later we have our stand up. Everybody gets up and starts talking about what they done yesterday and what they plan to do today (sometimes). At the start this was great, it gave great context for the team into what they are doing in a short fashion. But only now I realise and question how much value this actually gives? We can see what everybody is doing and have an overall picture but we kind of missed the point a few times. Sometimes we would have blocked cards within our process and they would naturally sit there for a few days without (hardly) any question. We spent too much time focusing on people and their days rather than focusing on the stories. People would talk about what they done yesterday and often fall into technical discussions that (sometimes) were forced to be taken offline (I have done this many of times…) After we went around the whole team (15/25 minutes later) we would sign up to today’s stories. This was fine and we got to rotate and carry on with the job.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;…the process slowly was turning into something that felt unnatural&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;But what I found was the process slowly was turning into something that felt unnatural. We were focusing on what we are currently doing day to day and forgot to talk about the cards themselves. Overtime and with new developers we realised that this was an issue and decided to try something different.&lt;/p&gt;
+
+&lt;h4 id=&quot;what-changed&quot;&gt;What changed?&lt;/h4&gt;
+
+&lt;p&gt;We stopped focusing on people and focused on the cards on our Kanban wall. Walking through the wall rather than people allowed us to focus on what really matters and what adds value. We start from right to left (rather than left to right) we talk about cards that are ready for deployment first. This doesn’t really take that long as they have already been tested and are ready to be released. Next we talk about our cards currently in test (middle of the board). We see if any testers need any support and we try and see how we can get them moved along into production. Finally we talk about what cards are currently in development. This allows us to focus on what our developers are currently doing and if they need any help or if they are blocked. This process is fast and focused. It allows us to talk about things that matter (the stories) and keeps our discussions focused. I’m not saying we don’t ever talk about anything technical at stand-up but if we need to we hold technical discussions offline (straight after stand-up) if needed.&lt;/p&gt;
+
+&lt;h4 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;…I feel the results we got were interesting and really productive&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Our changes to the process didn’t really seem that different on paper but I feel the results we got were interesting and really productive. Our stand-ups time has halved and are more focused. It feels to me that the team are more focused on delivering stories and are moving as one. It’s still early days for the team and the new process, but I will update this blog post after a couple of months with an update on how we get on.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Value in Code</title>
+      <link>http://incorporated.sendtoinc.com/2014/06/20/value-in-code.html</link>
+      <pubDate>Fri, 20 Jun 2014 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://incorporated.sendtoinc.com/2014/06/20/value-in-code</guid>
+      <description>&lt;blockquote&gt;
+  &lt;p&gt;Question the requirement. Keep it simple&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I heard this quote today and its something that sounds very obvious for every developer but I always see the same mistakes happen throughout my career.&lt;/p&gt;
+
+&lt;p&gt;On a day to day basis developers are always asked to do something and most the time its not a problem. But at times the cost for a specific requirement outweighs its return value. If this happens I believe the requirement should be questioned. I have learnt that if you question these type of requirements that 60% of the time the requirement will be dropped from scope and 40% of the time it will remain in scope but people will be aware of the cost.&lt;/p&gt;
+
+&lt;p&gt;If you end up in this situation, try and question its value and I think you will be amazed from the outcome.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Benefits of crossing the divide between front-end and back-end development</title>
+      <link>http://incorporated.sendtoinc.com/2014/02/24/crossing-the-divide.html</link>
+      <pubDate>Mon, 24 Feb 2014 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://incorporated.sendtoinc.com/2014/02/24/crossing-the-divide</guid>
+      <description>&lt;p&gt;Developers come in all shapes and sizes (literally…) and the web community is so huge and growing at such a rate its hard for developers to keep up to date. Due to this developers tend to pick an area of technology (front-end or back-end) and stick with it for years. This has been going on for years now which has lead to a divide in the web community between front-end and back-end developers which I think is unhealthy and in this blog post I will explain why I think its important for developers to cross the divide and from my own experience what it has to offer.&lt;/p&gt;
+
+&lt;h3 id=&quot;problems-that-the-divide-between-front-end-and-back-end-causes&quot;&gt;Problems that the divide between front-end and back-end causes&lt;/h3&gt;
+
+&lt;p&gt;Every company I have worked for has in some form or another a divide between front-end and back-end developers. The front-end developer will make things “look pretty” whilst the back-end developer will provide data required by the client. This theory works well but I believe we can achieve much more. Unfortunately for some reason I have found that back-end developers are not keen to learn and understand the front-end world and the front-end developers are not really interested in the back-end world. I believe this leads to reduced productivity and creativity within teams.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“…crossing the divide leads to increased productivity and creativity for developers and teams…”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Imagine a team built from back-end and front-end developers but both sides of the divide were keen and interested in each others technology stack. Eventually front-end developers could write back-end code and back-end developers could write front-end code. Which are commonly known as web developers or full stack developers and these type of developers are becoming more and more common within our industry. From experience I have found that crossing this divide between front-end and back-end developers leads to increased productivity and creativity for developers and teams.&lt;/p&gt;
+
+&lt;h3 id=&quot;my-experience-and-tips-on-crossing-the-divide&quot;&gt;My Experience and tips on crossing the divide&lt;/h3&gt;
+
+&lt;p&gt;I started my career as a front end developer five years ago. I would spend hours making things look good and make things interactive through JavaScript. I would ask back-end developers for data which they would provide and our client would be happy. Overtime I felt restricted in what I could achieve for the team and personally due to my reliance on the back-end developers. I wanted to become more independent as a developer and started to learn and read the back-end code of our application. Overtime I got a good understanding of what was going on and could contribute to the team in a way I couldn’t before. I would contribute with the architecture of our application and also start writing the back-end code. This opened up huge windows for me as a developer as I could contribute to both sides of the divide. I felt more productive and creative than I ever had before and since then I always try and contribute on the front-end and back-end development of the applications I work on. But stepping over the divide was not easy and here are some tips that helped me along the way.&lt;/p&gt;
+
+&lt;h4 id=&quot;pairing&quot;&gt;Pairing&lt;/h4&gt;
+
+&lt;p&gt;Start pairing with developers if you aren’t already. Its a great way to share ideas and experiences but also a great way to learn. If you’re a front-end developer try pair programming with a back-end developer, ask questions and keep the decisions following, same if your a back-end developer go pair with a front-end developer. With the right pair its amazing how fast you can pick things up.&lt;/p&gt;
+
+&lt;h4 id=&quot;read-code&quot;&gt;Read Code&lt;/h4&gt;
+
+&lt;p&gt;Every so often I find myself reading node packages / framework source code / plugin source code. Its a great way to step inside a developer’s mind. Try and find out why and what they have written and what patterns they have used. I find this a great tool to learn. If you’re a front-end developer start reading your back-end developers code. Have a look in the git history or just dive straight in, ask questions if you find anything your not sure about and the same for back-end developers. You will find it amazing how fast you can pick it up and start to understand the applications full flow, which in itself is powerful.&lt;/p&gt;
+
+&lt;h4 id=&quot;just-hack-away&quot;&gt;Just hack away&lt;/h4&gt;
+
+&lt;p&gt;Want to learn a new technology? Don’t just read about it, start writing with it. There are plenty of tutorials online and guides on how to get started with any new technology.&lt;/p&gt;
+
+&lt;h4 id=&quot;teach-it&quot;&gt;Teach it&lt;/h4&gt;
+
+&lt;p&gt;Personal favourite of mine, if you want to know something teach it. Maybe do a talk or an internal lunch session at work? Teaching something makes you focus hard on what you want to talk about and for me is one of the most powerful learning tools I have used.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-you-should-cross-the-divide&quot;&gt;Why you should cross the divide&lt;/h3&gt;
+
+&lt;p&gt;I’m not saying that all developers need to cross this divide. But from experience I would question why you wouldnt? Moving across the divide from back-end to front-end or front-end to back-end is not easy. It has taken me years of applying these techniques to finally be able to do it with confidence but the rewards in my opinion are worth it. You will be able to contribute to your team is ways which you couldn’t before making you and the team more productive and creative. You will be able to fully understand and contribute to the full stack of your application, making it easier for you to understand. You will be able to write applications from scratch, no longer requiring a back-end or front-end developer. You will be able to write the whole thing yourself. And much more! These opinions are from my personal experience and I hope it helps you or drives to give it ago and step over the divide we have created as a web community.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Moving from Client-side logic to Server-side logic with AngularJS, Node.js and Express.js</title>
+      <link>http://incorporated.sendtoinc.com/2014/02/04/angular-serverside.html</link>
+      <pubDate>Tue, 04 Feb 2014 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://incorporated.sendtoinc.com/2014/02/04/angular-serverside</guid>
+      <description>&lt;p&gt;Developers come in all shapes and sizes (literally…) and the web community is so huge and growing at such a rate its hard for developers to keep up to date. Due to this developers tend to pick an area of technology (front-end or back-end) and stick with it for years. This has been going on for years now which has lead to a divide in the web community between front-end and back-end developers which I think is unhealthy and in this blog post I will explain why I think its important for developers to cross the divide and from my own experience what it has to offer.&lt;/p&gt;
+
+&lt;h3 id=&quot;problems-that-the-divide-between-front-end-and-back-end-causes&quot;&gt;Problems that the divide between front-end and back-end causes&lt;/h3&gt;
+
+&lt;p&gt;Every company I have worked for has in some form or another a divide between front-end and back-end developers. The front-end developer will make things “look pretty” whilst the back-end developer will provide data required by the client. This theory works well but I believe we can achieve much more. Unfortunately for some reason I have found that back-end developers are not keen to learn and understand the front-end world and the front-end developers are not really interested in the back-end world. I believe this leads to reduced productivity and creativity within teams.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“…crossing the divide leads to increased productivity and creativity for developers and teams…”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Imagine a team built from back-end and front-end developers but both sides of the divide were keen and interested in each others technology stack. Eventually front-end developers could write back-end code and back-end developers could write front-end code. Which are commonly known as web developers or full stack developers and these type of developers are becoming more and more common within our industry. From experience I have found that crossing this divide between front-end and back-end developers leads to increased productivity and creativity for developers and teams.&lt;/p&gt;
+
+&lt;h3 id=&quot;my-experience-and-tips-on-crossing-the-divide&quot;&gt;My Experience and tips on crossing the divide&lt;/h3&gt;
+
+&lt;p&gt;I started my career as a front end developer five years ago. I would spend hours making things look good and make things interactive through JavaScript. I would ask back-end developers for data which they would provide and our client would be happy. Overtime I felt restricted in what I could achieve for the team and personally due to my reliance on the back-end developers. I wanted to become more independent as a developer and started to learn and read the back-end code of our application. Overtime I got a good understanding of what was going on and could contribute to the team in a way I couldn’t before. I would contribute with the architecture of our application and also start writing the back-end code. This opened up huge windows for me as a developer as I could contribute to both sides of the divide. I felt more productive and creative than I ever had before and since then I always try and contribute on the front-end and back-end development of the applications I work on. But stepping over the divide was not easy and here are some tips that helped me along the way.&lt;/p&gt;
+
+&lt;h4 id=&quot;pairing&quot;&gt;Pairing&lt;/h4&gt;
+
+&lt;p&gt;Start pairing with developers if you aren’t already. Its a great way to share ideas and experiences but also a great way to learn. If you’re a front-end developer try pair programming with a back-end developer, ask questions and keep the decisions following, same if your a back-end developer go pair with a front-end developer. With the right pair its amazing how fast you can pick things up.&lt;/p&gt;
+
+&lt;h4 id=&quot;read-code&quot;&gt;Read Code&lt;/h4&gt;
+
+&lt;p&gt;Every so often I find myself reading node packages / framework source code / plugin source code. Its a great way to step inside a developer’s mind. Try and find out why and what they have written and what patterns they have used. I find this a great tool to learn. If you’re a front-end developer start reading your back-end developers code. Have a look in the git history or just dive straight in, ask questions if you find anything your not sure about and the same for back-end developers. You will find it amazing how fast you can pick it up and start to understand the applications full flow, which in itself is powerful.&lt;/p&gt;
+
+&lt;h4 id=&quot;just-hack-away&quot;&gt;Just hack away&lt;/h4&gt;
+
+&lt;p&gt;Want to learn a new technology? Don’t just read about it, start writing with it. There are plenty of tutorials online and guides on how to get started with any new technology.&lt;/p&gt;
+
+&lt;h4 id=&quot;teach-it&quot;&gt;Teach it&lt;/h4&gt;
+
+&lt;p&gt;Personal favourite of mine, if you want to know something teach it. Maybe do a talk or an internal lunch session at work? Teaching something makes you focus hard on what you want to talk about and for me is one of the most powerful learning tools I have used.&lt;/p&gt;
+
+&lt;h3 id=&quot;why-you-should-cross-the-divide&quot;&gt;Why you should cross the divide&lt;/h3&gt;
+
+&lt;p&gt;I’m not saying that all developers need to cross this divide. But from experience I would question why you wouldnt? Moving across the divide from back-end to front-end or front-end to back-end is not easy. It has taken me years of applying these techniques to finally be able to do it with confidence but the rewards in my opinion are worth it. You will be able to contribute to your team is ways which you couldn’t before making you and the team more productive and creative. You will be able to fully understand and contribute to the full stack of your application, making it easier for you to understand. You will be able to write applications from scratch, no longer requiring a back-end or front-end developer. You will be able to write the whole thing yourself. And much more! These opinions are from my personal experience and I hope it helps you or drives to give it ago and step over the divide we have created as a web community.&lt;/p&gt;
+
+&lt;p&gt;Three weeks into a new project, I had written some testable, decoupled and modular JavaScript code for a web application I was creating. Using AngularJS I created directives, controllers and modules that were reusable and most importantly using dependency injection they were easily testable.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;”..I removed AngularJS from the project and deleted all the JavaScript…”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;At the end of the third week I was proud of the JavaScript code that was written in such a short amount of time. With around 1000 lines of JavaScript the application was fully tested and working as expected. The following Monday I removed AngularJS from the project and deleted all the JavaScript I had written over the past few weeks. In this post blog I will explain my thoughts and why it was removed.&lt;/p&gt;
+
+&lt;h3 id=&quot;tunnel-vision&quot;&gt;Tunnel Vision&lt;/h3&gt;
+
+&lt;p&gt;Recently I was given the opportunity to work on a new project at work, which was great and exciting. I got told that a web application needed to be written and being somewhat a JavaScript enthusiast I wanted to use a framework. In the past I have used Backbone.js, KnockoutJS and AngularJS. From experience with all these frameworks I choose to write the web application using AngularJS. Within no time at all I had my project setup with Karma, PhantomJS and AngularJS. With the aid of &lt;a href=&quot;https://docs.angularjs.org/api/ngMock&quot; title=&quot;angular-mocks&quot;&gt;angular-mocks&lt;/a&gt; I was able to write testable Angular code fast!&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;”..I was proud of what was achieved after a couple of weeks.”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I spent time drawing the applications architecture down on paper then coding it up. Most things worked as expected and a couple of weeks later I had the web applications basics done. Everything was modular, decoupled and testable. I followed the SOLID and DRY principles and I was proud of what was achieved after a couple of weeks. I naturally wanted the web application to be a single page application and I used angular-router to load in different views. The only issue I found was the client would have to ask the server where the user should get directed to when the application launched. Which wasn’t too much of an issue but it felt dirty. Although the application was in working condition, certain parts of it seemed to have this layer of unnecessary complexity.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“…using a server side templating language could dramatically decrease the complexity of the application…”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Node.js was used for the backend and I was serving up static HTML, JS and CSS. Everything seemed to be working fine until I had a conversation with a colleague of mine and he asked what server side tempting language I was using. I told him I was just serving static HTML and he asked me why, and I replied I just needed HTML and AngularJS for the web application but that night on the way home I realised what I had done… I realised that a server side templating language could dramatically decrease the complexity of the application and remove the need or requirement of a front end framework such as AngularJS.&lt;/p&gt;
+
+&lt;h3 id=&quot;refactoring&quot;&gt;Refactoring&lt;/h3&gt;
+
+&lt;p&gt;I went back to work on Monday with them thoughts in mind and tested out some theory’s using express.js and node.js and I was right. In theory I could remove all client side JavaScript code and make the application structure simple. So I did. Using express.js (routing and middleware) with jade templating I was able to do everything I wanted from server-side. Most the requirements for the project could be delivered using server-side templating.&lt;/p&gt;
+
+&lt;h3 id=&quot;lessons-learnt&quot;&gt;Lessons Learnt&lt;/h3&gt;
+
+&lt;p&gt;When I started the project I was so excited to get on board and I naturally thought a frontend framework would be best for the web application but I realised due to the nature of the web application (its requirements) I was able to do what was required server-side which greatly reduced the applications complexity.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;“…think about all possible scenarios even if it’s a different technology stack…”&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I understand that some people might read this and think it’s a rookie mistake to make, but I learnt that when starting a new project to really think about all possible scenarios even if it’s a different technology stack, because there might be something that is simpler and easier to implement.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Lessons learnt from running a workshop</title>
+      <link>http://incorporated.sendtoinc.com/2014/01/30/whatthehtml-workshop.html</link>
+      <pubDate>Thu, 30 Jan 2014 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://incorporated.sendtoinc.com/2014/01/30/whatthehtml-workshop</guid>
+      <description>&lt;blockquote&gt;
+  &lt;p&gt;I learnt that no matter how hard or big the challenge seems at the start, if you’re organised and focused I believe anything is achievable&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As a front end developer I’m always keen on learning new front end techniques and technology and the best way I found to do this was to meet new people and discuss it in person. A few weeks ago I created a JavaScript workshop event and this blog post will cover how, why and lessons learnt from the event.&lt;/p&gt;
+
+&lt;h4 id=&quot;from-the-start&quot;&gt;From the start&lt;/h4&gt;
+
+&lt;p&gt;I started looking online for events around Peterborough but couldn’t find much happening in the area. I wondered if people would be interested in a web based event in Peterborough so I decided to create one to see what would happen.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;…the first ‘What the HTML?’ speaker event was run with a huge success…&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Last year in 2014 I created a meetup group called ‘What the HTML?’ as part of Agile Peterborough (&lt;a href=&quot;http://www.meetup.com/Agile-Peterborough/&quot;&gt;http://www.meetup.com/Agile-Peterborough/&lt;/a&gt;) and in late 2014 the first ‘What the HTML?’ speaker event was run with a huge success (&lt;a href=&quot;http://www.meetup.com/Agile-Peterborough/events/94822712/&quot;&gt;http://www.meetup.com/Agile-Peterborough/events/94822712/&lt;/a&gt;). The next stage was to see if there was any interest for a frond end workshop in Peterborough where developers could meet and learn/code. After a month of planning the JavaScript workshop material was created and ready to rock.&lt;/p&gt;
+
+&lt;h4 id=&quot;the-day&quot;&gt;The Day&lt;/h4&gt;
+
+&lt;p&gt;On Saturday the 26th April 2014 the event started with free breakfast and drinks. Around 30 people attended the event and were ready to code. The day started off with a small ice breaker for 45 minutes that allowed people to get warmed up and start pairing together. The ice breaker consisted of 11 failing Jasmine tests and they had to read the code and fix them. I was surprised with the success of the ice breaker and was excited to get the day started. The day was split into two parts, Knockout.js in the morning (Held by myself – &lt;a href=&quot;https://twitter.com/boyney123&quot;&gt;@boyney123&lt;/a&gt;) and Angular.js in the afternoon (Held by Chris Neave &lt;a href=&quot;https://twitter.com/chris_neave&quot;&gt;@chris_neave&lt;/a&gt;). Each session was split into 4 lessons. Each lesson had a 10 minute lecture/teaching session and 40 minutes of people coding some exercises. The first session in the morning on knockout.js gave people an understanding of the framework and also allowed them to contribute to a retrospective that was held at the end. We discussed at the pros and cons of the framework collectively as a group through a retrospective. After lunch Chris Neave dived straight into the Angular.js sessions. The format of the lessons was similar to the knockout lessons so people already understood what we were trying to achieve. After the Angular session in the afternoon the group had another retrospective to identify the pros and cons of Angular and also the differences between knockout and Angular. The retrospectives were one of the most valuable parts of the day as it gave people the chance to discuss the frameworks collectively as a group. The day ended with a raffle and another quick retrospective on the event itself. People had the chance to tell us what was good and bad about the day and any ideas they had for the next event/workshop. This allowed us to get instant feedback from the workshop and also allowed to quickly see what people would want for the next one.&lt;/p&gt;
+
+&lt;h4 id=&quot;why-and-lessons-learnt&quot;&gt;Why and lessons learnt&lt;/h4&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;…I was nervous and unsure if I wanted to take on the challenge…&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;When the JavaScript workshop event was originally proposed to me from Alex Shaw I was nervous and unsure if I wanted to take on the challenge. At the early stages of organising the workshop I come close to cancelling it numerous times as I thought it was too big a challenge and I was unorganised. Alex kept me on track and focused; it ended up being one of the most rewarding things I have done this year. I learnt that no matter how hard or big the challenge seems at the start, if you’re organised and focused I believe anything is achievable and although the workshop doesn’t sound like much of an challenge I was proud with the help and people that come out on a Saturday in their own time to attended the event. I’d like to thank everybody that helped organise and attended the event without them it wouldn’t have happened. I’d also like to thank Chris Neave for organising and leading the Angular session in the afternoon. I started this post talking about how and why ‘What the HTML’ was created. ‘What the HTML’ was designed and created to help bring people interested in web development to events held in Peterborough. Although it is still early days for ‘What the HTML?’ the two events held were a huge success and I learnt that people are thriving for these events and want more of its kind in Peterborough. This is just the start of ‘What the HTML’ and I look forward to see what comes next! Link to the workshop exercises – &lt;a href=&quot;https://github.com/AgilePeterborough/JavaScriptWorkShop&quot;&gt;https://github.com/AgilePeterborough/JavaScriptWorkShop&lt;/a&gt; Feedback from attendees – &lt;a href=&quot;https://www.surveymonkey.com/results/SM-VKDHDTX/&quot;&gt;https://www.surveymonkey.com/results/SM-VKDHDTX/&lt;/a&gt; Orignal post I wrote for my employer - &lt;a href=&quot;http://tech.comparethemarket.com/javascript-beginings/&quot;&gt;http://tech.comparethemarket.com/javascript-beginings/&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Running a retrospective with a spin</title>
+      <link>http://incorporated.sendtoinc.com/2014/01/20/retro-with-a-spin.html</link>
+      <pubDate>Mon, 20 Jan 2014 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://incorporated.sendtoinc.com/2014/01/20/retro-with-a-spin</guid>
+      <description>&lt;blockquote&gt;
+  &lt;p&gt;Retrospectives play a huge part for agile teams…&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Retrospectives are great for a team as its the time and place where teams can talk about what has gone right or wrong and also create actions to improve as individuals and as a team. Throughout my career I have been in many retrospectives and seen people host them slightly differently but overall they have the same output. What went well, what didn’t go so well and what can be improved on. I have been in retrospectives that run every month and retrospectives that run every week. I personally believe that weekly retrospectives are valuable as people in the team always have context on what has happened and I have found if they are run monthly people tend to lose context on what happened over the month so problems or positive ideas are lost. I recently ran and ‘R_etrospective with a spin’_ and will share my thoughts on what I learnt. &lt;strong&gt;Why&lt;/strong&gt; I read a blog post last week by &lt;em&gt;&lt;a href=&quot;http://avietzioni.blogspot.co.il/2013/11/my-retrospective-about-my-retrospective.html&quot; title=&quot;Avi Etzioni&quot;&gt;Avi Etzioni&lt;/a&gt;&lt;/em&gt; and was interested with his approach on retrospectives and wondered if and how it would work. I put myself forward to run a retrospective and decided to try it out. &lt;strong&gt;How&lt;/strong&gt; I started by writing up all the stories (tasks) the team completed in the previous week and wrote them down onto sticky notes. Once that was complete I stuck them up on the wall and explained to the team the new approach. I asked the team to write down any &lt;strong&gt;good&lt;/strong&gt; and &lt;strong&gt;bad&lt;/strong&gt; points they experienced on each story and stick them up on the board. After 10 minutes we had lots of talking points for the retrospective. The team went through each story and spoke about its good and bad points. As I understood  Avi Etzioni’s approach targeted on the improvements for a story but I also wanted to focus on what went well on the stories to boost team moral and give the team an opportunity to praise each other on the work that was delivered. From the bad points raised for each story I asked the team to think of solutions (actions) to improve the situation so we don’t repeat our mistakes.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Pattern occurred&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Overtime a pattern occurred. The negative points repeated themselves throughout different story’s and the solution/action was the same. At the end of the retrospective we had clear and consist actions which would hopefully solve most of the issues raised. &lt;strong&gt;What I learnt&lt;/strong&gt; Retrospectives are very important for a team and also very effective if they are run differently from time to time. I believe this new approach identified problems that would not of arisen from the normal method of retrospectives. Mixing things up from time to time is healthy and I would definitely recommend and run this approach again. &lt;strong&gt;Summary&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Running the retrospective like this gave team visibility on all the stories that were being worked on during the week&lt;/li&gt;
+  &lt;li&gt;Identified common problems which resulted in similar solutions/actions.&lt;/li&gt;
+  &lt;li&gt;Depending on the team size depends on how fast you can go through each story. Even with large teams I think the value returned is worth it&lt;/li&gt;
+  &lt;li&gt;Team were very positive about the new idea and enjoyed it&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;I would like to thank &lt;em&gt;Avi Etzioni&lt;/em&gt; for the idea and my employer for giving me the opportunity to exercise the idea. If your in an agile team why not give it ago? Read Avi’s original post &lt;a href=&quot;http://avietzioni.blogspot.co.il/2013/11/my-retrospective-about-my-retrospective.html&quot; title=&quot;here&quot;&gt;here &lt;/a&gt;and try it out.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Doing something good</title>
+      <link>http://incorporated.sendtoinc.com/2013/10/08/test.html</link>
+      <pubDate>Tue, 08 Oct 2013 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://incorporated.sendtoinc.com/2013/10/08/test</guid>
+      <description>&lt;p&gt;Incorporated provides a great typography, responsive design, author details, semantic markup and more.&lt;/p&gt;
+
+&lt;p&gt;You can set customize post covers, and other things directly in the post front matter:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;layout&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;post&lt;/span&gt;
+
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;Jekyll Incorporated Features&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;subtitle&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;What&amp;#39;s&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;in&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;the&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;box&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Setup post cover image in /images/&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;cover_image&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;blog-cover.jpg&lt;/span&gt;
+
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;excerpt&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Incorporated&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;provides&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;great&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;typography,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;responsive&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;design,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;details,&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;semantic&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;markup&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;and&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;more.&amp;quot;&lt;/span&gt;
+
+&lt;span class=&quot;c1&quot;&gt;# Author details, including Google Plus authorship&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;author&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;Karri Saarinen&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;twitter&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;karrisaarinen&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;gplus&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;100687498195339762535&lt;/span&gt; 
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;bio&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;Co-founder, Design&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;image&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;ks.jpg&lt;/span&gt;
+  
+&lt;span class=&quot;c1&quot;&gt;# Keep it as draft, not published in index.html or feed.xml&lt;/span&gt;
+&lt;span class=&quot;l-Scalar-Plain&quot;&gt;draft&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h4 id=&quot;configurable--code-snipped-highlighting&quot;&gt;Configurable &amp;amp; Code Snipped Highlighting&lt;/h4&gt;
+
+&lt;p&gt;/assets/stylesheets/main.scss:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-scss&quot; data-lang=&quot;scss&quot;&gt;&lt;span class=&quot;cm&quot;&gt;/* Bodytext font */&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$font&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Droid Sans&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Helvetica Neue&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Helvetica&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;sans-serif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/* Font for headings */&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$fontheadings&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Droid Sans&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Helvetica Neue&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Helvetica&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Arial&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;sans-serif&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/* Text colors */&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#21272d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$textmuted&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#848484&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;nv&quot;&gt;$accent&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mh&quot;&gt;#2077b2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;config.yml:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-yaml&quot; data-lang=&quot;yaml&quot;&gt;&lt;span class=&quot;l-Scalar-Plain&quot;&gt;inc&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+  &lt;span class=&quot;c1&quot;&gt;# Blog Information&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;title&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;        &lt;span class=&quot;s&quot;&gt;&amp;quot;Jekyll&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Incorporated&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;subtitle&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;s&quot;&gt;&amp;quot;Modern&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;Jekyll&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;based&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;blog&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;companies&amp;quot;&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;cover_image&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;blog-cover.jpg&lt;/span&gt;
+  
+  &lt;span class=&quot;c1&quot;&gt;# Company information&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;company&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;Incorporated&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;url&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;          &lt;span class=&quot;l-Scalar-Plain&quot;&gt;http://incorporated.sendtoinc.com/&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;facebook&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;     &lt;span class=&quot;l-Scalar-Plain&quot;&gt;sendtoinc&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;twitter&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;sendtoinc&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;about_link&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;l-Scalar-Plain&quot;&gt;https://sendtoinc.com/about/&lt;/span&gt;
+  
+  &lt;span class=&quot;c1&quot;&gt;# Product Information&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;product_link&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;l-Scalar-Plain&quot;&gt;http://incorporated.sendtoinc.com/&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;tagline&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;s&quot;&gt;&amp;quot;Get&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;modern&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;blog&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;for&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;your&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s&quot;&gt;company&amp;quot;&lt;/span&gt;
+  
+  &lt;span class=&quot;c1&quot;&gt;# Comments&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;disqus&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Eg. &amp;quot;exampleblog&amp;quot; Set to false to disable comments&lt;/span&gt;
+    &lt;span class=&quot;l-Scalar-Plain&quot;&gt;shortname&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;false&lt;/span&gt;
+  
+  
+  &lt;span class=&quot;c1&quot;&gt;# Sharing settings&lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;sharing&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;l-Scalar-Plain&quot;&gt;twitter&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;    &lt;span class=&quot;l-Scalar-Plain&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;l-Scalar-Plain&quot;&gt;facebook&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;   &lt;span class=&quot;l-Scalar-Plain&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;l-Scalar-Plain&quot;&gt;gplus&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;false&lt;/span&gt;
+    &lt;span class=&quot;l-Scalar-Plain&quot;&gt;hn&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;         &lt;span class=&quot;l-Scalar-Plain&quot;&gt;false&lt;/span&gt;
+    
+  
+ &lt;span class=&quot;c1&quot;&gt;# Analytics     &lt;/span&gt;
+  &lt;span class=&quot;l-Scalar-Plain&quot;&gt;analytics&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;l-Scalar-Plain&quot;&gt;google&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt; 
+      &lt;span class=&quot;c1&quot;&gt;# eg. &amp;#39;UA-123-12&amp;#39;&lt;/span&gt;
+      &lt;span class=&quot;l-Scalar-Plain&quot;&gt;id&lt;/span&gt;&lt;span class=&quot;p-Indicator&quot;&gt;:&lt;/span&gt;       &lt;span class=&quot;l-Scalar-Plain&quot;&gt;false&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Zoomable images&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;full zoomable&quot;&gt;&lt;img src=&quot;/images/incorporated.jpg&quot; /&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;strong&gt;Awesome quotes&lt;/strong&gt;
+&amp;gt; “Effective companies tend to communicate more, their people are curious and they have opinions”&lt;/p&gt;
+
+&lt;p&gt;Stay tuned for updates.&lt;/p&gt;
+</description>
+    </item>
+    
+    
+
+  </channel> 
+</rss>
