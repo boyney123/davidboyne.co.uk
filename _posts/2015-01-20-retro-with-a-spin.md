@@ -2,15 +2,14 @@
 layout: post
 
 title: Running a retrospective with a spin
-cover_image: motivation.jpg
 
 excerpt: "Learning new retrospective ideas and applying them"
 
 author:
   name: David Boyne
   twitter: boyney123
-  bio: Dev
-  image: ks.png
+  bio: Just another developer
+  image: ks.jpg
 ---
 
 > Retrospectives play a huge part for agile teams...

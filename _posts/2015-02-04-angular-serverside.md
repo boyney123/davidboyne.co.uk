@@ -2,15 +2,14 @@
 layout: post
 
 title: Moving from Client-side logic to Server-side logic with AngularJS, Node.js and Express.js
-cover_image: motivation.jpg
 
-excerpt: "With examples for a project I worked on"
+excerpt: "With examples from a project I worked on"
 
 author:
   name: David Boyne
   twitter: boyney123
-  bio: Dev
-  image: ks.png
+  bio: Just another developer
+  image: ks.jpg
 ---
 
 Three weeks into a new project, I had written some testable, decoupled and modular JavaScript code for a web application I was creating. Using AngularJS I created directives, controllers and modules that were reusable and most importantly using dependency injection they were easily testable.

@@ -1,44 +1,38 @@
-inc:
   # Blog Information
-  title:        "Boyney"
-  subtitle:     "Just another developer..."
-  subtitle2:    "sharing thoughts on anything that interests me"
-  cover_image:  blog-cover.png
-  logo:         logo.png
-  
-  # Company information
-  twitter:      boyney123
-  gplus:        '101183822199340201470'
-  
-  # Product Information
-  #product_link: http://incorporated.sendtoinc.com/
-  #tagline:      "Get a modern blog for your company"
-  
-  # Comments
-  disqus:
-    # Eg. "exampleblog" Set to false to disable comments
-    shortname:  true
-  
-  # Sharing settings
-  sharing:
-    twitter:    false
-    facebook:   false
-    gplus:      false
-    hn:         false
-    
-  
- # Analytics     
-  analytics:
-    google: false # Add tracking code in _includes/_google-analytics.html
-      
-      
-  # Google Fonts
-  # eg. 'Droid+Sans:400,700|Droid+Serif:400,700'
-  google_font: 'Droid+Sans:400,700'
-  
-  # Setup your fonts, colors etc at _assets/stylesheets/main.scss
+title:        "Boyney"
+subtitle:     "Just another developer..."
+subtitle2:    "sharing thoughts on anything that interests me"
+cover_image:  blog-cover.png
+logo:         logo.png
 
-url:         http://incorporated.sendtoinc.com
+author-image: "https://pbs.twimg.com/profile_images/660943257795457030/igA_joVD_400x400.jpg"
+twitter:      boyney123
+
+# Comments
+disqus:
+  # Eg. "exampleblog" Set to false to disable comments
+  shortname:  true
+
+# Sharing settings
+sharing:
+  twitter:    false
+  facebook:   false
+  gplus:      false
+  hn:         false
+
+
+# Analytics
+analytics:
+  google: false # Add tracking code in _includes/_google-analytics.html
+
+
+# Google Fonts
+# eg. 'Droid+Sans:400,700|Droid+Serif:400,700'
+google_font: 'Droid+Sans:400,700'
+
+# Setup your fonts, colors etc at _assets/stylesheets/main.scss
+
+url:         http://www.davidboyne.co.uk
 source:      .
 destination: ./_site
 plugins_dir:     ./_plugins
@@ -96,10 +90,6 @@ kramdown:
 
 redcloth:
   hard_breaks: true
-
-ftp_host: 'automation@davidboyne.co.uk'
-ftp_dir: '/www'
-ftp_passive: false
 
 #
 # jekyll-assets: see more at https://github.com/ixti/jekyll-assets

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title></title>
-    <link>http://incorporated.sendtoinc.com</link>
-    <atom:link href="http://incorporated.sendtoinc.com/feed.xml" rel="self" type="application/rss+xml" />
+    <link>http://www.davidboyne.co.uk</link>
+    <atom:link href="http://www.davidboyne.co.uk/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Fri, 29 Jan 2016 19:22:40 +0000</pubDate>
-    <lastBuildDate>Fri, 29 Jan 2016 19:22:40 +0000</lastBuildDate>
+    <pubDate>Fri, 29 Jan 2016 20:20:18 +0000</pubDate>
+    <lastBuildDate>Fri, 29 Jan 2016 20:20:18 +0000</lastBuildDate>
 
     
     
     <item>
       <title>Standups - Moving from people to stories</title>
-      <link>http://incorporated.sendtoinc.com/2015/01/01/moving-to-people-not-stories.html</link>
-      <pubDate>Thu, 01 Jan 2015 00:00:00 +0000</pubDate>
+      <link>http://www.davidboyne.co.uk/2016/01/01/moving-to-people-not-stories.html</link>
+      <pubDate>Fri, 01 Jan 2016 00:00:00 +0000</pubDate>
       <author></author>
-      <guid>http://incorporated.sendtoinc.com/2015/01/01/moving-to-people-not-stories</guid>
+      <guid>http://www.davidboyne.co.uk/2016/01/01/moving-to-people-not-stories</guid>
       <description>&lt;blockquote&gt;
   &lt;p&gt;We spent too much time focusing on people and their days rather than focusing on the stories.&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -51,10 +51,10 @@
     
     <item>
       <title>Value in Code</title>
-      <link>http://incorporated.sendtoinc.com/2014/06/20/value-in-code.html</link>
-      <pubDate>Fri, 20 Jun 2014 00:00:00 +0000</pubDate>
+      <link>http://www.davidboyne.co.uk/2015/06/20/value-in-code.html</link>
+      <pubDate>Sat, 20 Jun 2015 00:00:00 +0000</pubDate>
       <author></author>
-      <guid>http://incorporated.sendtoinc.com/2014/06/20/value-in-code</guid>
+      <guid>http://www.davidboyne.co.uk/2015/06/20/value-in-code</guid>
       <description>&lt;blockquote&gt;
   &lt;p&gt;Question the requirement. Keep it simple&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -71,10 +71,10 @@
     
     <item>
       <title>Benefits of crossing the divide between front-end and back-end development</title>
-      <link>http://incorporated.sendtoinc.com/2014/02/24/crossing-the-divide.html</link>
-      <pubDate>Mon, 24 Feb 2014 00:00:00 +0000</pubDate>
+      <link>http://www.davidboyne.co.uk/2015/02/24/crossing-the-divide.html</link>
+      <pubDate>Tue, 24 Feb 2015 00:00:00 +0000</pubDate>
       <author></author>
-      <guid>http://incorporated.sendtoinc.com/2014/02/24/crossing-the-divide</guid>
+      <guid>http://www.davidboyne.co.uk/2015/02/24/crossing-the-divide</guid>
       <description>&lt;p&gt;Developers come in all shapes and sizes (literally…) and the web community is so huge and growing at such a rate its hard for developers to keep up to date. Due to this developers tend to pick an area of technology (front-end or back-end) and stick with it for years. This has been going on for years now which has lead to a divide in the web community between front-end and back-end developers which I think is unhealthy and in this blog post I will explain why I think its important for developers to cross the divide and from my own experience what it has to offer.&lt;/p&gt;
 
 &lt;h3 id=&quot;problems-that-the-divide-between-front-end-and-back-end-causes&quot;&gt;Problems that the divide between front-end and back-end causes&lt;/h3&gt;
@@ -117,10 +117,10 @@
     
     <item>
       <title>Moving from Client-side logic to Server-side logic with AngularJS, Node.js and Express.js</title>
-      <link>http://incorporated.sendtoinc.com/2014/02/04/angular-serverside.html</link>
-      <pubDate>Tue, 04 Feb 2014 00:00:00 +0000</pubDate>
+      <link>http://www.davidboyne.co.uk/2015/02/04/angular-serverside.html</link>
+      <pubDate>Wed, 04 Feb 2015 00:00:00 +0000</pubDate>
       <author></author>
-      <guid>http://incorporated.sendtoinc.com/2014/02/04/angular-serverside</guid>
+      <guid>http://www.davidboyne.co.uk/2015/02/04/angular-serverside</guid>
       <description>&lt;p&gt;Three weeks into a new project, I had written some testable, decoupled and modular JavaScript code for a web application I was creating. Using AngularJS I created directives, controllers and modules that were reusable and most importantly using dependency injection they were easily testable.&lt;/p&gt;
 
 &lt;blockquote&gt;
@@ -165,10 +165,10 @@
     
     <item>
       <title>Lessons learnt from running a workshop</title>
-      <link>http://incorporated.sendtoinc.com/2014/01/30/whatthehtml-workshop.html</link>
-      <pubDate>Thu, 30 Jan 2014 00:00:00 +0000</pubDate>
+      <link>http://www.davidboyne.co.uk/2015/01/30/whatthehtml-workshop.html</link>
+      <pubDate>Fri, 30 Jan 2015 00:00:00 +0000</pubDate>
       <author></author>
-      <guid>http://incorporated.sendtoinc.com/2014/01/30/whatthehtml-workshop</guid>
+      <guid>http://www.davidboyne.co.uk/2015/01/30/whatthehtml-workshop</guid>
       <description>&lt;blockquote&gt;
   &lt;p&gt;I learnt that no matter how hard or big the challenge seems at the start, if you’re organised and focused I believe anything is achievable&lt;/p&gt;
 &lt;/blockquote&gt;
@@ -203,10 +203,10 @@
     
     <item>
       <title>Running a retrospective with a spin</title>
-      <link>http://incorporated.sendtoinc.com/2014/01/20/retro-with-a-spin.html</link>
-      <pubDate>Mon, 20 Jan 2014 00:00:00 +0000</pubDate>
+      <link>http://www.davidboyne.co.uk/2015/01/20/retro-with-a-spin.html</link>
+      <pubDate>Tue, 20 Jan 2015 00:00:00 +0000</pubDate>
       <author></author>
-      <guid>http://incorporated.sendtoinc.com/2014/01/20/retro-with-a-spin</guid>
+      <guid>http://www.davidboyne.co.uk/2015/01/20/retro-with-a-spin</guid>
       <description>&lt;blockquote&gt;
   &lt;p&gt;Retrospectives play a huge part for agile teams…&lt;/p&gt;
 &lt;/blockquote&gt;

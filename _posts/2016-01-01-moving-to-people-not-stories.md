@@ -3,16 +3,16 @@ layout: post
 
 title: Standups - Moving from people to stories
 subtitle: "People > Stories"
-cover_image: motivation.jpg
+cover_image: /blog-covers/agile-standup.jpg
+cover_credit: 'Drew Stephens from flickr'
 
-excerpt: "Focus on people rather than process"
+excerpt: "We spent too much time focusing on people and their days rather than focusing on the stories."
 
 author:
   name: David Boyne
-  twitter: karrisaarinen
-  gplus: 100687498195339762535 
-  bio: Dev
-  image: ks.png
+  twitter: boyney123
+  bio: Just another developer
+  image: ks.jpg
 ---
 
 > We spent too much time focusing on people and their days rather than focusing on the stories.

@@ -2,12 +2,25 @@
 layout: base
 ---
 {% if page.cover_image %}
-<div class="article-cover">
-    <div>
-        <img src="/images/{{ page.cover_image }}" class="image">
+    <div class="article-cover">
+        <div>
+            <img src="/images/{{ page.cover_image }}" class="image">
+        </div>
     </div>
-</div>
+{% else %}
+    <div class="article-cover">
+        <div>
+            <img src="/images/blog-covers/default.jpg" class="image">
+        </div>
+    </div>
+    <span class="blog-cover-credit">Credit : Dennis Gaylor from flickr</span>
 {% endif %}
+
+
+{% if page.cover_credit %}<span class="blog-cover-credit">Credit: {{page.cover_credit}}</span>{% endif %}
+
+
+
 <article>
 
     <div class="container">

@@ -1,26 +1,29 @@
 ---
 layout: base
 ---
-<div class="blog-cover" style="background-image:url(/images/{{ site.inc.cover_image }});">
+<div class="blog-cover" style="background-image:url(/images/{{ site.cover_image }});">
 
 
     <section>
         <div class="container">
 
-            <div class="profile">
-                <img class="ProfileAvatar-image " src="https://pbs.twimg.com/profile_images/660943257795457030/igA_joVD_400x400.jpg" alt="Isaac Z. Schlueter"/>
-            </div>
+
+            {% if site.author-image %}
+                <div class="profile">
+                    <img class="ProfileAvatar-image " src="{{site.author-image}}" alt="David Boyne"/>
+                </div>
+            {% endif %}
             
 
             <!-- <h1>{{ site.inc.title }}</h1> -->
-            {% if site.inc.subtitle %}<h3 class="subtitle1">{{ site.inc.subtitle }}</h3>{% endif %}
-            {% if site.inc.subtitle2 %}<h3 class="subtitle2">{{ site.inc.subtitle2 }}</h3>{% endif %}
+            {% if site.subtitle %}<h3 class="subtitle1">{{ site.subtitle }}</h3>{% endif %}
+            {% if site.subtitle2 %}<h3 class="subtitle2">{{ site.subtitle2 }}</h3>{% endif %}
         
-            {% if site.inc.twitter %}
-            <a href="https://twitter.com/{{ site.inc.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter"></i></a>
+            {% if site.twitter %}
+            <a href="https://twitter.com/{{ site.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter"></i></a>
             {% endif %}
-            {% if site.inc.facebook %}
-            <a href="http://facebook.com/{{ site.inc.facebook }}" title="Like on Facebook" target="_blank"><i class="icon icon-facebook"></i></a>
+            {% if site.facebook %}
+            <a href="http://facebook.com/{{ site.facebook }}" title="Like on Facebook" target="_blank"><i class="icon icon-facebook"></i></a>
             {% endif %}
             <a href="/feed.xml" title="RSS Feed">
                 <i class="icon icon-rss"></i>
@@ -29,6 +32,9 @@ layout: base
     </section>
 </div>
 
+{% if site.cover_credit %}
+    <span class="blog-cover-credit">{{site.cover_credit}}</span>
+{% endif %}
 
 <article class="container">
 {% for post in paginator.posts %}

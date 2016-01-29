@@ -2,15 +2,16 @@
 layout: post
 
 title: Value in Code
-cover_image: motivation.jpg
+cover_image: blog-covers/js-code.jpg
+cover_credit: "Photo by Kovah from flickr"
 
-excerpt: "Always question the value we add"
+excerpt: "Question the requirement. Keep it simple"
 
 author:
   name: David Boyne
   twitter: boyney123
-  bio: Dev
-  image: ks.png
+  bio: Just another developer
+  image: ks.jpg
 ---
 
 > Question the requirement. Keep it simple

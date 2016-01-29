@@ -2,17 +2,20 @@
 layout: post
 
 title: Benefits of crossing the divide between front-end and back-end development
-subtitle: "Something here?"
-cover_image: motivation.jpg
+subtitle: "Should we focus on Front end or Back end?"
 
-excerpt: "Why we should care about the full stack"
+
+excerpt: Developers come in all shapes and sizes (literally…) and the web community is so huge and growing at such a rate its hard for developers to keep up to date. Due to this developers tend to pick an area of technology (front-end or back-end) and stick with it for years..
+
+
+cover_image: blog-covers/bridge.jpg
+cover_credit: Bryan Burke from flickr
 
 author:
   name: David Boyne
-  twitter: karrisaarinen
-  gplus: 100687498195339762535 
-  bio: Dev
-  image: ks.png
+  twitter: boyney123
+  bio: Just another developer
+  image: ks.jpg
 ---
 
 Developers come in all shapes and sizes (literally...) and the web community is so huge and growing at such a rate its hard for developers to keep up to date. Due to this developers tend to pick an area of technology (front-end or back-end) and stick with it for years. This has been going on for years now which has lead to a divide in the web community between front-end and back-end developers which I think is unhealthy and in this blog post I will explain why I think its important for developers to cross the divide and from my own experience what it has to offer.
