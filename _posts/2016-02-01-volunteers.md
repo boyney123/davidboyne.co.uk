@@ -6,7 +6,7 @@ subtitle: "Share and Learn within the local area"
 cover_image: /blog-covers/sharing.jpg
 cover_credit: 'Drew Stephens from flickr'
 
-excerpt: "We spent too much time focusing on people and their days rather than focusing on the stories."
+excerpt: "Share and Learn within the local area."
 
 author:
   name: David Boyne
