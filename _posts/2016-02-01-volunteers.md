@@ -19,9 +19,11 @@ author:
 
 I’m exploring the idea of creating a place (website) where IT professionals in a local area can share ideas, events and blogs. Maybe its something you have recently used or would like to share? Maybe its something your company is currently exploring? Or maybe its just a short description of your blog with links to your own blog site?
 
+> "..I’m looking for anybody around Peterborough that can provide me a blog post on anything IT related..."
+
 I think it could be great opportunity for people to promote themselves locally but also generate a local culture of sharing and learning. 
 
-For my first draft of the project I’m looking for anybody around Peterborough that can provide me a blog post on anything IT related. Even if you’re an amateur blogger, this could be the perfect platform for any skilled blogger.
+For my first draft of the project **I’m looking for anybody around Peterborough that can provide me a blog post on anything IT related**. Even if you’re an amateur blogger, this could be the perfect platform for any skilled blogger.
 
 I think it would be great to see what the local community is up to, and generate a sharing and learning culture around Peterborough
 
