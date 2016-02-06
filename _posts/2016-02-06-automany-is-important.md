@@ -59,6 +59,6 @@ Traditional management methods still work today, it's why they have been around 
 
 
 <a class="twitter-share-button"
-  href="https://twitter.com/intent/tweet?text='Why autonomy is so important for individuals, teams and companies' - http://www.david.boyne.co.uk/2016/02/06/automany-is-important.html by @boyney123"
+  href="https://twitter.com/intent/tweet?text='Why autonomy is so important for individuals, teams and companies' - http://davidboyne.co.uk/2016/02/06/automany-is-important.html by @boyney123"
   data-size="large">
 Share on Twitter</a>
