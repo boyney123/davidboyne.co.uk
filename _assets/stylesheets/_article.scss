@@ -135,7 +135,7 @@ article {
         margin-bottom:0.3em;
         font-weight:400;
         letter-spacing:1px;
-
+        margin-top:0;
         time, address {
             display:inline;
             font-size:13px;
@@ -156,6 +156,7 @@ article {
     .title {
         margin:0.2em 0;
         font-weight:bold;
+      width: 100%;
 
         a {
             border:0;
@@ -245,4 +246,28 @@ article {
         }
     }
 
+}
+
+.button{
+  display: inline-block;
+  font-family: 'Montserrat',sans-serif;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #b1b1b1;
+  border: 1px solid rgba(0,0,0,0.15);
+  padding: 13px 23px 13px 26px;
+  border-radius: 26px;
+  &:hover{
+    border-color:rgba(0,0,0,0.5);
+  }
+}
+
+.main-post{
+  text-align: center;
+}
+
+.excerpt{
+  text-align: left;
+  margin-top:10px;
+  font-size: 16px;
 }

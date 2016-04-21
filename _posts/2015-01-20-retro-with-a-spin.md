@@ -3,7 +3,7 @@ layout: post
 
 title: Running a retrospective with a spin
 
-excerpt: "Learning new retrospective ideas and applying them"
+excerpt: "Retrospectives are great for a team as its the time and place where teams can talk about what has gone right or wrong and also create actions to improve as individuals and as a team..."
 
 author:
   name: David Boyne

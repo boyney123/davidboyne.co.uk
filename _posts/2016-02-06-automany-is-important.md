@@ -6,7 +6,7 @@ subtitle: "Motivation, Engagement and Passion"
 cover_image: /blog-covers/train.jpg
 cover_credit: 'Jiří Zralý from flickr'
 
-excerpt: "How to keep teams engaged, motivated and passionate."
+excerpt: "I recently came across a thought provoking blog from Mike Hadlow which got me thinking about the importance of autonomy in teams and what it means for developers. In this post I will share from experience how autonomy can lead to motivated, self organising and passionate teams, and how dangerous things can get if teams don't have it or it's taken away from them..."
 
 author:
   name: David Boyne

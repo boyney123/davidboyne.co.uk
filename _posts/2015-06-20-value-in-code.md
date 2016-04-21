@@ -5,7 +5,7 @@ title: Value in Code
 cover_image: blog-covers/js-code.jpg
 cover_credit: "Photo by Kovah from flickr"
 
-excerpt: "Question the requirement. Keep it simple"
+excerpt: "Question the requirement. Keep it simple. So many people make this mistake..."
 
 author:
   name: David Boyne

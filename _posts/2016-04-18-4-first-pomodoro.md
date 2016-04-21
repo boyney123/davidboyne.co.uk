@@ -1,12 +1,12 @@
 ---
 layout: post
 
-title: My first Pomodoro - How I learnt to be more productive with just 25 minutes
+title: The Pomodoro Technique - Making the most out of 25 minutes
 subtitle: "Removing distractions and focus"
 cover_image: /blog-covers/tomato.jpg
 cover_credit: 'Andy Rogers from flickr'
 
-excerpt: "Removing distractions and focus"
+excerpt: "I just experienced and completed my first ever pomodoro (experiencing my second pomodoro writing this blog post) and I’m going to share with you what I learnt and managed to achieve and hopefully inspire you to try and do the same..."
 
 author:
   name: David Boyne

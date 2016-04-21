@@ -6,7 +6,7 @@ subtitle: "People > Stories"
 cover_image: /blog-covers/agile-standup.jpg
 cover_credit: 'Drew Stephens from flickr'
 
-excerpt: "We spent too much time focusing on people and their days rather than focusing on the stories."
+excerpt: "We spent too much time focusing on people and their days rather than focusing on the stories. Lets focus on people again..."
 
 author:
   name: David Boyne

@@ -6,7 +6,7 @@ subtitle: "Push yourself, others and staying motivated"
 cover_image: /blog-covers/motivation.jpg
 cover_credit: 'Kari from flickr'
 
-excerpt: "Some tips to keep motivated as a Developer"
+excerpt: "Four brief summary’s of ways in which people can keep motivated within the IT industry..."
 
 author:
   name: David Boyne

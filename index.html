@@ -13,12 +13,12 @@ layout: base
                     <img class="ProfileAvatar-image " src="{{site.author-image}}" alt="David Boyne"/>
                 </div>
             {% endif %}
-            
+
 
             <!-- <h1>{{ site.inc.title }}</h1> -->
             {% if site.subtitle %}<h3 class="subtitle1">{{ site.subtitle }}</h3>{% endif %}
             {% if site.subtitle2 %}<h3 class="subtitle2">{{ site.subtitle2 }}</h3>{% endif %}
-        
+
             {% if site.twitter %}
             <a href="https://twitter.com/{{ site.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter"></i></a>
             {% endif %}
@@ -39,15 +39,24 @@ layout: base
 <article class="container">
 {% for post in paginator.posts %}
   {% unless post.draft %}
-    <section class="index">
+    <section class="index main-post">
         <!-- {% if post.author.image %}<img src="/images/{{ post.author.image }}" class="avatar">{% endif %}-->
         <div>
             <h2 class="title"><a href="{{ post.url }}" rel="prefetch">{{ post.title }}</a></h2>
-            <p>{{ post.excerpt }}</p>
+
             <div class="meta">
-                Written By <address>{{ post.author.name }}</address> &mdash;
+                Posted By <address>{{ post.author.name }}</address> &mdash;
                 <time pubdate datetime="{{ post.date | date: "%Y-%d-%B" }}" title="{{ post.date | date: "%B %d, %Y" }}">{{ post.date | date: "%B %d, %Y" }}</time>
             </div>
+
+            <p class="excerpt">{{ post.excerpt }}</p>
+
+            <a href="{{ post.url }}" class="button">
+                Read more
+            </a>
+
+            <!--<img src="/images/{{ post.cover_image }}" class="image">-->
+
         </div>
         <hr>
     </section>

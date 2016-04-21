@@ -3,7 +3,7 @@ layout: post
 
 title: Lessons learnt from running a workshop
 
-excerpt: "Why I think if you’re organised and focused I believe anything is achievable"
+excerpt: "I learnt that no matter how hard or big the challenge seems at the start, if you’re organised and focused I believe anything is achievable..."
 
 author:
   name: David Boyne
