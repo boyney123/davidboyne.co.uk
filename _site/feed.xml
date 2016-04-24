@@ -6,9 +6,33 @@
     <atom:link href="http://www.davidboyne.co.uk/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Sun, 24 Apr 2016 19:29:10 +0000</pubDate>
-    <lastBuildDate>Sun, 24 Apr 2016 19:29:10 +0000</lastBuildDate>
+    <pubDate>Sun, 24 Apr 2016 19:51:25 +0000</pubDate>
+    <lastBuildDate>Sun, 24 Apr 2016 19:51:25 +0000</lastBuildDate>
 
+    
+    
+    <item>
+      <title>React or Angular2</title>
+      <link>http://www.davidboyne.co.uk/2016/04/18/angular2-or-react.html</link>
+      <pubDate>Mon, 18 Apr 2016 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://www.davidboyne.co.uk/2016/04/18/angular2-or-react</guid>
+      <description>&lt;p&gt;I’ve recently just got back from a short journey of comparing &lt;a href=&quot;https://facebook.github.io/react/&quot;&gt;React&lt;/a&gt; and &lt;a href=&quot;https://angular.io/&quot;&gt;Angular2&lt;/a&gt; for a new project.&lt;/p&gt;
+
+&lt;p&gt;I spent just over week gathering information online  about the two and created a slide deck comparing them.&lt;/p&gt;
+
+&lt;p&gt;I can spend time writing it up here, but just thought I would share the slide deck so you can see for yourself.&lt;/p&gt;
+
+&lt;iframe src=&quot;//www.slideshare.net/slideshow/embed_code/key/GVLO44Gaz1vicc&quot; width=&quot;595&quot; height=&quot;485&quot; frameborder=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; style=&quot;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&quot; allowfullscreen=&quot;&quot;&gt; &lt;/iframe&gt;
+&lt;div style=&quot;margin-bottom:5px&quot;&gt; &lt;strong&gt; &lt;a href=&quot;//www.slideshare.net/boyney123/reactjs-or-angular&quot; title=&quot;ReactJS or Angular&quot; target=&quot;_blank&quot;&gt;ReactJS or Angular&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&quot;//www.slideshare.net/boyney123&quot; target=&quot;_blank&quot;&gt;boyney123&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+If you have any questions just &lt;a href=&quot;https://twitter.com/boyney123&quot;&gt;tweet me&lt;/a&gt;, or leave a comment.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;FYI – We ended up picking React as its lightweight and the composition based architecture suits the needs of the project.&lt;/em&gt;&lt;/p&gt;
+</description>
+    </item>
+    
     
     
     <item>
