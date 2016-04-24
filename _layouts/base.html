@@ -11,6 +11,10 @@
     <link href="{{ site_url }}/feed.xml" rel="alternate" type="application/rss+xml" title="{{ site.title }}" />
     <meta name="title" content="{% if page.title %}{{ page.title }} {% else %}{{ site.title }}{% endif %}">
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+
     {% if page.site.gplus %}<link rel="publisher" href="https://plus.google.com/{{ site.gplus }}">{% endif %} 
     {% if page.author.gplus %}<link rel="author" href="https://plus.google.com/{{ page.author.gplus }}">{% endif %}       
     <meta property="og:title" content="{% if page.title %}{{ page.title }} {% else %}{{ site.title }}{% endif %}"/>
@@ -29,28 +33,52 @@
     <meta property="og:site_name" content="{{ site.title }}">     
 </head>
 <body>
+
+<div class="blog-cover" >
+
+
+    <section>
+        <div class="container">
+
+
+            {% if site.author-image %}
+            <div class="profile">
+                <img class="ProfileAvatar-image " src="{{site.author-image}}" alt="David Boyne"/>
+            </div>
+            {% endif %}
+
+                <p class="profile-blurb" >
+                    Senior Software Engineer <a href="http://www.comparethemarket.com/">@Comparethemarket</a>.
+                    Organiser of <a href="http://www.meetup.com/Agile-Peterborough/">WhatTheHTML</a>. Speaker & evangelist of web development, agile principles and helping others.</p>
+
+
+            <a class="twitter-follow-button" href="https://twitter.com/boyney123" data-show-count="false"></a>
+
+        </div>
+    </section>
+</div>
+
+
+<div class="container">
+    <div class="site-nav">
+            <nav id="navigation">
+                <a href="/" class="home">Posts</a>
+            </nav>
+    </div>
+</div>
     
-<section class="site-nav">
-    <header>
-        <nav id="navigation">
-            <a class="brand" href="/">
-                <img src="/images/{{ site.logo }}" alt="Inc">
-            </a>
-            <a href="/" class="home">Blog</a>
-            <a href="/about">About</a>
-        </nav>
-    </header>
-</section>
+
 
 {{ content }}
+
+
 
 <footer class="site-footer">
     <div class="container">
         &copy; {{ site.time | date: "%Y" }} 
         
         <nav>
-            <a href="/">Blog</a> &middot;
-            <a href="/about">About</a>
+            <a href="/">Posts</a>
         </nav>
         
         <nav class="social">

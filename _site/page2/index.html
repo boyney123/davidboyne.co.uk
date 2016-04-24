@@ -11,6 +11,10 @@
     <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="Boyney" />
     <meta name="title" content="Boyney">
     <link rel="canonical" href="http://www.davidboyne.co.uk/page2/index.html">
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+
      
            
     <meta property="og:title" content="Boyney"/>
@@ -20,20 +24,8 @@
     <meta property="og:site_name" content="Boyney">     
 </head>
 <body>
-    
-<section class="site-nav">
-    <header>
-        <nav id="navigation">
-            <a class="brand" href="/">
-                <img src="/images/logo.png" alt="Inc">
-            </a>
-            <a href="/" class="home">Blog</a>
-            <a href="/about">About</a>
-        </nav>
-    </header>
-</section>
 
-<div class="blog-cover" style="background-image:url(/images/blog-cover.png);">
+<div class="blog-cover" >
 
 
     <section>
@@ -41,26 +33,32 @@
 
 
             
-                <div class="profile">
-                    <img class="ProfileAvatar-image " src="https://pbs.twimg.com/profile_images/660943257795457030/igA_joVD_400x400.jpg" alt="David Boyne"/>
-                </div>
+            <div class="profile">
+                <img class="ProfileAvatar-image " src="https://pbs.twimg.com/profile_images/660943257795457030/igA_joVD_400x400.jpg" alt="David Boyne"/>
+            </div>
             
 
+                <p class="profile-blurb" >
+                    Senior Software Engineer <a href="http://www.comparethemarket.com/">@Comparethemarket</a>.
+                    Organiser of <a href="http://www.meetup.com/Agile-Peterborough/">WhatTheHTML</a>. Speaker & evangelist of web development, agile principles and helping others.</p>
 
-            <!-- <h1></h1> -->
-            <h3 class="subtitle1">Passionate Developer</h3>
-            <h3 class="subtitle2">Continuously growing and teaching others</h3>
 
-            
-            <a href="https://twitter.com/boyney123" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter"></i></a>
-            
-            
-            <a href="/feed.xml" title="RSS Feed">
-                <i class="icon icon-rss"></i>
-            </a>
+            <a class="twitter-follow-button" href="https://twitter.com/boyney123" data-show-count="false"></a>
+
         </div>
     </section>
 </div>
+
+
+<div class="container">
+    <div class="site-nav">
+            <nav id="navigation">
+                <a href="/" class="home">Posts</a>
+            </nav>
+    </div>
+</div>
+    
+
 
 
 
@@ -149,13 +147,14 @@
 </article>
 
 
+
+
 <footer class="site-footer">
     <div class="container">
         &copy; 2016 
         
         <nav>
-            <a href="/">Blog</a> &middot;
-            <a href="/about">About</a>
+            <a href="/">Posts</a>
         </nav>
         
         <nav class="social">
@@ -188,6 +187,23 @@
 </script>
 
 <script id="dsq-count-scr" src="//boyney123.disqus.com/count.js" async></script>
+
+<script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+        t._e.push(f);
+    };
+
+    return t;
+}(document, "script", "twitter-wjs"));</script>
 
 
 </body>

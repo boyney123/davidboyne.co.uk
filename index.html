@@ -1,36 +1,7 @@
 ---
 layout: base
 ---
-<div class="blog-cover" style="background-image:url(/images/{{ site.cover_image }});">
 
-
-    <section>
-        <div class="container">
-
-
-            {% if site.author-image %}
-                <div class="profile">
-                    <img class="ProfileAvatar-image " src="{{site.author-image}}" alt="David Boyne"/>
-                </div>
-            {% endif %}
-
-
-            <!-- <h1>{{ site.inc.title }}</h1> -->
-            {% if site.subtitle %}<h3 class="subtitle1">{{ site.subtitle }}</h3>{% endif %}
-            {% if site.subtitle2 %}<h3 class="subtitle2">{{ site.subtitle2 }}</h3>{% endif %}
-
-            {% if site.twitter %}
-            <a href="https://twitter.com/{{ site.twitter }}" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter"></i></a>
-            {% endif %}
-            {% if site.facebook %}
-            <a href="http://facebook.com/{{ site.facebook }}" title="Like on Facebook" target="_blank"><i class="icon icon-facebook"></i></a>
-            {% endif %}
-            <a href="/feed.xml" title="RSS Feed">
-                <i class="icon icon-rss"></i>
-            </a>
-        </div>
-    </section>
-</div>
 
 {% if site.cover_credit %}
     <span class="blog-cover-credit">{{site.cover_credit}}</span>
