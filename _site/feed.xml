@@ -6,9 +6,30 @@
     <atom:link href="http://www.davidboyne.co.uk/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Sun, 24 Apr 2016 19:51:25 +0000</pubDate>
-    <lastBuildDate>Sun, 24 Apr 2016 19:51:25 +0000</lastBuildDate>
+    <pubDate>Sun, 24 Apr 2016 21:05:17 +0000</pubDate>
+    <lastBuildDate>Sun, 24 Apr 2016 21:05:17 +0000</lastBuildDate>
 
+    
+    
+    <item>
+      <title>Introduction to ES6</title>
+      <link>http://www.davidboyne.co.uk/2016/04/24/es6-es7.html</link>
+      <pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://www.davidboyne.co.uk/2016/04/24/es6-es7</guid>
+      <description>&lt;p&gt;If you haven’t heard of JavaScript ES6 or ES7 yet, then you must have been living in a cave over the past year.&lt;/p&gt;
+
+&lt;p&gt;New features of JavaScript allow us to do some real awesome things these days. I got so excited about them I pulled together a slide deck and started to teach others. Hopefully it can help you too.&lt;/p&gt;
+
+&lt;iframe src=&quot;//www.slideshare.net/slideshow/embed_code/key/bEFUkeduXR233&quot; width=&quot;595&quot; height=&quot;485&quot; frameborder=&quot;0&quot; marginwidth=&quot;0&quot; marginheight=&quot;0&quot; scrolling=&quot;no&quot; style=&quot;border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;&quot; allowfullscreen=&quot;&quot;&gt; &lt;/iframe&gt;
+&lt;div style=&quot;margin-bottom:5px&quot;&gt; &lt;strong&gt; &lt;a href=&quot;//www.slideshare.net/boyney123/introduction-into-es6-javascript&quot; title=&quot;Introduction into ES6 JavaScript.&quot; target=&quot;_blank&quot;&gt;Introduction into ES6 JavaScript.&lt;/a&gt; &lt;/strong&gt; from &lt;strong&gt;&lt;a href=&quot;//www.slideshare.net/boyney123&quot; target=&quot;_blank&quot;&gt;boyney123&lt;/a&gt;&lt;/strong&gt; &lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;
+If you have any questions just &lt;a href=&quot;https://twitter.com/boyney123&quot;&gt;tweet me&lt;/a&gt;, or leave a comment.&lt;/p&gt;
+
+</description>
+    </item>
+    
     
     
     <item>
