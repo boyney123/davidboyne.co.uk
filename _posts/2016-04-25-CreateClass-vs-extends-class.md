@@ -26,8 +26,6 @@ Looks like the majority of people that answered are using **extends React.Compon
 
 I done some deeper diving into why and found some links that might help you decide: 
 
-[React.createClass vs Component](https://toddmotto.com/react-create-class-versus-component/)
-
 [Composing Components](https://reactjsnews.com/composing-components)
 
 #### Choose extends React.Component

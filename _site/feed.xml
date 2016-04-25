@@ -6,8 +6,8 @@
     <atom:link href="http://www.davidboyne.co.uk/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Mon, 25 Apr 2016 08:33:54 +0000</pubDate>
-    <lastBuildDate>Mon, 25 Apr 2016 08:33:54 +0000</lastBuildDate>
+    <pubDate>Mon, 25 Apr 2016 11:12:08 +0000</pubDate>
+    <lastBuildDate>Mon, 25 Apr 2016 11:12:08 +0000</lastBuildDate>
 
     
     
@@ -28,8 +28,6 @@
 &lt;p&gt;Looks like the majority of people that answered are using &lt;strong&gt;extends React.Component&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;I done some deeper diving into why and found some links that might help you decide:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://toddmotto.com/react-create-class-versus-component/&quot;&gt;React.createClass vs Component&lt;/a&gt;&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;https://reactjsnews.com/composing-components&quot;&gt;Composing Components&lt;/a&gt;&lt;/p&gt;
 
