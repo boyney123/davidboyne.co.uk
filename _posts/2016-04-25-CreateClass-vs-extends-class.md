@@ -5,7 +5,7 @@ title: React.createClass vs extends React.Component
 
 subtitle: "Poll results from Twitter"
 
-excerpt: "If you haven’t heard of JavaScript ES6 or ES7 yet, then you must have been living in a cave over the past year. Take a look at my presentation to see if it can help..."
+excerpt: "**React.createComponent** and **extends React.Component** give us the same results. The ability to create React components..."
 
 author:
   name: David Boyne
