@@ -6,13 +6,44 @@
     <atom:link href="http://www.davidboyne.co.uk/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Sun, 24 Apr 2016 21:05:17 +0000</pubDate>
-    <lastBuildDate>Sun, 24 Apr 2016 21:05:17 +0000</lastBuildDate>
+    <pubDate>Mon, 25 Apr 2016 07:50:20 +0000</pubDate>
+    <lastBuildDate>Mon, 25 Apr 2016 07:50:20 +0000</lastBuildDate>
 
     
     
     <item>
-      <title>Introduction to ES6</title>
+      <title>React.createClass vs extends React.Component</title>
+      <link>http://www.davidboyne.co.uk/2016/04/25/CreateClass-vs-extends-class.html</link>
+      <pubDate>Mon, 25 Apr 2016 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://www.davidboyne.co.uk/2016/04/25/CreateClass-vs-extends-class</guid>
+      <description>&lt;p&gt;&lt;strong&gt;React.createComponent&lt;/strong&gt; and &lt;strong&gt;extends React.Component&lt;/strong&gt; give us the same results. The ability to create React components.&lt;/p&gt;
+
+&lt;p&gt;I’m starting a new project, and wanted to set a standard in the way I create components. I was interested to see who uses 
+&lt;strong&gt;React.createComponent&lt;/strong&gt; or &lt;strong&gt;extends React.Component&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;blockquote class=&quot;twitter-tweet&quot; data-lang=&quot;en&quot;&gt;&lt;p lang=&quot;en&quot; dir=&quot;ltr&quot;&gt;How do you create your &lt;a href=&quot;https://twitter.com/hashtag/react?src=hash&quot;&gt;#react&lt;/a&gt; components? &lt;a href=&quot;https://twitter.com/reactjs&quot;&gt;@reactjs&lt;/a&gt; &lt;a href=&quot;https://twitter.com/londonreact&quot;&gt;@londonreact&lt;/a&gt; &lt;a href=&quot;https://twitter.com/React_Tutorial&quot;&gt;@React_Tutorial&lt;/a&gt;&lt;/p&gt;&amp;mdash; David Boyne (@boyney123) &lt;a href=&quot;https://twitter.com/boyney123/status/723084810990702592&quot;&gt;April 21, 2016&lt;/a&gt;&lt;/blockquote&gt;
+&lt;script async=&quot;&quot; src=&quot;//platform.twitter.com/widgets.js&quot; charset=&quot;utf-8&quot;&gt;&lt;/script&gt;
+
+&lt;p&gt;Looks like the majority of people that answered are using &lt;strong&gt;extends React.Component&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;I done some deeper diving into why and found some links that might help you decide:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://toddmotto.com/react-create-class-versus-component/&quot;&gt;React.createClass vs Component&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://reactjsnews.com/composing-components&quot;&gt;Composing Components&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&quot;choose-extends-reactcomponent&quot;&gt;Choose extends React.Component&lt;/h4&gt;
+
+&lt;p&gt;I decided to use extends React.Component due to the fact it looks like &lt;a href=&quot;https://facebook.github.io/react/blog/2015/03/10/react-v0.13.html&quot;&gt;Facebook might be dropping it at some point&lt;/a&gt; &lt;em&gt;(although that was over a year ago…)&lt;/em&gt;. Thanks to &lt;a href=&quot;https://twitter.com/Rhodesy&quot;&gt;@Rhodesy&lt;/a&gt; for pointing this out.&lt;/p&gt;
+
+</description>
+    </item>
+    
+    
+    
+    <item>
+      <title>Introduction to ES6/7</title>
       <link>http://www.davidboyne.co.uk/2016/04/24/es6-es7.html</link>
       <pubDate>Sun, 24 Apr 2016 00:00:00 +0000</pubDate>
       <author></author>

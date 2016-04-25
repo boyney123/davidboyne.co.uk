@@ -3,22 +3,22 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to ES6/7 &mdash; Boyney</title>
+    <title>React.createClass vs extends React.Component &mdash; Boyney</title>
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/assets/main.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/images/logo.png"/>
     <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="Boyney" />
-    <meta name="title" content="Introduction to ES6/7 ">
-    <link rel="canonical" href="http://www.davidboyne.co.uk/2016/04/24/es6-es7.html">
+    <meta name="title" content="React.createClass vs extends React.Component ">
+    <link rel="canonical" href="http://www.davidboyne.co.uk/2016/04/25/CreateClass-vs-extends-class.html">
 
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
 
      
            
-    <meta property="og:title" content="Introduction to ES6/7 "/>
-    <meta property="og:url" content="http://www.davidboyne.co.uk/2016/04/24/es6-es7.html"/>
+    <meta property="og:title" content="React.createClass vs extends React.Component "/>
+    <meta property="og:url" content="http://www.davidboyne.co.uk/2016/04/25/CreateClass-vs-extends-class.html"/>
     
     
     <meta property="og:description" content="If you haven’t heard of JavaScript ES6 or ES7 yet, then you must have been living in a cave over the past year. Take a look at my presentation to see if it can help..."/>
@@ -71,22 +71,32 @@
             <header>
                 <div class="meta">
                     By <address><a rel="author" href="" title="David Boyne" target="_blank">David Boyne</a></address> &mdash;
-                    <time pubdate datetime="2016-24-April" title="April 24, 2016">April 24, 2016</time>
+                    <time pubdate datetime="2016-25-April" title="April 25, 2016">April 25, 2016</time>
                 </div>
-                <h1 class="title">Introduction to ES6/7</h1>
-                <h2 class="subtitle">Simple presentation to teach ES6/7 features</h2>
+                <h1 class="title">React.createClass vs extends React.Component</h1>
+                <h2 class="subtitle">Poll results from Twitter</h2>
             </header>
 
             <section>
-                <p>If you haven’t heard of JavaScript ES6 or ES7 yet, then you must have been living in a cave over the past year.</p>
+                <p><strong>React.createComponent</strong> and <strong>extends React.Component</strong> give us the same results. The ability to create React components.</p>
 
-<p>New features of JavaScript allow us to do some real awesome things these days. I got so excited about them I pulled together a slide deck and started to teach others. Hopefully it can help you too.</p>
+<p>I’m starting a new project, and wanted to set a standard in the way I create components. I was interested to see who uses 
+<strong>React.createComponent</strong> or <strong>extends React.Component</strong>.</p>
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/bEFUkeduXR233" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe>
-<div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/boyney123/introduction-into-es6-javascript" title="Introduction into ES6 JavaScript." target="_blank">Introduction into ES6 JavaScript.</a> </strong> from <strong><a href="//www.slideshare.net/boyney123" target="_blank">boyney123</a></strong> </div>
+<blockquote class="twitter-tweet" data-lang="en"><p lang="en" dir="ltr">How do you create your <a href="https://twitter.com/hashtag/react?src=hash">#react</a> components? <a href="https://twitter.com/reactjs">@reactjs</a> <a href="https://twitter.com/londonreact">@londonreact</a> <a href="https://twitter.com/React_Tutorial">@React_Tutorial</a></p>&mdash; David Boyne (@boyney123) <a href="https://twitter.com/boyney123/status/723084810990702592">April 21, 2016</a></blockquote>
+<script async="" src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 
-<p><br />
-If you have any questions just <a href="https://twitter.com/boyney123">tweet me</a>, or leave a comment.</p>
+<p>Looks like the majority of people that answered are using <strong>extends React.Component</strong>.</p>
+
+<p>I done some deeper diving into why and found some links that might help you decide:</p>
+
+<p><a href="https://toddmotto.com/react-create-class-versus-component/">React.createClass vs Component</a></p>
+
+<p><a href="https://reactjsnews.com/composing-components">Composing Components</a></p>
+
+<h4 id="choose-extends-reactcomponent">Choose extends React.Component</h4>
+
+<p>I decided to use extends React.Component due to the fact it looks like <a href="https://facebook.github.io/react/blog/2015/03/10/react-v0.13.html">Facebook might be dropping it at some point</a> <em>(although that was over a year ago…)</em>. Thanks to <a href="https://twitter.com/Rhodesy">@Rhodesy</a> for pointing this out.</p>
 
 
                 
