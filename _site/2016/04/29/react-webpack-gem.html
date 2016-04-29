@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Goodbye ../../../ &mdash; Boyney</title>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/logo.png"/>
+    <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="Boyney" />
+    <meta name="title" content="Goodbye ../../../ ">
+    <link rel="canonical" href="http://www.davidboyne.co.uk/2016/04/29/react-webpack-gem.html">
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+
+     
+           
+    <meta property="og:title" content="Goodbye ../../../ "/>
+    <meta property="og:url" content="http://www.davidboyne.co.uk/2016/04/29/react-webpack-gem.html"/>
+    
+    
+    <meta property="og:description" content="I have recently been writing a React application and recently ran into a little webpack gem I thought I would share..."/>
+    <meta name="description" content="I have recently been writing a React application and recently ran into a little webpack gem I thought I would share..."/>
+    
+    <meta property="og:site_name" content="Boyney">     
+</head>
+<body>
+
+<div class="blog-cover" >
+
+
+    <section>
+        <div class="container">
+
+
+            
+            <div class="profile">
+                <img class="ProfileAvatar-image " src="https://pbs.twimg.com/profile_images/660943257795457030/igA_joVD_400x400.jpg" alt="David Boyne"/>
+            </div>
+            
+
+                <p class="profile-blurb" >
+                    Senior Software Engineer <a href="http://www.comparethemarket.com/">@Comparethemarket</a>.
+                    Organiser of <a href="http://www.meetup.com/Agile-Peterborough/">WhatTheHTML</a>. Speaker & evangelist of web development, agile principles and helping others.</p>
+
+
+            <a class="twitter-follow-button" href="https://twitter.com/boyney123" data-show-count="false"></a>
+
+        </div>
+    </section>
+</div>
+
+
+<div class="container">
+    <div class="site-nav">
+            <nav id="navigation">
+                <a href="/" class="home">Posts</a>
+            </nav>
+    </div>
+</div>
+    
+
+
+<article class="post container">
+
+    <article>
+
+        <div class="container">
+            <header>
+                <div class="meta">
+                    By <address><a rel="author" href="" title="David Boyne" target="_blank">David Boyne</a></address> &mdash;
+                    <time pubdate datetime="2016-29-April" title="April 29, 2016">April 29, 2016</time>
+                </div>
+                <h1 class="title">Goodbye ../../../</h1>
+                <h2 class="subtitle">Removing absolute paths when importing</h2>
+            </header>
+
+            <section>
+                <p>I have recently been writing a <a href="https://facebook.github.io/react/">React</a> application and ran into a little webpack gem I thought I would share.</p>
+
+<p>First lets look at the problem.</p>
+
+<h5 id="contactusjs">ContactUs.js</h5>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">PropTypes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
+
+<span class="kr">import</span> <span class="nx">Question</span> <span class="nx">from</span> <span class="s1">&#39;../../components/question&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Input</span> <span class="nx">from</span> <span class="s1">&#39;../../components/input&#39;</span><span class="p">;</span>
+
+
+<span class="kr">const</span> <span class="nx">ContactUs</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">confirmEmail</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">section</span><span class="o">&gt;</span>
+
+       <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Contact</span> <span class="nx">Us</span><span class="o">:&lt;</span><span class="err">/h2&gt;</span>
+
+        <span class="o">&lt;</span><span class="nx">Question</span>
+            <span class="nx">field</span><span class="o">=</span><span class="p">{</span><span class="nx">email</span><span class="p">}</span>
+            <span class="nx">question</span><span class="o">=</span><span class="s2">&quot;Email:&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">Input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;textbox&quot;</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;Email&quot;</span> <span class="p">{...</span><span class="nx">email</span><span class="p">}</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="err">/Question&gt;</span>
+
+        <span class="o">&lt;</span><span class="nx">Question</span>
+            <span class="nx">field</span><span class="o">=</span><span class="p">{</span><span class="nx">confirmEmail</span><span class="p">}</span>
+            <span class="nx">question</span><span class="o">=</span><span class="s2">&quot;Confirm Email:&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">Input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;textbox&quot;</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;Confirm Email&quot;</span> <span class="p">{...</span><span class="nx">confirmEmail</span><span class="p">}</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="err">/Question&gt;</span>
+
+    <span class="o">&lt;</span><span class="err">/section&gt;</span>
+<span class="p">)</span>
+
+<span class="nx">ContactUs</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">ContactUs</span><span class="p">;</span></code></pre></div>
+
+<p>This is a simple high-level stateless component that could handle a contact us section for our application.</p>
+
+<p>As you can see we are importing other components to use inside this component and we are using the filepath to find the component. For example <code>../../component/question</code></p>
+
+<p>There are a couple of <em>(obvious)</em> problems with this approach.</p>
+
+<h4 id="problem-1--hard-time-refactoring">Problem 1 – Hard time refactoring</h4>
+
+<p>If we want to refactor our folder structure we have to change the file path in this component and maybe others.</p>
+
+<p>Across the application this is tiresome and can take time.</p>
+
+<h4 id="problem-2---repetitive">Problem 2 - Repetitive</h4>
+
+<p>Writing <code>../../</code> or <code>../../../../</code> overtime can be boring and repetitive.</p>
+
+<p><em>And lets be honest, it looks ugly!</em></p>
+
+<h4 id="solution">Solution</h4>
+
+<p>Webpack’s <a href="https://webpack.github.io/docs/configuration.html#resolve-modulesdirectories">modulesDirectories</a> to the rescue.</p>
+
+<p>Using <code>modulesDirectories</code> we can use a similar pattern to what we see when we import from our <code>node_modules.</code></p>
+
+<p>First we need to setup <code>webpack.config.js</code></p>
+
+<h5 id="webpackconfigjs">webpack.config.js</h5>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">path</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;path&#39;</span><span class="p">);</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">entry</span><span class="o">:</span> <span class="p">[</span>
+        <span class="s1">&#39;./src/index&#39;</span>
+    <span class="p">],</span>
+    <span class="nx">module</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">loaders</span><span class="o">:</span> <span class="p">[</span>
+            <span class="p">{</span><span class="nx">test</span><span class="o">:</span> <span class="sr">/\.js$/</span><span class="p">,</span> <span class="nx">loader</span><span class="o">:</span> <span class="s1">&#39;babel&#39;</span><span class="p">,</span> <span class="nx">exclude</span><span class="o">:</span> <span class="sr">/node_modules/</span><span class="p">}</span>
+        <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nx">resolve</span><span class="o">:</span><span class="p">{</span>
+        <span class="nx">modulesDirectories</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;src&#39;</span><span class="p">,</span> <span class="s1">&#39;node_modules&#39;</span><span class="p">],</span>
+    <span class="p">},</span>
+    <span class="nx">output</span><span class="o">:</span> <span class="p">{</span>
+        <span class="nx">path</span><span class="o">:</span> <span class="nx">path</span><span class="p">.</span><span class="nx">join</span><span class="p">(</span><span class="nx">__dirname</span><span class="p">,</span> <span class="s1">&#39;dist&#39;</span><span class="p">),</span>
+        <span class="nx">filename</span><span class="o">:</span> <span class="s1">&#39;bundle.js&#39;</span>
+    <span class="p">}</span>
+
+<span class="p">};</span></code></pre></div>
+
+<p>As you can see in this example we are mounting our ‘src’ directory <em>(you might want to mount something else)</em>.</p>
+
+<p>This now allows us to remove the file path pattern <code>../../</code></p>
+
+<p>Now lets look our component again using  <code>modulesDirectories</code>.</p>
+
+<h5 id="contactusjs-1">ContactUs.js</h5>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">Component</span><span class="p">,</span> <span class="nx">PropTypes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
+
+<span class="kr">import</span> <span class="nx">Question</span> <span class="nx">from</span> <span class="s1">&#39;components/question&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Input</span> <span class="nx">from</span> <span class="s1">&#39;components/input&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">ContactUs</span> <span class="o">=</span> <span class="p">({</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">confirmEmail</span> <span class="p">})</span> <span class="o">=&gt;</span> <span class="p">(</span>
+    <span class="o">&lt;</span><span class="nx">section</span><span class="o">&gt;</span>
+
+       <span class="o">&lt;</span><span class="nx">h2</span><span class="o">&gt;</span><span class="nx">Contact</span> <span class="nx">Us</span><span class="o">:&lt;</span><span class="err">/h2&gt;</span>
+
+        <span class="o">&lt;</span><span class="nx">Question</span>
+            <span class="nx">field</span><span class="o">=</span><span class="p">{</span><span class="nx">email</span><span class="p">}</span>
+            <span class="nx">question</span><span class="o">=</span><span class="s2">&quot;Email:&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">Input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;textbox&quot;</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;Email&quot;</span> <span class="p">{...</span><span class="nx">email</span><span class="p">}</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="err">/Question&gt;</span>
+
+        <span class="o">&lt;</span><span class="nx">Question</span>
+            <span class="nx">field</span><span class="o">=</span><span class="p">{</span><span class="nx">confirmEmail</span><span class="p">}</span>
+            <span class="nx">question</span><span class="o">=</span><span class="s2">&quot;Confirm Email:&quot;</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="nx">Input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">className</span><span class="o">=</span><span class="s2">&quot;textbox&quot;</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;Confirm Email&quot;</span> <span class="p">{...</span><span class="nx">confirmEmail</span><span class="p">}</span><span class="o">/&gt;</span>
+        <span class="o">&lt;</span><span class="err">/Question&gt;</span>
+
+    <span class="o">&lt;</span><span class="err">/section&gt;</span>
+<span class="p">)</span>
+
+<span class="nx">ContactUs</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{};</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">ContactUs</span><span class="p">;</span></code></pre></div>
+
+<p>As you can see, we no longer have to import our components using <code>../../</code>, we can now directly use <code>/components/</code> which webpack will understand and mount to our src directory for us.</p>
+
+<p>Give it ago. Hopefully this gem can help you like it has me.</p>
+
+<p>If you have any questions just <a href="https://twitter.com/boyney123">tweet me</a>, or leave a comment.</p>
+
+
+                
+
+
+                <div class="post-share">
+                    <h5>SHARE</h5>
+                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                        <a class="a2a_button_facebook"></a>
+                        <a class="a2a_button_twitter"></a>
+                        <a class="a2a_button_linkedin"></a>
+                        <a class="a2a_button_google_plus"></a>
+                    </div>
+                    <script async src="https://static.addtoany.com/menu/page.js"></script>
+                </div>
+
+
+            </section>
+
+            <footer>
+                <address>
+                   <img src="/images/ks.jpg">
+                    <p>Written by <strong><a rel="author" href="https://twitter.com/boyney123" title="" target="_blank">David Boyne</a></strong><br>
+                    <span class="muted">Just another developer</span>
+                    </p>
+                </address>
+
+            </footer>
+
+            <div class="other__posts">
+                <section>
+                    <h2>Other Posts</h2>
+                    <ul>
+
+                        
+                            
+                        
+                            
+                                <li>
+                                    <a href="/2016/04/26/web-developers-are-mobile-developers.html">
+                                        <h3>Web developers are now mobile developers</h3>
+                                        <span>Posted on <time pubdate datetime="2016-26-April" title="April 26, 2016">April 26, 2016</time></span>
+                                    </a>
+                                </li>
+                            
+                        
+                            
+                                <li>
+                                    <a href="/2016/04/25/CreateClass-vs-extends-class.html">
+                                        <h3>React.createClass vs extends React.Component</h3>
+                                        <span>Posted on <time pubdate datetime="2016-25-April" title="April 25, 2016">April 25, 2016</time></span>
+                                    </a>
+                                </li>
+                            
+                        
+                            
+                                <li>
+                                    <a href="/2016/04/24/es6-es7.html">
+                                        <h3>Introduction to ES6/7</h3>
+                                        <span>Posted on <time pubdate datetime="2016-24-April" title="April 24, 2016">April 24, 2016</time></span>
+                                    </a>
+                                </li>
+                            
+                        
+                            
+                                <li>
+                                    <a href="/2016/04/18/angular2-or-react.html">
+                                        <h3>React or Angular2</h3>
+                                        <span>Posted on <time pubdate datetime="2016-18-April" title="April 18, 2016">April 18, 2016</time></span>
+                                    </a>
+                                </li>
+                            
+                        
+
+                    </ul>
+                </section>
+
+            </div>
+
+            <section>
+                <div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+     var disqus_config = function () {
+     this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+     };
+     */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//boyney123.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </section>
+        </div>
+    </article>
+</article>
+
+
+
+<footer class="site-footer">
+    <div class="container">
+        &copy; 2016 
+        
+        <nav>
+            <a href="/">Posts</a>
+        </nav>
+        
+        <nav class="social">
+            
+            <a href="https://twitter.com/boyney123" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
+            
+            <a href="/feed.xml" title="RSS Feed">
+                <i class="icon icon-rss black"></i>
+            </a>
+        </nav>
+    </div>
+</footer>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/assets/main.js"></script>
+
+
+
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-73070461-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+<script id="dsq-count-scr" src="//boyney123.disqus.com/count.js" async></script>
+
+<script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+        t._e.push(f);
+    };
+
+    return t;
+}(document, "script", "twitter-wjs"));</script>
+
+
+</body>
+</html>
