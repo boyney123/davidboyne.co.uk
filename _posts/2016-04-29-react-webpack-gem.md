@@ -3,7 +3,7 @@ layout: post
 
 title: Goodbye ../../../
 
-subtitle: "Removing absolute paths when importing"
+subtitle: "Removing relative paths when importing"
 
 excerpt: "I have recently been writing a React application and recently ran into a little webpack gem I thought I would share..."
 
