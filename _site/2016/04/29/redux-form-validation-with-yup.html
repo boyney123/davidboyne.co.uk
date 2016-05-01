@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Easy validation with redux-form and schemas &mdash; Boyney</title>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/logo.png"/>
+    <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="Boyney" />
+    <meta name="title" content="Easy validation with redux-form and schemas ">
+    <link rel="canonical" href="http://www.davidboyne.co.uk/2016/04/29/redux-form-validation-with-yup.html">
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+
+     
+           
+    <meta property="og:title" content="Easy validation with redux-form and schemas "/>
+    <meta property="og:url" content="http://www.davidboyne.co.uk/2016/04/29/redux-form-validation-with-yup.html"/>
+    
+    
+    <meta property="og:description" content="Yup with redux-form is pretty cool. Using schemas to validate our forms is very powerful...."/>
+    <meta name="description" content="Yup with redux-form is pretty cool. Using schemas to validate our forms is very powerful...."/>
+    
+    <meta property="og:site_name" content="Boyney">     
+</head>
+<body>
+
+<div class="blog-cover" >
+
+
+    <section>
+        <div class="container">
+
+
+            
+            <div class="profile">
+                <img class="ProfileAvatar-image " src="https://pbs.twimg.com/profile_images/660943257795457030/igA_joVD_400x400.jpg" alt="David Boyne"/>
+            </div>
+            
+
+                <p class="profile-blurb" >
+                    Senior Software Engineer <a href="http://www.comparethemarket.com/">@Comparethemarket</a>.
+                    Organiser of <a href="http://www.meetup.com/Agile-Peterborough/">WhatTheHTML</a>. Speaker & evangelist of web development, agile principles and helping others.</p>
+
+
+            <a class="twitter-follow-button" href="https://twitter.com/boyney123" data-show-count="false"></a>
+
+        </div>
+    </section>
+</div>
+
+
+<div class="container">
+    <div class="site-nav">
+            <nav id="navigation">
+                <a href="/" class="home">Posts</a>
+            </nav>
+    </div>
+</div>
+    
+
+
+<article class="post container">
+
+    <article>
+
+        <div class="container">
+            <header>
+                <div class="meta">
+                    By <address><a rel="author" href="" title="David Boyne" target="_blank">David Boyne</a></address> &mdash;
+                    <time pubdate datetime="2016-29-April" title="April 29, 2016">April 29, 2016</time>
+                </div>
+                <h1 class="title">Easy validation with redux-form and schemas</h1>
+                <h2 class="subtitle">Using React, redux, redux-forms and yup to build forms and validation</h2>
+            </header>
+
+            <section>
+                <p><em>TLDR; Yup with redux-form is pretty cool. Using schemas to validate our forms is very powerful. 
+<a href="https://github.com/boyney123/react-redux-form-yup-schema-example">Checkout the code here</a></em>.</p>
+
+<p>Working with forms and validation in single page applications can be a <strong>pain</strong>.</p>
+
+<p>I have recently been writing a React application that requires form validation,
+and found an interesting way to easily implement forms with validation using <code>redux</code>
+, <code>redux-form</code> and <code>yup</code>.</p>
+
+<p>In this post we will walk though how to create a basic form, apply <code>redux-form</code> to it and then apply our
+<code>yup</code> schemas to valid it.</p>
+
+<p>So, lets dive into some code.</p>
+
+<h5 id="formjs">Form.js</h5>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+
+<span class="kr">class</span> <span class="nx">Form</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">form</span> <span class="nx">action</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="o">&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">Firstname</span><span class="o">:&lt;</span><span class="err">/label&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span>
+                    <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span>
+                    <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;First Name&quot;</span><span class="o">/&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">Surname</span><span class="o">:&lt;</span><span class="err">/label&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="o">/&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">Email</span><span class="o">:&lt;</span><span class="err">/label&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span>
+                    <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;email&quot;</span>
+                    <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;Email&quot;</span><span class="o">/&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">Sex</span><span class="o">&lt;</span><span class="err">/label&gt;</span>
+                <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">input</span>
+                            <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;radio&quot;</span>
+                            <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;male&quot;</span> <span class="o">/&gt;</span> <span class="nx">Male</span>
+                    <span class="o">&lt;</span><span class="err">/label&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">input</span>
+                            <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;radio&quot;</span>
+                            <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;female&quot;</span> <span class="o">/&gt;</span> <span class="nx">Female</span>
+                    <span class="o">&lt;</span><span class="err">/label&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span> <span class="o">&gt;</span>
+                <span class="nx">Submit</span>
+            <span class="o">&lt;</span><span class="err">/button&gt;</span>
+
+        <span class="o">&lt;</span><span class="err">/form&gt;);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">Form</span><span class="p">;</span></code></pre></div>
+
+<p>This is our basic Form component. A simple form with some fields to capture some basic information from our user. Nice and simple.</p>
+
+<p>So lets add <code>redux</code> and <code>redux-form</code> to our application to start handling form data, validation and errors.</p>
+
+<p><a href="http://redux-form.com/5.2.3/"><em>(This is not a redux or redux-form guide, if your interested in that please see the docs here)</em></a>.</p>
+
+<h2 id="adding-validation">Adding validation</h2>
+
+<h4 id="form-fields">Form fields</h4>
+
+<p>First thing we do is define our fields for our form.</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;firstName&#39;</span><span class="p">,</span> <span class="s1">&#39;lastName&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">];</span></code></pre></div>
+
+<h4 id="synchronous-validation">Synchronous Validation</h4>
+
+<p>Lets add some <em>(noddy)</em> validation.</p>
+
+<p>The <code>validate</code> function is called by <code>redux-form</code> with the values of our form <em>(which we have just setup)</em>. 
+Here we can make sure they are valid then hydrate and return an error object if we have any problems.</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">validate</span> <span class="o">=</span> <span class="nx">values</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+    <span class="kr">const</span> <span class="nx">errors</span> <span class="o">=</span> <span class="p">{};</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">values</span><span class="p">.</span><span class="nx">firstName</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">errors</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">=</span> <span class="s1">&#39;First name is required&#39;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">values</span><span class="p">.</span><span class="nx">lastName</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">errors</span><span class="p">.</span><span class="nx">lastName</span> <span class="o">=</span> <span class="s1">&#39;Last name is required&#39;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">values</span><span class="p">.</span><span class="nx">email</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">errors</span><span class="p">.</span><span class="nx">email</span> <span class="o">=</span> <span class="s1">&#39;Email is required&#39;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">values</span><span class="p">.</span><span class="nx">sex</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">errors</span><span class="p">.</span><span class="nx">sex</span> <span class="o">=</span> <span class="s1">&#39;Sex is required&#39;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">errors</span>
+
+
+<span class="p">};</span></code></pre></div>
+
+<h4 id="taking-redux-form-props-and-apply-them-to-our-form">Taking redux-form props and apply them to our form</h4>
+
+<p>Cool. So far we have a <code>validate</code> function and have defined our fields.</p>
+
+<p>These fields are given to <code>redux-form</code>. Props are added to the component and the field objects are <a href="(http://redux-form.com/5.2.3/#/api/props?_k=y7bc3u)">decorated with <code>redux-form</code> functionality</a>.</p>
+
+<p>With these new <code>props</code>  we need to map them back to our form.
+Easist way to do this is to use the <code>spread operator</code> and apply them to our form.</p>
+
+<h5 id="define-our-fields">define our fields</h5>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="p">{</span> <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span> <span class="nx">firstName</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">,</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">sex</span> <span class="p">}</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span></code></pre></div>
+
+<h5 id="spread-props-across-our-form">spread props across our form</h5>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+	<span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">First</span> <span class="nx">name</span><span class="o">:&lt;</span><span class="err">/label&gt;</span>
+	<span class="o">&lt;</span><span class="nx">input</span>
+		<span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span>
+		<span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;First name&quot;</span>
+		<span class="p">{...</span><span class="nx">firstName</span><span class="p">}</span> <span class="o">/&gt;</span>
+
+	<span class="p">{</span><span class="nx">firstName</span><span class="p">.</span><span class="nx">touched</span>
+		<span class="o">&amp;&amp;</span> <span class="nx">firstName</span><span class="p">.</span><span class="nx">error</span>
+		<span class="o">&amp;&amp;</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">firstName</span><span class="p">.</span><span class="nx">error</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;}</span>
+
+<span class="o">&lt;</span><span class="err">/div&gt;</span></code></pre></div>
+
+<h4 id="initialising-redux-form">Initialising redux-form</h4>
+
+<p>Last thing we need to do is simply wrap our component around the <code>reduxForm</code> function. 
+This will setup our form for us, with the fields and validate function.</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">export</span> <span class="k">default</span> <span class="nx">reduxForm</span><span class="p">({</span>
+    <span class="nx">form</span><span class="o">:</span> <span class="s1">&#39;userDetails&#39;</span><span class="p">,</span>
+    <span class="nx">fields</span><span class="p">,</span>
+    <span class="nx">validate</span>
+<span class="p">})(</span><span class="nx">Form</span><span class="p">);</span></code></pre></div>
+
+<p>Great! Now we have validation and redux-form setup!</p>
+
+<h5 id="formjs-with-redux-form-and-validation">Form.js (With redux-form and validation)</h5>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span> <span class="p">,</span> <span class="p">{</span><span class="nx">PropTypes</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">reduxForm</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux-form&#39;</span><span class="p">;</span>
+
+<span class="c1">//Define our form names for redux-form</span>
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">fields</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;firstName&#39;</span><span class="p">,</span> <span class="s1">&#39;lastName&#39;</span><span class="p">,</span> <span class="s1">&#39;email&#39;</span><span class="p">,</span> <span class="s1">&#39;sex&#39;</span><span class="p">];</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Our basic validation. Its abit noddy but just for demo purpose.s</span>
+<span class="cm"> */</span>
+<span class="kr">const</span> <span class="nx">validate</span> <span class="o">=</span> <span class="nx">values</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+    <span class="kr">const</span> <span class="nx">errors</span> <span class="o">=</span> <span class="p">{};</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">values</span><span class="p">.</span><span class="nx">firstName</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">errors</span><span class="p">.</span><span class="nx">firstName</span> <span class="o">=</span> <span class="s1">&#39;First name is required&#39;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">values</span><span class="p">.</span><span class="nx">lastName</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">errors</span><span class="p">.</span><span class="nx">lastName</span> <span class="o">=</span> <span class="s1">&#39;Last name is required&#39;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">values</span><span class="p">.</span><span class="nx">email</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">errors</span><span class="p">.</span><span class="nx">email</span> <span class="o">=</span> <span class="s1">&#39;Email is required&#39;</span>
+    <span class="p">}</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="o">!</span><span class="nx">values</span><span class="p">.</span><span class="nx">sex</span><span class="p">)</span> <span class="p">{</span>
+        <span class="nx">errors</span><span class="p">.</span><span class="nx">sex</span> <span class="o">=</span> <span class="s1">&#39;Sex is required&#39;</span>
+    <span class="p">}</span>
+
+    <span class="k">return</span> <span class="nx">errors</span>
+
+
+<span class="p">};</span>
+
+<span class="kr">class</span> <span class="nx">Form</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="cm">/* define our fields to bind to our form, from redux-form */</span>
+        <span class="kr">const</span> <span class="p">{</span> <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span> <span class="nx">firstName</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">,</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">sex</span> <span class="p">},</span> <span class="nx">handleSubmit</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;success!&#39;</span><span class="p">))}</span><span class="o">&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">First</span> <span class="nx">name</span><span class="o">:&lt;</span><span class="err">/label&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span>
+                    <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span>
+                    <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;First name&quot;</span>
+                    <span class="p">{...</span><span class="nx">firstName</span><span class="p">}</span> <span class="o">/&gt;</span>
+
+                <span class="p">{</span><span class="nx">firstName</span><span class="p">.</span><span class="nx">touched</span>
+                    <span class="o">&amp;&amp;</span> <span class="nx">firstName</span><span class="p">.</span><span class="nx">error</span>
+                    <span class="o">&amp;&amp;</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">firstName</span><span class="p">.</span><span class="nx">error</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;}</span>
+
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">Last</span> <span class="nx">name</span><span class="o">:&lt;</span><span class="err">/label&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span>
+                    <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span>
+                    <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;Last name&quot;</span>
+                    <span class="p">{...</span><span class="nx">lastName</span><span class="p">}</span> <span class="o">/&gt;</span>
+
+                <span class="p">{</span><span class="nx">lastName</span><span class="p">.</span><span class="nx">touched</span>
+                    <span class="o">&amp;&amp;</span> <span class="nx">lastName</span><span class="p">.</span><span class="nx">error</span>
+                    <span class="o">&amp;&amp;</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">lastName</span><span class="p">.</span><span class="nx">error</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;}</span>
+
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">Email</span><span class="o">:&lt;</span><span class="err">/label&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span>
+                    <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;email&quot;</span>
+                    <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;Email&quot;</span>
+                    <span class="p">{...</span><span class="nx">email</span><span class="p">}</span> <span class="o">/&gt;</span>
+
+                <span class="p">{</span><span class="nx">email</span><span class="p">.</span><span class="nx">touched</span>
+                    <span class="o">&amp;&amp;</span> <span class="nx">email</span><span class="p">.</span><span class="nx">error</span>
+                    <span class="o">&amp;&amp;</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">email</span><span class="p">.</span><span class="nx">error</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;}</span>
+
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+
+                <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">Sex</span><span class="o">&lt;</span><span class="err">/label&gt;</span>
+
+                <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">input</span>
+                            <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;radio&quot;</span>
+                            <span class="p">{...</span><span class="nx">sex</span><span class="p">}</span>
+                            <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;male&quot;</span>
+                            <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="nx">sex</span><span class="p">.</span><span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;male&#39;</span><span class="p">}</span><span class="o">/&gt;</span> <span class="nx">Male</span>
+                    <span class="o">&lt;</span><span class="err">/label&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">input</span>
+                            <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;radio&quot;</span> <span class="p">{...</span><span class="nx">sex</span><span class="p">}</span>
+                            <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;female&quot;</span>
+                            <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="nx">sex</span><span class="p">.</span><span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;female&#39;</span><span class="p">}</span><span class="o">/&gt;</span> <span class="nx">Female</span>
+                    <span class="o">&lt;</span><span class="err">/label&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+
+                <span class="p">{</span><span class="nx">sex</span><span class="p">.</span><span class="nx">touched</span>
+                    <span class="o">&amp;&amp;</span> <span class="nx">sex</span><span class="p">.</span><span class="nx">error</span>
+                    <span class="o">&amp;&amp;</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">sex</span><span class="p">.</span><span class="nx">error</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;}</span>
+                
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span> <span class="o">&gt;</span>
+                <span class="nx">Submit</span>
+            <span class="o">&lt;</span><span class="err">/button&gt;</span>
+
+        <span class="o">&lt;</span><span class="err">/form&gt;);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">Form</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">isRequired</span><span class="p">,</span>
+    <span class="nx">handleSubmit</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span><span class="p">.</span><span class="nx">isRequired</span>
+<span class="p">};</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Map our form to redux-form</span>
+<span class="cm"> *</span>
+<span class="cm"> * form -  The redux store will now have a section called userDetails which will store our form data</span>
+<span class="cm"> *</span>
+<span class="cm"> * fields - Tells redux-form the fields of our form and will spread its API across the objects (ready to be used in our form)</span>
+<span class="cm"> *</span>
+<span class="cm"> * validate - Sync function to call when we need to validate.</span>
+<span class="cm"> */</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">reduxForm</span><span class="p">({</span>
+    <span class="nx">form</span><span class="o">:</span> <span class="s1">&#39;userDetails&#39;</span><span class="p">,</span>
+    <span class="nx">fields</span><span class="p">,</span>
+    <span class="nx">validate</span>
+<span class="p">})(</span><span class="nx">Form</span><span class="p">);</span></code></pre></div>
+
+<h3 id="adding-schemas-for-validation">Adding schemas for validation</h3>
+
+<p>We could stop there but validation kinda sucks right now, so lets add some better validation with schemas. Using <a href="https://github.com/jquense/yup">yup</a>.</p>
+
+<p><code>yup</code> allows us to define a validation schema for our form. We can tie it up to our form with a couple of easy steps.</p>
+
+<p>Lets dive into the code and have a look at our schema.</p>
+
+<h5 id="form-schemajs">form-schema.js</h5>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="cm">/**</span>
+<span class="cm"> * Using yup we can create our schemas for our form.</span>
+<span class="cm"> */</span>
+
+<span class="kr">import</span> <span class="nx">yup</span> <span class="nx">from</span> <span class="s1">&#39;yup&#39;</span><span class="p">;</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">yup</span><span class="p">.</span><span class="nx">object</span><span class="p">().</span><span class="nx">shape</span><span class="p">({</span>
+
+    <span class="nx">firstName</span><span class="o">:</span>      <span class="nx">yup</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">required</span><span class="p">(),</span>
+
+    <span class="nx">lastName</span><span class="o">:</span>      <span class="nx">yup</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">required</span><span class="p">(),</span>
+
+    <span class="c1">//yup comes with some handy validation functions, as you can see email validation for us!</span>
+    <span class="nx">email</span><span class="o">:</span>      <span class="nx">yup</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">email</span><span class="p">().</span><span class="nx">required</span><span class="p">(),</span>
+
+    <span class="nx">sex</span><span class="o">:</span> <span class="nx">yup</span><span class="p">.</span><span class="nx">string</span><span class="p">().</span><span class="nx">required</span><span class="p">()</span>
+
+<span class="p">});</span></code></pre></div>
+
+<p>You can probably read this quite easily and work out whats going on, its pretty straight forward.
+We are making sure some of our fields are <strong>required</strong> and <strong>valid</strong>.</p>
+
+<p>Next, lets tie this into our <code>redux-form</code>.</p>
+
+<h4 id="using-objectkeys-to-get-fields">Using Object.keys to get fields</h4>
+
+<p>First we need to import our schema inside our Form.js.</p>
+
+<p>We no longer have to define our fields like this <code>['firstName', 'lastName'...]</code>
+We can use <code>Object.keys()</code> to get our fields from our schema object. Pretty cool!</p>
+
+<p>Everytime we change our schema in the future our fields will be bound to the changes, meaning less code for us to maintain.</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="c1">//Lets get our schema we created</span>
+<span class="kr">import</span> <span class="nx">schema</span> <span class="nx">from</span> <span class="s1">&#39;./schemas/form-schema&#39;</span>
+
+<span class="c1">//Using Object.keys we can now get our redux-form fields from our schema!</span>
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">fields</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">schema</span><span class="p">.</span><span class="nx">fields</span><span class="p">);</span></code></pre></div>
+
+<h4 id="moving-to-asynchronous-validation">Moving to asynchronous validation</h4>
+
+<p><code>redux-form</code> allows us to validate our form <code>synchronously</code>, or <code>synchronously</code>.</p>
+
+<p>When we call <code>schema.validate()</code> on our schema, it returns a promise.
+This means we have to refactor our form and validate it asynchronously.</p>
+
+<p>When our schema is invalid <code>yup</code> will return an array of errors. We have to take <code>yups</code> errors and transform them into errors <code>redux-form</code> can understand.</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">const</span> <span class="nx">asyncValidate</span> <span class="o">=</span> <span class="nx">values</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+        <span class="c1">//Validate our form values against our schema</span>
+        <span class="nx">schema</span><span class="p">.</span><span class="nx">validate</span><span class="p">(</span><span class="nx">values</span><span class="p">,</span> <span class="p">{</span><span class="nx">abortEarly</span><span class="o">:</span> <span class="kc">false</span><span class="p">})</span>
+            <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="c1">//form is valid happy days!</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your form is valid!&#39;</span><span class="p">)</span>
+                <span class="nx">resolve</span><span class="p">();</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">errors</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+                <span class="c1">//Yup errors &gt; redux-form errors</span>
+
+                <span class="kd">let</span> <span class="nx">rErrors</span> <span class="o">=</span> <span class="p">{};</span>
+
+                <span class="nx">errors</span><span class="p">.</span><span class="nx">inner</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">rErrors</span><span class="p">[</span><span class="nx">error</span><span class="p">.</span><span class="nx">path</span><span class="p">]</span> <span class="o">=</span> <span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
+                <span class="p">})</span>
+
+                <span class="nx">reject</span><span class="p">(</span><span class="nx">rErrors</span><span class="p">);</span>
+
+            <span class="p">})</span>
+    <span class="p">});</span>
+
+<span class="p">};</span></code></pre></div>
+
+<h4 id="setting-up-redux-form-to-use-asyncvalidation">Setting up redux-form to use asyncValidation</h4>
+
+<p>Last thing we must do it remove synchronous validation, and replace it with our new asynchronous function.</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">export</span> <span class="k">default</span> <span class="nx">reduxForm</span><span class="p">({</span>
+    <span class="nx">form</span><span class="o">:</span> <span class="s1">&#39;userDetails&#39;</span><span class="p">,</span>
+    <span class="nx">fields</span><span class="p">,</span>
+    <span class="nx">asyncValidate</span>
+<span class="p">})(</span><span class="nx">Form</span><span class="p">);</span></code></pre></div>
+
+<h4 id="react-with-redux-form-and-schema-validation">React with redux-form and schema validation</h4>
+
+<p>Thats it! Our form is now using schemas to valid itself. No more writing horrid validation code around the place, we can just use
+schemas to validate our form for us.</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span> <span class="p">,</span> <span class="p">{</span><span class="nx">PropTypes</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="p">{</span> <span class="nx">reduxForm</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;redux-form&#39;</span><span class="p">;</span>
+
+<span class="c1">//Lets get our schema we created</span>
+<span class="kr">import</span> <span class="nx">schema</span> <span class="nx">from</span> <span class="s1">&#39;./schemas/form-schema&#39;</span>
+
+<span class="c1">//Using Object.keys we can now get our redux-form fields from our schema!</span>
+<span class="kr">export</span> <span class="kr">const</span> <span class="nx">fields</span> <span class="o">=</span> <span class="nb">Object</span><span class="p">.</span><span class="nx">keys</span><span class="p">(</span><span class="nx">schema</span><span class="p">.</span><span class="nx">fields</span><span class="p">);</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Now using Yup to validate our form with schema!</span>
+<span class="cm"> */</span>
+<span class="kr">const</span> <span class="nx">asyncValidate</span> <span class="o">=</span> <span class="nx">values</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+
+    <span class="k">return</span> <span class="k">new</span> <span class="nx">Promise</span><span class="p">((</span><span class="nx">resolve</span><span class="p">,</span> <span class="nx">reject</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+        <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">values</span><span class="p">)</span>
+
+        <span class="c1">//Validate our form values against our schema! Also dont abort the validate early.</span>
+        <span class="nx">schema</span><span class="p">.</span><span class="nx">validate</span><span class="p">(</span><span class="nx">values</span><span class="p">,</span> <span class="p">{</span><span class="nx">abortEarly</span><span class="o">:</span> <span class="kc">false</span><span class="p">})</span>
+            <span class="p">.</span><span class="nx">then</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                <span class="c1">//form is valid happy days!</span>
+                <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;Your form is valid!&#39;</span><span class="p">)</span>
+                <span class="nx">resolve</span><span class="p">();</span>
+            <span class="p">})</span>
+            <span class="p">.</span><span class="k">catch</span><span class="p">(</span><span class="nx">errors</span> <span class="o">=&gt;</span> <span class="p">{</span>
+
+                <span class="c1">//form is not valid, yup has given us errors back. Lets transform them into something redux can understand.</span>
+
+                <span class="kd">let</span> <span class="nx">reduxFormErrors</span> <span class="o">=</span> <span class="p">{};</span>
+
+                <span class="nx">errors</span><span class="p">.</span><span class="nx">inner</span><span class="p">.</span><span class="nx">forEach</span><span class="p">(</span><span class="nx">error</span> <span class="o">=&gt;</span> <span class="p">{</span>
+                    <span class="nx">reduxFormErrors</span><span class="p">[</span><span class="nx">error</span><span class="p">.</span><span class="nx">path</span><span class="p">]</span> <span class="o">=</span> <span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="p">;</span>
+                <span class="p">})</span>
+
+                <span class="c1">//redux form will now understand the errors that yup has thrown</span>
+                <span class="nx">reject</span><span class="p">(</span><span class="nx">reduxFormErrors</span><span class="p">);</span>
+
+            <span class="p">})</span>
+    <span class="p">});</span>
+
+<span class="p">};</span>
+
+<span class="kr">class</span> <span class="nx">Form</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+
+        <span class="cm">/* define our fields to bind to our form, from redux-form */</span>
+        <span class="kr">const</span> <span class="p">{</span> <span class="nx">fields</span><span class="o">:</span> <span class="p">{</span> <span class="nx">firstName</span><span class="p">,</span> <span class="nx">lastName</span><span class="p">,</span> <span class="nx">email</span><span class="p">,</span> <span class="nx">sex</span> <span class="p">},</span> <span class="nx">handleSubmit</span> <span class="p">}</span> <span class="o">=</span> <span class="k">this</span><span class="p">.</span><span class="nx">props</span><span class="p">;</span>
+
+        <span class="k">return</span> <span class="p">(</span><span class="o">&lt;</span><span class="nx">form</span> <span class="nx">onSubmit</span><span class="o">=</span><span class="p">{</span><span class="nx">handleSubmit</span><span class="p">(()</span> <span class="o">=&gt;</span> <span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;success!&#39;</span><span class="p">))}</span><span class="o">&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">First</span> <span class="nx">name</span><span class="o">:&lt;</span><span class="err">/label&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;First name&quot;</span> <span class="p">{...</span><span class="nx">firstName</span><span class="p">}</span> <span class="o">/&gt;</span>
+                <span class="p">{</span><span class="nx">firstName</span><span class="p">.</span><span class="nx">touched</span> <span class="o">&amp;&amp;</span> <span class="nx">firstName</span><span class="p">.</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">firstName</span><span class="p">.</span><span class="nx">error</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;}</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">Last</span> <span class="nx">name</span><span class="o">:&lt;</span><span class="err">/label&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;text&quot;</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;Last name &quot;</span><span class="p">{...</span><span class="nx">lastName</span><span class="p">}</span> <span class="o">/&gt;</span>
+                <span class="p">{</span><span class="nx">lastName</span><span class="p">.</span><span class="nx">touched</span> <span class="o">&amp;&amp;</span> <span class="nx">lastName</span><span class="p">.</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">lastName</span><span class="p">.</span><span class="nx">error</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;}</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">Email</span><span class="o">:&lt;</span><span class="err">/label&gt;</span>
+                <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;email&quot;</span> <span class="nx">placeholder</span><span class="o">=</span><span class="s2">&quot;Email&quot;</span> <span class="p">{...</span><span class="nx">email</span><span class="p">}</span> <span class="o">/&gt;</span>
+                <span class="p">{</span><span class="nx">email</span><span class="p">.</span><span class="nx">touched</span> <span class="o">&amp;&amp;</span> <span class="nx">email</span><span class="p">.</span><span class="nx">error</span> <span class="o">&amp;&amp;</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">email</span><span class="p">.</span><span class="nx">error</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;}</span>
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+
+                <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span><span class="nx">Sex</span><span class="o">&lt;</span><span class="err">/label&gt;</span>
+
+                <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">input</span>
+                            <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;radio&quot;</span>
+                            <span class="p">{...</span><span class="nx">sex</span><span class="p">}</span>
+                            <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;male&quot;</span>
+                            <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="nx">sex</span><span class="p">.</span><span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;male&#39;</span><span class="p">}</span><span class="o">/&gt;</span> <span class="nx">Male</span>
+                    <span class="o">&lt;</span><span class="err">/label&gt;</span>
+                    <span class="o">&lt;</span><span class="nx">label</span><span class="o">&gt;</span>
+                        <span class="o">&lt;</span><span class="nx">input</span>
+                            <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;radio&quot;</span> <span class="p">{...</span><span class="nx">sex</span><span class="p">}</span>
+                            <span class="nx">value</span><span class="o">=</span><span class="s2">&quot;female&quot;</span>
+                            <span class="nx">checked</span><span class="o">=</span><span class="p">{</span><span class="nx">sex</span><span class="p">.</span><span class="nx">value</span> <span class="o">===</span> <span class="s1">&#39;female&#39;</span><span class="p">}</span><span class="o">/&gt;</span> <span class="nx">Female</span>
+                    <span class="o">&lt;</span><span class="err">/label&gt;</span>
+                <span class="o">&lt;</span><span class="err">/div&gt;</span>
+
+                <span class="p">{</span><span class="nx">sex</span><span class="p">.</span><span class="nx">touched</span>
+                <span class="o">&amp;&amp;</span> <span class="nx">sex</span><span class="p">.</span><span class="nx">error</span>
+                <span class="o">&amp;&amp;</span> <span class="o">&lt;</span><span class="nx">div</span><span class="o">&gt;</span><span class="p">{</span><span class="nx">sex</span><span class="p">.</span><span class="nx">error</span><span class="p">}</span><span class="o">&lt;</span><span class="err">/div&gt;}</span>
+
+            <span class="o">&lt;</span><span class="err">/div&gt;</span>
+
+            <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&quot;submit&quot;</span> <span class="o">&gt;</span>
+                <span class="nx">Submit</span>
+            <span class="o">&lt;</span><span class="err">/button&gt;</span>
+
+        <span class="o">&lt;</span><span class="err">/form&gt;);</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="nx">Form</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="nx">fields</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">object</span><span class="p">.</span><span class="nx">isRequired</span><span class="p">,</span>
+    <span class="nx">handleSubmit</span><span class="o">:</span> <span class="nx">PropTypes</span><span class="p">.</span><span class="nx">func</span><span class="p">.</span><span class="nx">isRequired</span>
+<span class="p">};</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * Map our form to redux-form</span>
+<span class="cm"> *</span>
+<span class="cm"> * asyncValidate : Validation in now async - The redux store will now have a section called userDetails which will store our form data</span>
+<span class="cm"> *</span>
+<span class="cm"> * fields - Tells redux-form the fields of our form and will spread its API across the objects (ready to be used in our form)</span>
+<span class="cm"> *</span>
+<span class="cm"> * valdate - Function to call when we need to validate.</span>
+<span class="cm"> */</span>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">reduxForm</span><span class="p">({</span>
+    <span class="nx">form</span><span class="o">:</span> <span class="s1">&#39;userDetails&#39;</span><span class="p">,</span>
+    <span class="nx">fields</span><span class="p">,</span>
+    <span class="nx">asyncValidate</span>
+<span class="p">})(</span><span class="nx">Form</span><span class="p">);</span></code></pre></div>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p><code>yup</code> is an awesome, flexable and powerful tool to validate our data against a schema. With <code>redux-form</code> it seems like a nice tool chain that work well together.</p>
+
+<p><a href="https://github.com/boyney123/react-redux-form-yup-schema-example">Free free to check the code on github.</a></p>
+
+<p>If you have any questions just <a href="https://twitter.com/boyney123">tweet me</a>, or leave a comment.</p>
+
+
+                
+
+
+                <div class="post-share">
+                    <h5>SHARE</h5>
+                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style">
+                        <a class="a2a_button_facebook"></a>
+                        <a class="a2a_button_twitter"></a>
+                        <a class="a2a_button_linkedin"></a>
+                        <a class="a2a_button_google_plus"></a>
+                    </div>
+                    <script async src="https://static.addtoany.com/menu/page.js"></script>
+                </div>
+
+
+            </section>
+
+            <footer>
+                <address>
+                   <img src="/images/ks.jpg">
+                    <p>Written by <strong><a rel="author" href="https://twitter.com/boyney123" title="" target="_blank">David Boyne</a></strong><br>
+                    <span class="muted">Just another developer</span>
+                    </p>
+                </address>
+
+            </footer>
+
+            <div class="other__posts">
+                <section>
+                    <h2>Other Posts</h2>
+                    <ul>
+
+                        
+                            
+                        
+                            
+                                <li>
+                                    <a href="/2016/04/29/react-webpack-gem.html">
+                                        <h3>Goodbye ../../../</h3>
+                                        <span>Posted on <time pubdate datetime="2016-29-April" title="April 29, 2016">April 29, 2016</time></span>
+                                    </a>
+                                </li>
+                            
+                        
+                            
+                                <li>
+                                    <a href="/2016/04/26/web-developers-are-mobile-developers.html">
+                                        <h3>Web developers are now mobile developers</h3>
+                                        <span>Posted on <time pubdate datetime="2016-26-April" title="April 26, 2016">April 26, 2016</time></span>
+                                    </a>
+                                </li>
+                            
+                        
+                            
+                                <li>
+                                    <a href="/2016/04/25/CreateClass-vs-extends-class.html">
+                                        <h3>React.createClass vs extends React.Component</h3>
+                                        <span>Posted on <time pubdate datetime="2016-25-April" title="April 25, 2016">April 25, 2016</time></span>
+                                    </a>
+                                </li>
+                            
+                        
+                            
+                                <li>
+                                    <a href="/2016/04/24/es6-es7.html">
+                                        <h3>Introduction to ES6/7</h3>
+                                        <span>Posted on <time pubdate datetime="2016-24-April" title="April 24, 2016">April 24, 2016</time></span>
+                                    </a>
+                                </li>
+                            
+                        
+
+                    </ul>
+                </section>
+
+            </div>
+
+            <section>
+                <div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+     var disqus_config = function () {
+     this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+     };
+     */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//boyney123.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </section>
+        </div>
+    </article>
+</article>
+
+
+
+<footer class="site-footer">
+    <div class="container">
+        &copy; 2016 
+        
+        <nav>
+            <a href="/">Posts</a>
+        </nav>
+        
+        <nav class="social">
+            
+            <a href="https://twitter.com/boyney123" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
+            
+            <a href="/feed.xml" title="RSS Feed">
+                <i class="icon icon-rss black"></i>
+            </a>
+        </nav>
+    </div>
+</footer>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/assets/main.js"></script>
+
+
+
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-73070461-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+<script id="dsq-count-scr" src="//boyney123.disqus.com/count.js" async></script>
+
+<script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+        t._e.push(f);
+    };
+
+    return t;
+}(document, "script", "twitter-wjs"));</script>
+
+
+</body>
+</html>
