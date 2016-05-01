@@ -1,7 +1,7 @@
 ---
 layout: post
 
-title: Easy validation with redux-form and schemas
+title: Using schemas to validate redux-forms
 
 subtitle: "Using React, redux, redux-forms and yup to build forms and validation"
 

@@ -6,13 +6,13 @@
     <atom:link href="http://www.davidboyne.co.uk/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Sun, 01 May 2016 21:18:14 +0000</pubDate>
-    <lastBuildDate>Sun, 01 May 2016 21:18:14 +0000</lastBuildDate>
+    <pubDate>Sun, 01 May 2016 21:24:05 +0000</pubDate>
+    <lastBuildDate>Sun, 01 May 2016 21:24:05 +0000</lastBuildDate>
 
     
     
     <item>
-      <title>Easy validation with redux-form and schemas</title>
+      <title>Using schemas to validate redux-forms</title>
       <link>http://www.davidboyne.co.uk/2016/04/29/redux-form-validation-with-yup.html</link>
       <pubDate>Fri, 29 Apr 2016 00:00:00 +0000</pubDate>
       <author></author>
