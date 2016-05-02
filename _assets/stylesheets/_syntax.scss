@@ -1,4 +1,17 @@
 .highlight  { background: #ffffff; }
+
+@media screen and (max-width: 700px) {
+  .highlight{
+    font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .highlight{
+    font-size: 14px;
+  }
+}
+
 .highlight .c { color: #999988; font-style: italic } /* Comment */
 .highlight .k { font-weight: bold } /* Keyword */
 .highlight .o { font-weight: bold } /* Operator */
