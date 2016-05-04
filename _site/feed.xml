@@ -6,9 +6,50 @@
     <atom:link href="http://www.davidboyne.co.uk/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Tue, 03 May 2016 09:48:00 +0000</pubDate>
-    <lastBuildDate>Tue, 03 May 2016 09:48:00 +0000</lastBuildDate>
+    <pubDate>Wed, 04 May 2016 15:20:29 +0000</pubDate>
+    <lastBuildDate>Wed, 04 May 2016 15:20:29 +0000</lastBuildDate>
 
+    
+    
+    <item>
+      <title>JavaScript module patterns in React</title>
+      <link>http://www.davidboyne.co.uk/2016/05/03/react-module-patterns.html</link>
+      <pubDate>Tue, 03 May 2016 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://www.davidboyne.co.uk/2016/05/03/react-module-patterns</guid>
+      <description>&lt;p&gt;I’ve recently been exploring and using different patterns in React to import modules recently and I thought id share 
+what patterns I came across with some examples of why you might use them.&lt;/p&gt;
+
+&lt;p&gt;Lets dive in.&lt;/p&gt;
+
+&lt;h3 id=&quot;import--as&quot;&gt;import * as&lt;/h3&gt;
+
+&lt;p&gt;&lt;em&gt;Use case : Import an entire module’s contents&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;This import pattern allows us to import the entire module content and cast it into another variable to use within our scope.&lt;/p&gt;
+
+&lt;h5 id=&quot;example---importing-all-components-from-a-directory&quot;&gt;Example - Importing all components from a directory&lt;/h5&gt;
+&lt;p&gt;&lt;code&gt;import * as myComponents from “../components/”&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;In this example this import pattern allows use to export multiple things from within our component directory. Lets take a look at what that looks like.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;src&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;components&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+   &lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;input&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+   &lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;
+   &lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;picker&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+   &lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;
+   &lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;dropdown&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+   &lt;span class=&quot;err&quot;&gt;│&lt;/span&gt;  &lt;span class=&quot;err&quot;&gt;└──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;
+   &lt;span class=&quot;err&quot;&gt;├──&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;js&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;index.js would import all the components and export them individually in this example. Allowing us to import the index file and get access to everything.&lt;/p&gt;
+
+&lt;p&gt;If you have any questions just &lt;a href=&quot;https://twitter.com/boyney123&quot;&gt;tweet me&lt;/a&gt;, or leave a comment.&lt;/p&gt;
+
+</description>
+    </item>
+    
     
     
     <item>
