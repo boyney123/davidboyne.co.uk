@@ -36,8 +36,43 @@ layout: base
 
         <p>If this sounds interesting just fill in the form below and I will try and get back to you.</p>
 
-        <a href="http://goo.gl/forms/CIkl6EPtwj">Click here to fill in the form</a>
+        <form action="https://formspree.io/boyneyy123@gmail.com"
+              method="POST">
+            <div>
+                <label for="name">Name:</label>
+                <input type="text" name="name"/>
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" name="email"/>
+            </div>
+            <div>
+                <label for="contactPreference">Preferred way of contact:</label>
+                <select name="contactPreference" id="">
+                    <option value="email">Email</option>
+                    <option value="messenger">Skype Messenger</option>
+                    <option value="video">Skype Video</option>
+                </select>
+            </div>
+            
+            <div>
+                <label for="background">Your background: What do you do?</label>
+                <textarea name="background" style="width:100%" rows="4"></textarea>
+            </div>
 
+            <div>
+                <label for="advice">What would you like advice on?</label>
+                <textarea name="advice" style="width:100%" rows="4"></textarea>
+            </div>
+
+            <div>
+                <label for="comments">Comments:</label>
+                <textarea name="comments" style="width:100%" rows="4"></textarea>
+            </div>
+
+
+            <input type="submit" value="Send" style="margin-top:10px;">
+        </form>
 
 
     </section>
