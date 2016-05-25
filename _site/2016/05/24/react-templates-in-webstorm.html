@@ -3,30 +3,26 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Keeping motivated in IT &mdash; Boyney</title>
+    <title>Using React templates in WebStorm &mdash; Boyney</title>
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/assets/main.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/images/logo.png"/>
     <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="Boyney" />
-    <meta name="title" content="Keeping motivated in IT ">
-    <link rel="canonical" href="http://www.davidboyne.co.uk/2016/02/22/4-ways-to-keep-motivated.html">
+    <meta name="title" content="Using React templates in WebStorm ">
+    <link rel="canonical" href="http://www.davidboyne.co.uk/2016/05/24/react-templates-in-webstorm.html">
 
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
 
      
            
-    <meta property="og:title" content="Keeping motivated in IT "/>
-    <meta property="og:url" content="http://www.davidboyne.co.uk/2016/02/22/4-ways-to-keep-motivated.html"/>
-    
-    <meta property="og:image" content="http://www.davidboyne.co.uk/images//blog-covers/motivation.jpg"/>
-    
-    <meta property="og:image" content="http://www.davidboyne.co.uk/images/logo.png"/>   
+    <meta property="og:title" content="Using React templates in WebStorm "/>
+    <meta property="og:url" content="http://www.davidboyne.co.uk/2016/05/24/react-templates-in-webstorm.html"/>
     
     
-    <meta property="og:description" content="Four brief summary’s of ways in which people can keep motivated within the IT industry..."/>
-    <meta name="description" content="Four brief summary’s of ways in which people can keep motivated within the IT industry..."/>
+    <meta property="og:description" content="Yup with redux-form is pretty cool. Using schemas to validate our forms is very powerful...."/>
+    <meta name="description" content="Yup with redux-form is pretty cool. Using schemas to validate our forms is very powerful...."/>
     
     <meta property="og:site_name" content="Boyney">     
 </head>
@@ -76,110 +72,152 @@
             <header>
                 <div class="meta">
                     By <address><a rel="author" href="" title="David Boyne" target="_blank">David Boyne</a></address> &mdash;
-                    <time pubdate datetime="2016-22-February" title="February 22, 2016">February 22, 2016</time>
+                    <time pubdate datetime="2016-24-May" title="May 24, 2016">May 24, 2016</time>
                 </div>
-                <h1 class="title">Keeping motivated in IT</h1>
-                <h2 class="subtitle">Push yourself, others and staying motivated</h2>
+                <h1 class="title">Using React templates in WebStorm</h1>
+                <h2 class="subtitle">Speeding up your workflow using WebStorm and React</h2>
             </header>
 
             <section>
-                <p>Four brief summary’s of ways in which people can keep motivated within the IT industry.</p>
+                <p>When working with React you will often find yourself creating a number of components. If you’re like me then you might write a component and copy and paste that component to make your next component.</p>
 
-<h2 id="make-boring-work-fun">1. Make boring work fun</h2>
+<p>This is fine… but it can get boring.</p>
 
-<p><img src="../../../../images/fun.jpg" alt="Alt text" />
-<span class="photo-credit">Credit: عبدالرحمن القصيِّر from flickr</span></p>
+<p>I recently came across some WebStorm templates and thought I would share my React templates with you.</p>
 
-<h3 id="the-problem">The Problem</h3>
+<p>Firstly we need to be able to add templates.</p>
 
-<p>Look, we have all been there. Given the BAU (business as usual) task, the work that you can’t engage with, you know the boring tasks, minimal reward and no fun.</p>
+<p>So lets dive in.</p>
 
-<h3 id="the-solution">The Solution</h3>
+<h2 id="creating-templates-in-webstorm">Creating templates in Webstorm</h2>
 
-<p>Simple. Make the task <strong>interesting</strong>, <strong>challenging</strong> and <strong>enjoyable</strong>.</p>
+<p>Templates can help us define the base foundations of any file we create. So lets utilise this feature and create some templates for React.</p>
 
-<p>Sometimes we are given tasks that were not really interested in. Maybe its fixing tests, or bug fixing? Personally I get <strong>demotivated</strong> and bored quite fast with certain tasks, but I have learnt recently that I can easily make these tasks <strong>more enjoyable</strong> and <strong>more rewarding</strong>.</p>
+<p>Creating templates in WebStorm is very straightforward. So how do we do create them?</p>
 
-<p>Rather than cracking on with the task, maybe we can look at it with a different angle?</p>
+<p>First open <code>Webstorm/Preferences</code></p>
 
-<p>Maybe its exploring different test tools you could use? Different patterns you could use to fix your bugs and issues? Could we try to accomplish a high level of test coverage? Can we make the task more interesting by pairing or mobbing together on a task?</p>
+<p><img src="../../../images/webstorm/webstorm-perf.png" width="50%" /></p>
 
-<p>When we think about it there are tons of ways in which we can make a task more <strong>enjoyable</strong>, <strong>fun</strong> and <strong>challenging</strong> and it can drive our <strong>motivation</strong> and <strong>passion</strong> into completing the task; making a task that once was boring now enjoyable.</p>
+<p>Then go to <code>Editor/File and Code Templates</code></p>
 
-<h2 id="learn-learn-learn-and-dont-stop">2. Learn, learn, learn and don’t stop</h2>
+<p><img src="../../../images/webstorm/file-code-templates.png" width="50%" /></p>
 
-<p><img src="../../../../images/learn.jpg" alt="Alt text" />
-<span class="photo-credit">Credit: Shawn Harquail from flickr</span></p>
+<p>Then click the plus icon <code>+</code> to add a new template</p>
 
-<h3 id="the-problem-1">The Problem</h3>
-<p>The world is moving and you can’t keep up with everything. If you stop learning you get <strong>unskilled</strong>, <strong>demotivated</strong> and <strong>bored</strong>.</p>
+<p><img src="../../../images/webstorm/add.png" width="80%" /></p>
 
-<h3 id="the-solution-1">The Solution</h3>
-<p>Take time out. Read, blog, listen to podcasts, watch tech talks, sign up to newsletters, code, talk at events, host events, etc…</p>
+<p>Now your setup and ready to go. Next lets add our templates.</p>
 
-<blockquote>
-  <p>“…Figure out your goals, especially your learning goals…”</p>
-</blockquote>
+<h2 id="class-extends-reactcomponent--template">Class extends React.Component – Template</h2>
 
-<p>What I have learnt is that we all go through a process of peaks and troughs when it comes to learning. Like a roller coaster. Have you ever wondered during your low stage of learning why you are no longer learning anything?</p>
+<p>This is a basic template that will create a component using <code>Class extends React.Component</code>.</p>
 
-<p>Try looking at <strong>different mediums</strong> of learning. Maybe it’s going for a walk at lunch listening to a pod cast? Maybe its blogging about things your interested in? Maybe it’s exploring and joining you local community and engaging in new ways in which you wouldn’t before.</p>
+<p>As you can see using <code>$NAME</code> will take our filename and populate our Component.</p>
 
-<p>Its important we <strong>push ourself</strong> out of our <strong>comfort zone</strong> and start exploring <strong>new ways</strong> in which we can <strong>push ourselves and those around us</strong>.</p>
+<h4 id="template">Template</h4>
 
-<h2 id="working-on-side-projects">3. Working on side projects</h2>
+<p><em>Copy and paste the following into your new template</em></p>
 
-<p><img src="../../../../images/code.jpg" alt="Alt text" />
-<span class="photo-credit">Credit: Dmitry Baranovskiy from flickr</span></p>
+<h5 id="react-component-template">React Component Template</h5>
 
-<h3 id="the-problem-2">The Problem</h3>
-<p>I don’t have time for side projects? I don’t have any ideas for side projects?</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">PropTypes</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 
-<h3 id="the-solution-2">The Solution</h3>
-<p>Just start. If you feel you don’t have time, find some and start <strong>investing in yourself</strong>.</p>
+<span class="kr">class</span> <span class="nx">$NAME</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
 
-<p>Side projects and open source projects are great way to explore and learn new technologies, thoughts and principles. Haven’t got a side project?  <strong>Just make one</strong>.</p>
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
+    
+    <span class="p">}</span>
+    
+<span class="p">}</span>
 
-<p>Get your ideas and thoughts on paper and start building.</p>
+<span class="nx">$NAME</span> <span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{};</span>
 
-<p>Developers are similar to artists, we have a blank canvas its up to us to paint, so just get your hands dirty and paint something. Doesn’t have to be perfect, but if you get your hands dirty, <strong>you will be better today than what you were yesterday</strong>.</p>
+<span class="nx">$NAME</span> <span class="p">.</span><span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{};</span>
 
-<p>Pick up a side project, invest a few hours a week into it and you eventually will see the <strong>rewards</strong>.</p>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">$NAME</span><span class="p">;</span></code></pre></div>
 
-<h3 id="community">4. Community</h3>
+<h4 id="template-output-example">Template Output Example</h4>
 
-<p><img src="../../../../images/community.jpg" alt="Alt text" />
-<span class="photo-credit">Credit: Juhan Sonin from flickr</span></p>
+<p>So if we now create a new file called <code>Button</code> using our template will we get the following output.</p>
 
-<p><strong>Building</strong>, <strong>contributing</strong> and <strong>giving something back</strong> to the community is one of the <strong>biggest rewards</strong> and motivation in my opinion. If you get motivation through other people this is a great platform.</p>
+<p><img src="../../../images/webstorm/new-component.png" width="50%" /></p>
 
-<blockquote>
-  <p>“Doing something that matters, doing something in a cause larger than ourselves.”</p>
-</blockquote>
+<p><img src="../../../images/webstorm/create-component.png" width="50%" /></p>
 
-<p>Explore your local meetup groups, is there anything around that interests you? If not, create something and get like-minded people together talking about stuff that really motivates you.</p>
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span><span class="nx">PropTypes</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span><span class="p">;</span>
 
-<p>Hosting events isn’t as scary as it sounds. If you need any advise or help feel free to contact me.</p>
+<span class="kr">class</span> <span class="nx">Button</span> <span class="kr">extends</span> <span class="nx">React</span><span class="p">.</span><span class="nx">Component</span> <span class="p">{</span>
 
-<hr />
+    <span class="nx">render</span><span class="p">()</span> <span class="p">{</span>
 
-<p>I would love to hear ways you keep motivated.</p>
+    <span class="p">}</span>
 
-<p>Feel free to comment your thoughts below or share this post if you enjoyed it.</p>
+<span class="p">}</span>
 
-<p>If you would like to get involved in one of my side projects please check it out.</p>
+<span class="nx">Button</span><span class="p">.</span><span class="nx">propTypes</span> <span class="o">=</span> <span class="p">{};</span>
 
-<p><a href="http://www.peterborough.tech-community.co.uk/">http://www.peterborough.tech-community.co.uk/</a></p>
+<span class="nx">Button</span><span class="p">.</span><span class="nx">defaultProps</span> <span class="o">=</span> <span class="p">{};</span>
 
-<p><a class="twitter-share-button" href="https://twitter.com/intent/tweet?text='Why autonomy is so important for individuals, teams and companies' - http://davidboyne.co.uk/2016/02/06/automany-is-important.html by @boyney123" data-size="large">
-Share on Twitter</a></p>
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">Button</span><span class="p">;</span></code></pre></div>
+
+<h2 id="react-stateless-component--template">React Stateless Component – Template</h2>
+
+<p>This is a basic template that will create us a stateless React component.</p>
+
+<h4 id="template-1">Template</h4>
+
+<p><em>Copy and paste the following into your new template</em></p>
+
+<h5 id="react-stateless-component-template">React Stateless Component Template</h5>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">PropTypes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
+
+<span class="kr">const</span> <span class="nx">$NAME</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+	<span class="k">return</span> <span class="p">(</span>
+		
+	<span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">$NAME</span> <span class="p">.</span><span class="nx">PropTypes</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">$NAME</span></code></pre></div>
+
+<h4 id="template-output-example-1">Template Output Example</h4>
+
+<p>Lets create a <code>Button</code> component again with the <code>stateless component template</code>.</p>
+
+<p><img src="../../../images/webstorm/new-component2.png" width="50%" /></p>
+
+<p><img src="../../../images/webstorm/create-component.png" width="50%" /></p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">React</span><span class="p">,</span> <span class="p">{</span> <span class="nx">PropTypes</span> <span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react&#39;</span>
+
+<span class="kr">const</span> <span class="nx">Button</span> <span class="o">=</span> <span class="p">(</span><span class="nx">props</span><span class="p">)</span> <span class="o">=&gt;</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">(</span>
+
+    <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">Button</span><span class="p">.</span><span class="nx">PropTypes</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="kr">export</span> <span class="k">default</span> <span class="nx">Button</span></code></pre></div>
+
+<h2 id="workflow">Workflow</h2>
+
+<p>Automating the boring and repetitive tasks is key. It allows us to spend more time being creative.</p>
+
+<p>I know this could form a small part of your React workflow, but everything counts.</p>
+
+<p>If you have any questions just <a href="https://twitter.com/boyney123">tweet me</a>, or leave a comment.</p>
+
 
                 
 
 
                 <div class="post-share">
                     <h5>SHARE</h5>
-                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-title="Keeping motivated in IT by @boyney123">
+                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-title="Using React templates in WebStorm by @boyney123">
                         <a class="a2a_button_facebook"></a>
                         <a class="a2a_button_twitter"></a>
                         <a class="a2a_button_linkedin "></a>
@@ -207,13 +245,6 @@ Share on Twitter</a></p>
                     <ul>
 
                         
-                            
-                                <li>
-                                    <a href="/2016/05/24/react-templates-in-webstorm.html">
-                                        <h3>Using React templates in WebStorm</h3>
-                                        <span>Posted on <time pubdate datetime="2016-24-May" title="May 24, 2016">May 24, 2016</time></span>
-                                    </a>
-                                </li>
                             
                         
                             
