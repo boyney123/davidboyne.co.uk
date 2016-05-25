@@ -6,13 +6,13 @@
     <atom:link href="http://www.davidboyne.co.uk/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Wed, 25 May 2016 07:38:38 +0000</pubDate>
-    <lastBuildDate>Wed, 25 May 2016 07:38:38 +0000</lastBuildDate>
+    <pubDate>Wed, 25 May 2016 07:48:35 +0000</pubDate>
+    <lastBuildDate>Wed, 25 May 2016 07:48:35 +0000</lastBuildDate>
 
     
     
     <item>
-      <title>Using React templates in WebStorm</title>
+      <title>Creating React templates in WebStorm</title>
       <link>http://www.davidboyne.co.uk/2016/05/24/react-templates-in-webstorm.html</link>
       <pubDate>Tue, 24 May 2016 00:00:00 +0000</pubDate>
       <author></author>
