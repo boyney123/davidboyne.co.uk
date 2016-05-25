@@ -1,7 +1,7 @@
 ---
 layout: post
 
-title: Using React templates in WebStorm
+title: Creating React templates in WebStorm
 
 subtitle: "Speeding up your workflow using WebStorm and React"
 
