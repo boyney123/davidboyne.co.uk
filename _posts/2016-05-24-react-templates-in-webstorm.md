@@ -5,7 +5,7 @@ title: Creating React templates in WebStorm
 
 subtitle: "Speeding up your workflow using WebStorm and React"
 
-excerpt: "Yup with redux-form is pretty cool. Using schemas to validate our forms is very powerful...."
+excerpt: "I recently came across some WebStorm templates and thought I would share my React templates with you..."
 
 author:
   name: David Boyne
