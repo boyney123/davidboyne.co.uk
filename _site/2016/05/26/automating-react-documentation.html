@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Automating documentation for your React components &mdash; Boyney</title>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/logo.png"/>
+    <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="Boyney" />
+    <meta name="title" content="Automating documentation for your React components ">
+    <link rel="canonical" href="http://www.davidboyne.co.uk/2016/05/26/automating-react-documentation.html">
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+
+     
+           
+    <meta property="og:title" content="Automating documentation for your React components "/>
+    <meta property="og:url" content="http://www.davidboyne.co.uk/2016/05/26/automating-react-documentation.html"/>
+    
+    
+    <meta property="og:description" content="I recently came across some WebStorm templates and thought I would share my React templates with you..."/>
+    <meta name="description" content="I recently came across some WebStorm templates and thought I would share my React templates with you..."/>
+    
+    <meta property="og:site_name" content="Boyney">     
+</head>
+<body>
+
+<div class="blog-cover" >
+
+
+    <section>
+        <div class="container">
+
+
+            
+            <div class="profile">
+                <img class="ProfileAvatar-image " src="https://pbs.twimg.com/profile_images/660943257795457030/igA_joVD_400x400.jpg" alt="David Boyne"/>
+            </div>
+            
+
+                <p class="profile-blurb" >
+                    Senior Software Engineer <a href="http://www.comparethemarket.com/">@Comparethemarket</a>.
+                    Organiser of <a href="http://www.meetup.com/Agile-Peterborough/">WhatTheHTML</a>. Speaker & evangelist of web development, agile principles and helping others.</p>
+
+
+            <a class="twitter-follow-button" href="https://twitter.com/boyney123" data-show-count="false"></a>
+
+        </div>
+    </section>
+</div>
+
+
+<div class="container">
+    <div class="site-nav">
+            <nav id="navigation">
+                <a href="/" class="home">Posts</a>
+                <a href="/about" class="home">About</a>
+            </nav>
+    </div>
+</div>
+    
+
+
+<article class="post container">
+
+    <article>
+
+        <div class="container">
+            <header>
+                <div class="meta">
+                    By <address><a rel="author" href="" title="David Boyne" target="_blank">David Boyne</a></address> &mdash;
+                    <time pubdate datetime="2016-26-May" title="May 26, 2016">May 26, 2016</time>
+                </div>
+                <h1 class="title">Automating documentation for your React components</h1>
+                <h2 class="subtitle">Sharing with documentation</h2>
+            </header>
+
+            <section>
+                <p>Building and sharing <code>components</code> is one of the most powerful features of <code>React</code>, but what good are our components without any <strong>documentation</strong>?</p>
+
+<p>I have recently been involved in a project creating components that will be adopted by a wide range of developers and have learnt a way to easily automate <code>component</code> documentation.</p>
+
+<p>In this post we will cover why you might need to document your components and how you can easily achieve this with <code>React</code>.</p>
+
+<h2 id="why-document-components">Why document components?</h2>
+
+<p>So firstly you might be thinking why do we need to document our components?</p>
+
+<p>To be honest it really depends on what you are building and who will be consuming your components.</p>
+
+<p>When building web applications in <code>React</code> our <strong>tests</strong> could be enough documentation for our components.</p>
+
+<p>But if your writing a large scale application or large number of components that are used throughout your business or for a online community then documentation is <strong>key</strong>.</p>
+
+<p>If we look at some examples like <a href="https://react-bootstrap.github.io/">React Bootstrap</a> or <a href="http://www.material-ui.com/#/">Material UI</a> their documentation <strong>really helps developers</strong> get setup and utilising their components within <strong>minutes</strong>.</p>
+
+<p>Taking <strong>inspiration</strong> from these projects, I wanted to do something similar for my project and managed to do it with some awesome tools I found along the way.</p>
+
+<p>So lets take a look at them.</p>
+
+<h2 id="react-docgen">react-docgen</h2>
+
+<p><a href="https://github.com/reactjs/react-docgen">react-docgen</a> is a CLI and toolbox to help extract information from <code>React</code> components, and generate documentation from it.</p>
+
+<p>The idea is simple. We pass our  <code>component</code> into <code>react-docgen</code> and it will return an <code>object</code>.</p>
+
+<p>Lets take a look at the example on the <code>react-docgen</code> <a href="https://github.com/reactjs/react-docgen">GitHub page</a>.</p>
+
+<h5 id="component-example">Component Example</h5>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">React</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;react&#39;</span><span class="p">);</span>
+
+<span class="cm">/**</span>
+<span class="cm"> * General component description.</span>
+<span class="cm"> */</span>
+<span class="kd">var</span> <span class="nx">Component</span> <span class="o">=</span> <span class="nx">React</span><span class="p">.</span><span class="nx">createClass</span><span class="p">({</span>
+  <span class="nx">propTypes</span><span class="o">:</span> <span class="p">{</span>
+    <span class="cm">/**</span>
+<span class="cm">     * Description of prop &quot;foo&quot;.</span>
+<span class="cm">     */</span>
+    <span class="nx">foo</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">number</span><span class="p">,</span>
+    <span class="cm">/**</span>
+<span class="cm">     * Description of prop &quot;bar&quot; (a custom validation function).</span>
+<span class="cm">     */</span>
+    <span class="nx">bar</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">props</span><span class="p">,</span> <span class="nx">propName</span><span class="p">,</span> <span class="nx">componentName</span><span class="p">)</span> <span class="p">{</span>
+      <span class="c1">// ...</span>
+    <span class="p">},</span>
+    <span class="nx">baz</span><span class="o">:</span> <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">oneOfType</span><span class="p">([</span>
+      <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">number</span><span class="p">,</span>
+      <span class="nx">React</span><span class="p">.</span><span class="nx">PropTypes</span><span class="p">.</span><span class="nx">string</span>
+    <span class="p">]),</span>
+  <span class="p">},</span>
+
+  <span class="nx">getDefaultProps</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">{</span>
+      <span class="nx">foo</span><span class="o">:</span> <span class="mi">42</span><span class="p">,</span>
+      <span class="nx">bar</span><span class="o">:</span> <span class="mi">21</span>
+    <span class="p">};</span>
+  <span class="p">},</span>
+
+  <span class="nx">render</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+    <span class="c1">// ...</span>
+  <span class="p">}</span>
+<span class="p">});</span>
+
+<span class="nx">module</span><span class="p">.</span><span class="nx">exports</span> <span class="o">=</span> <span class="nx">Component</span><span class="p">;</span></code></pre></div>
+
+<h5 id="json-output">JSON output</h5>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="p">{</span>
+  <span class="s2">&quot;props&quot;</span><span class="o">:</span> <span class="p">{</span>
+    <span class="s2">&quot;foo&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;number&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;required&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Description of prop \&quot;foo\&quot;.&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;defaultValue&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;42&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;computed&quot;</span><span class="o">:</span> <span class="kc">false</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;bar&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;custom&quot;</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;required&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;Description of prop \&quot;bar\&quot; (a custom validation function).&quot;</span><span class="p">,</span>
+      <span class="s2">&quot;defaultValue&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="s2">&quot;21&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;computed&quot;</span><span class="o">:</span> <span class="kc">false</span>
+      <span class="p">}</span>
+    <span class="p">},</span>
+    <span class="s2">&quot;baz&quot;</span><span class="o">:</span> <span class="p">{</span>
+      <span class="s2">&quot;type&quot;</span><span class="o">:</span> <span class="p">{</span>
+        <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;union&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;value&quot;</span><span class="o">:</span> <span class="p">[</span>
+          <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;number&quot;</span>
+          <span class="p">},</span>
+          <span class="p">{</span>
+            <span class="s2">&quot;name&quot;</span><span class="o">:</span> <span class="s2">&quot;string&quot;</span>
+          <span class="p">}</span>
+        <span class="p">]</span>
+      <span class="p">},</span>
+      <span class="s2">&quot;required&quot;</span><span class="o">:</span> <span class="kc">false</span><span class="p">,</span>
+      <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;&quot;</span>
+    <span class="p">}</span>
+  <span class="p">},</span>
+  <span class="s2">&quot;description&quot;</span><span class="o">:</span> <span class="s2">&quot;General component description.&quot;</span>
+<span class="p">}</span></code></pre></div>
+
+<p>The <code>JSON object</code> we get back has extracted documentation from our <code>component</code>.</p>
+
+<p>The <code>Object</code> holds all the <code>props</code> we defined in the component.</p>
+
+<p>For each <code>prop</code> it returns the <strong>type</strong>, if it is <strong>required</strong>, the <strong>description</strong> and any 
+<strong>default values</strong>.</p>
+
+<p>So using the CLI is great, but how do we use this in a React application and automate the process? Its actually pretty straight forward so lets have a look.</p>
+
+<h2 id="using-react-docgen-inside-our-react-application">Using react-docgen inside our React application</h2>
+
+<p>First thing we should do is install <code>react-docgen</code></p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">npm</span> <span class="nx">install</span> <span class="o">--</span><span class="nx">save</span> <span class="nx">react</span><span class="o">-</span><span class="nx">docgen</span></code></pre></div>
+
+<p>Next lets  <code>import</code> it into our <code>React</code> application</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="p">{</span><span class="nx">parse</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-docgen&#39;</span><span class="p">;</span></code></pre></div>
+
+<p>Now we have the ability to <code>parse</code> any component and get its documentation back. But to use the <code>parse</code> function we need to <code>import</code>
+our components as <code>strings</code>.</p>
+
+<p>So lets import a component as a <code>string</code> using the <a href="https://github.com/webpack/raw-loader">raw-loader</a>.</p>
+
+<h2 id="using-raw-loader">Using raw-loader</h2>
+
+<p>First we need to install raw-loader.</p>
+
+<h5 id="installing-raw-loader">Installing raw-loader</h5>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">npm</span> <span class="nx">install</span> <span class="nx">raw</span><span class="o">-</span><span class="nx">loader</span></code></pre></div>
+
+<p>After <a href="http://webpack.github.io/docs/using-loaders.html">setting up raw-loader</a> with <code>webpack</code> we can import any file in its <strong>raw format</strong>.</p>
+
+<h5 id="import-file-in-its-raw-format">Import file in its raw format</h5>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="nx">Component</span> <span class="nx">from</span> <span class="s1">&#39;!raw!./Component&#39;</span><span class="p">;</span></code></pre></div>
+
+<p><em>Note: Component will come back to us as a <code>string</code> and not a <code>React</code> component.</em></p>
+
+<p>With the component as a <code>string</code> we can pass it into our <code>parse</code> function from
+<code>react-docgen</code> to get some documentation back.</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="kr">import</span> <span class="p">{</span><span class="nx">parse</span><span class="p">}</span> <span class="nx">from</span> <span class="s1">&#39;react-docgen&#39;</span><span class="p">;</span>
+<span class="kr">import</span> <span class="nx">Component</span> <span class="nx">from</span> <span class="s1">&#39;!raw!./Component&#39;</span><span class="p">;</span>
+
+<span class="kr">const</span> <span class="nx">componentDocs</span> <span class="o">=</span> <span class="nx">parse</span><span class="p">(</span><span class="nx">Component</span><span class="p">);</span></code></pre></div>
+
+<p>In this example <code>componentDocs</code> will hold the components documentation as a <code>JSON object</code>.</p>
+
+<h2 id="what-does-this-mean">What does this mean?</h2>
+
+<p>For large scale <code>React</code> applications being able to get <strong>documentation</strong> from our components might be a great idea.</p>
+
+<p>Using <code>react-docgen</code> and <code>raw-loader</code> we could easily create a simple <strong>user interface</strong> to represent our library of components and their documentation for other developers to consume.</p>
+
+<p>Using the information we could visually show our components in use, our component <code>props</code> details and our components description.</p>
+
+<p>Here is an example of what I’ve been working on and what you can achieve with <code>react-docgen</code>.</p>
+
+<h5 id="basic-react-application-that-renders-component-documentation">Basic React application that renders component documentation</h5>
+<p><img src="../../../images/docs.png" /></p>
+
+<p>The Button’s <code>description</code> and <code>props</code> are automatically generated anytime the component changes making sure the documentation is always kept up to date for other developers.</p>
+
+<p>This post was inspired by reading <a href="https://github.com/callemall/material-ui">material-ui project on GitHub</a>.</p>
+
+<p>Checkout the <a href="https://github.com/callemall/material-ui">material-ui project on GitHub</a> for some awesome examples on how they are using this technology to help drive their component documentation.</p>
+
+<p>If you have any questions just <a href="https://twitter.com/boyney123">tweet me</a>, or leave a comment.</p>
+
+
+                
+
+
+                <div class="post-share">
+                    <h5>SHARE</h5>
+                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-title="Automating documentation for your React components by @boyney123">
+                        <a class="a2a_button_facebook"></a>
+                        <a class="a2a_button_twitter"></a>
+                        <a class="a2a_button_linkedin "></a>
+                        <a class="a2a_button_google_plus "></a>
+                    </div>
+                    <script async src="https://static.addtoany.com/menu/page.js"></script>
+                </div>
+
+
+            </section>
+
+            <footer>
+                <address>
+                   <img src="/images/ks.jpg">
+                    <p>Written by <strong><a rel="author" href="https://twitter.com/boyney123" title="" target="_blank">David Boyne</a></strong><br>
+                    <span class="muted">Just another developer</span>
+                    </p>
+                </address>
+
+            </footer>
+
+            <div class="other__posts">
+                <section>
+                    <h2>Other Posts</h2>
+                    <ul>
+
+                        
+                            
+                        
+                            
+                                <li>
+                                    <a href="/2016/05/24/react-templates-in-webstorm.html">
+                                        <h3>Creating React templates in WebStorm</h3>
+                                        <span>Posted on <time pubdate datetime="2016-24-May" title="May 24, 2016">May 24, 2016</time></span>
+                                    </a>
+                                </li>
+                            
+                        
+                            
+                                <li>
+                                    <a href="/2016/04/29/redux-form-validation-with-yup.html">
+                                        <h3>Using schemas to validate redux-forms</h3>
+                                        <span>Posted on <time pubdate datetime="2016-29-April" title="April 29, 2016">April 29, 2016</time></span>
+                                    </a>
+                                </li>
+                            
+                        
+                            
+                                <li>
+                                    <a href="/2016/04/29/react-webpack-gem.html">
+                                        <h3>Goodbye ../../../</h3>
+                                        <span>Posted on <time pubdate datetime="2016-29-April" title="April 29, 2016">April 29, 2016</time></span>
+                                    </a>
+                                </li>
+                            
+                        
+                            
+                                <li>
+                                    <a href="/2016/04/26/web-developers-are-mobile-developers.html">
+                                        <h3>Web developers are now mobile developers</h3>
+                                        <span>Posted on <time pubdate datetime="2016-26-April" title="April 26, 2016">April 26, 2016</time></span>
+                                    </a>
+                                </li>
+                            
+                        
+
+                    </ul>
+                </section>
+
+            </div>
+
+            <section>
+                <div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+     var disqus_config = function () {
+     this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+     };
+     */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//boyney123.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </section>
+        </div>
+    </article>
+</article>
+
+
+
+<footer class="site-footer">
+    <div class="container">
+        &copy; 2016 
+        
+        <nav>
+            <a href="/">Posts</a>
+            <a href="/about">About</a>
+        </nav>
+        
+        <nav class="social">
+            
+            <a href="https://twitter.com/boyney123" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
+            
+            <a href="/feed.xml" title="RSS Feed">
+                <i class="icon icon-rss black"></i>
+            </a>
+        </nav>
+    </div>
+</footer>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/assets/main.js"></script>
+
+
+
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-73070461-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+<script id="dsq-count-scr" src="//boyney123.disqus.com/count.js" async></script>
+
+<script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+        t._e.push(f);
+    };
+
+    return t;
+}(document, "script", "twitter-wjs"));</script>
+
+
+</body>
+</html>

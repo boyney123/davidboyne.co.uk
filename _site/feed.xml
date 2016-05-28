@@ -6,9 +6,205 @@
     <atom:link href="http://www.davidboyne.co.uk/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Wed, 25 May 2016 07:48:35 +0000</pubDate>
-    <lastBuildDate>Wed, 25 May 2016 07:48:35 +0000</lastBuildDate>
+    <pubDate>Sat, 28 May 2016 19:05:19 +0000</pubDate>
+    <lastBuildDate>Sat, 28 May 2016 19:05:19 +0000</lastBuildDate>
 
+    
+    
+    <item>
+      <title>Automating documentation for your React components</title>
+      <link>http://www.davidboyne.co.uk/2016/05/26/automating-react-documentation.html</link>
+      <pubDate>Thu, 26 May 2016 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://www.davidboyne.co.uk/2016/05/26/automating-react-documentation</guid>
+      <description>&lt;p&gt;Building and sharing &lt;code&gt;components&lt;/code&gt; is one of the most powerful features of &lt;code&gt;React&lt;/code&gt;, but what good are our components without any &lt;strong&gt;documentation&lt;/strong&gt;?&lt;/p&gt;
+
+&lt;p&gt;I have recently been involved in a project creating components that will be adopted by a wide range of developers and have learnt a way to easily automate &lt;code&gt;component&lt;/code&gt; documentation.&lt;/p&gt;
+
+&lt;p&gt;In this post we will cover why you might need to document your components and how you can easily achieve this with &lt;code&gt;React&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;why-document-components&quot;&gt;Why document components?&lt;/h2&gt;
+
+&lt;p&gt;So firstly you might be thinking why do we need to document our components?&lt;/p&gt;
+
+&lt;p&gt;To be honest it really depends on what you are building and who will be consuming your components.&lt;/p&gt;
+
+&lt;p&gt;When building web applications in &lt;code&gt;React&lt;/code&gt; our &lt;strong&gt;tests&lt;/strong&gt; could be enough documentation for our components.&lt;/p&gt;
+
+&lt;p&gt;But if your writing a large scale application or large number of components that are used throughout your business or for a online community then documentation is &lt;strong&gt;key&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;If we look at some examples like &lt;a href=&quot;https://react-bootstrap.github.io/&quot;&gt;React Bootstrap&lt;/a&gt; or &lt;a href=&quot;http://www.material-ui.com/#/&quot;&gt;Material UI&lt;/a&gt; their documentation &lt;strong&gt;really helps developers&lt;/strong&gt; get setup and utilising their components within &lt;strong&gt;minutes&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Taking &lt;strong&gt;inspiration&lt;/strong&gt; from these projects, I wanted to do something similar for my project and managed to do it with some awesome tools I found along the way.&lt;/p&gt;
+
+&lt;p&gt;So lets take a look at them.&lt;/p&gt;
+
+&lt;h2 id=&quot;react-docgen&quot;&gt;react-docgen&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/reactjs/react-docgen&quot;&gt;react-docgen&lt;/a&gt; is a CLI and toolbox to help extract information from &lt;code&gt;React&lt;/code&gt; components, and generate documentation from it.&lt;/p&gt;
+
+&lt;p&gt;The idea is simple. We pass our  &lt;code&gt;component&lt;/code&gt; into &lt;code&gt;react-docgen&lt;/code&gt; and it will return an &lt;code&gt;object&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;Lets take a look at the example on the &lt;code&gt;react-docgen&lt;/code&gt; &lt;a href=&quot;https://github.com/reactjs/react-docgen&quot;&gt;GitHub page&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h5 id=&quot;component-example&quot;&gt;Component Example&lt;/h5&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;require&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&amp;#39;react&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
+
+&lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; * General component description.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt; */&lt;/span&gt;
+&lt;span class=&quot;kd&quot;&gt;var&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;createClass&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;({&lt;/span&gt;
+  &lt;span class=&quot;nx&quot;&gt;propTypes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     * Description of prop &amp;quot;foo&amp;quot;.&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     */&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PropTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+    &lt;span class=&quot;cm&quot;&gt;/**&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     * Description of prop &amp;quot;bar&amp;quot; (a custom validation function).&lt;/span&gt;
+&lt;span class=&quot;cm&quot;&gt;     */&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;props&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;propName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;componentName&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;nx&quot;&gt;baz&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PropTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;oneOfType&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PropTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;React&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PropTypes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;string&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;getDefaultProps&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;foo&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;42&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;nx&quot;&gt;bar&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;21&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;};&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+
+  &lt;span class=&quot;nx&quot;&gt;render&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;// ...&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;});&lt;/span&gt;
+
+&lt;span class=&quot;nx&quot;&gt;module&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;exports&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h5 id=&quot;json-output&quot;&gt;JSON output&lt;/h5&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&amp;quot;props&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&amp;quot;foo&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;type&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;number&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;required&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Description of prop \&amp;quot;foo\&amp;quot;.&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;defaultValue&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;value&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;42&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;computed&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&amp;quot;bar&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;type&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;custom&amp;quot;&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;required&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;Description of prop \&amp;quot;bar\&amp;quot; (a custom validation function).&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;defaultValue&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;value&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;21&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;computed&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+    &lt;span class=&quot;s2&quot;&gt;&amp;quot;baz&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;type&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;union&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+        &lt;span class=&quot;s2&quot;&gt;&amp;quot;value&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;number&amp;quot;&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+            &lt;span class=&quot;s2&quot;&gt;&amp;quot;name&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;string&amp;quot;&lt;/span&gt;
+          &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+      &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;required&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
+      &lt;span class=&quot;s2&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;&amp;quot;&lt;/span&gt;
+    &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+  &lt;span class=&quot;p&quot;&gt;},&lt;/span&gt;
+  &lt;span class=&quot;s2&quot;&gt;&amp;quot;description&amp;quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&amp;quot;General component description.&amp;quot;&lt;/span&gt;
+&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;The &lt;code&gt;JSON object&lt;/code&gt; we get back has extracted documentation from our &lt;code&gt;component&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;The &lt;code&gt;Object&lt;/code&gt; holds all the &lt;code&gt;props&lt;/code&gt; we defined in the component.&lt;/p&gt;
+
+&lt;p&gt;For each &lt;code&gt;prop&lt;/code&gt; it returns the &lt;strong&gt;type&lt;/strong&gt;, if it is &lt;strong&gt;required&lt;/strong&gt;, the &lt;strong&gt;description&lt;/strong&gt; and any 
+&lt;strong&gt;default values&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;So using the CLI is great, but how do we use this in a React application and automate the process? Its actually pretty straight forward so lets have a look.&lt;/p&gt;
+
+&lt;h2 id=&quot;using-react-docgen-inside-our-react-application&quot;&gt;Using react-docgen inside our React application&lt;/h2&gt;
+
+&lt;p&gt;First thing we should do is install &lt;code&gt;react-docgen&lt;/code&gt;&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;--&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;save&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;docgen&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Next lets  &lt;code&gt;import&lt;/code&gt; it into our &lt;code&gt;React&lt;/code&gt; application&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;react-docgen&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Now we have the ability to &lt;code&gt;parse&lt;/code&gt; any component and get its documentation back. But to use the &lt;code&gt;parse&lt;/code&gt; function we need to &lt;code&gt;import&lt;/code&gt;
+our components as &lt;code&gt;strings&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;So lets import a component as a &lt;code&gt;string&lt;/code&gt; using the &lt;a href=&quot;https://github.com/webpack/raw-loader&quot;&gt;raw-loader&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;using-raw-loader&quot;&gt;Using raw-loader&lt;/h2&gt;
+
+&lt;p&gt;First we need to install raw-loader.&lt;/p&gt;
+
+&lt;h5 id=&quot;installing-raw-loader&quot;&gt;Installing raw-loader&lt;/h5&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;raw&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;loader&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;After &lt;a href=&quot;http://webpack.github.io/docs/using-loaders.html&quot;&gt;setting up raw-loader&lt;/a&gt; with &lt;code&gt;webpack&lt;/code&gt; we can import any file in its &lt;strong&gt;raw format&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h5 id=&quot;import-file-in-its-raw-format&quot;&gt;Import file in its raw format&lt;/h5&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;!raw!./Component&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;Note: Component will come back to us as a &lt;code&gt;string&lt;/code&gt; and not a &lt;code&gt;React&lt;/code&gt; component.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;With the component as a &lt;code&gt;string&lt;/code&gt; we can pass it into our &lt;code&gt;parse&lt;/code&gt; function from
+&lt;code&gt;react-docgen&lt;/code&gt; to get some documentation back.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;react-docgen&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&amp;#39;!raw!./Component&amp;#39;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+
+&lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;componentDocs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;parse&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;Component&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;In this example &lt;code&gt;componentDocs&lt;/code&gt; will hold the components documentation as a &lt;code&gt;JSON object&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-does-this-mean&quot;&gt;What does this mean?&lt;/h2&gt;
+
+&lt;p&gt;For large scale &lt;code&gt;React&lt;/code&gt; applications being able to get &lt;strong&gt;documentation&lt;/strong&gt; from our components might be a great idea.&lt;/p&gt;
+
+&lt;p&gt;Using &lt;code&gt;react-docgen&lt;/code&gt; and &lt;code&gt;raw-loader&lt;/code&gt; we could easily create a simple &lt;strong&gt;user interface&lt;/strong&gt; to represent our library of components and their documentation for other developers to consume.&lt;/p&gt;
+
+&lt;p&gt;Using the information we could visually show our components in use, our component &lt;code&gt;props&lt;/code&gt; details and our components description.&lt;/p&gt;
+
+&lt;p&gt;Here is an example of what I’ve been working on and what you can achieve with &lt;code&gt;react-docgen&lt;/code&gt;.&lt;/p&gt;
+
+&lt;h5 id=&quot;basic-react-application-that-renders-component-documentation&quot;&gt;Basic React application that renders component documentation&lt;/h5&gt;
+&lt;p&gt;&lt;img src=&quot;../../../images/docs.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The Button’s &lt;code&gt;description&lt;/code&gt; and &lt;code&gt;props&lt;/code&gt; are automatically generated anytime the component changes making sure the documentation is always kept up to date for other developers.&lt;/p&gt;
+
+&lt;p&gt;This post was inspired by reading &lt;a href=&quot;https://github.com/callemall/material-ui&quot;&gt;material-ui project on GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Checkout the &lt;a href=&quot;https://github.com/callemall/material-ui&quot;&gt;material-ui project on GitHub&lt;/a&gt; for some awesome examples on how they are using this technology to help drive their component documentation.&lt;/p&gt;
+
+&lt;p&gt;If you have any questions just &lt;a href=&quot;https://twitter.com/boyney123&quot;&gt;tweet me&lt;/a&gt;, or leave a comment.&lt;/p&gt;
+
+</description>
+    </item>
+    
     
     
     <item>
