@@ -5,7 +5,7 @@ title: Automating documentation for your React components
 
 subtitle: "Sharing with documentation"
 
-excerpt: "I recently came across some WebStorm templates and thought I would share my React templates with you..."
+excerpt: "In this post we will cover why you might need to document your components and how you can easily achieve this with React..."
 
 author:
   name: David Boyne
