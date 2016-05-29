@@ -260,6 +260,11 @@ article {
   &:hover{
     border-color:rgba(0,0,0,0.5);
   }
+
+  &.button-primary{
+    background:#57ad68;
+    color:white;
+  }
 }
 
 .main-post{
@@ -270,4 +275,12 @@ article {
   text-align: left;
   margin-top:10px;
   font-size: 16px;
+}
+
+.signup{
+  text-align: center;
+  padding:10px 0 50px;
+  border-bottom:1px solid #ddd;
+  margin-bottom:20px;
+
 }
