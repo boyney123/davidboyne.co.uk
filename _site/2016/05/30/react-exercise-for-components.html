@@ -3,26 +3,26 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Introduction to ES6/7 &mdash; Boyney</title>
+    <title>Developing components as a team &mdash; Boyney</title>
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/assets/main.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/images/logo.png"/>
     <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="Boyney" />
-    <meta name="title" content="Introduction to ES6/7 ">
-    <link rel="canonical" href="http://www.davidboyne.co.uk/2016/04/24/es6-es7.html">
+    <meta name="title" content="Developing components as a team ">
+    <link rel="canonical" href="http://www.davidboyne.co.uk/2016/05/30/react-exercise-for-components.html">
 
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
 
      
            
-    <meta property="og:title" content="Introduction to ES6/7 "/>
-    <meta property="og:url" content="http://www.davidboyne.co.uk/2016/04/24/es6-es7.html"/>
+    <meta property="og:title" content="Developing components as a team "/>
+    <meta property="og:url" content="http://www.davidboyne.co.uk/2016/05/30/react-exercise-for-components.html"/>
     
     
-    <meta property="og:description" content="If you haven’t heard of JavaScript ES6 or ES7 yet, then you must have been living in a cave over the past year. Take a look at my presentation to see if it can help..."/>
-    <meta name="description" content="If you haven’t heard of JavaScript ES6 or ES7 yet, then you must have been living in a cave over the past year. Take a look at my presentation to see if it can help..."/>
+    <meta property="og:description" content="In this post we will cover why you might need to document your components and how you can easily achieve this with React..."/>
+    <meta name="description" content="In this post we will cover why you might need to document your components and how you can easily achieve this with React..."/>
     
     <meta property="og:site_name" content="Boyney">     
 </head>
@@ -73,23 +73,132 @@
             <header>
                 <div class="meta">
                     By <address><a rel="author" href="" title="David Boyne" target="_blank">David Boyne</a></address> &mdash;
-                    <time pubdate datetime="2016-24-April" title="April 24, 2016">April 24, 2016</time>
+                    <time pubdate datetime="2016-30-May" title="May 30, 2016">May 30, 2016</time>
                 </div>
-                <h1 class="title">Introduction to ES6/7</h1>
-                <h2 class="subtitle">Simple presentation to teach ES6/7 features</h2>
+                <h1 class="title">Developing components as a team</h1>
+                <h2 class="subtitle">Simple exercise to help component consistency between developers</h2>
             </header>
 
 
             <section>
-                <p>If you haven’t heard of JavaScript ES6 or ES7 yet, then you must have been living in a cave over the past year.</p>
+                <p>Components are <strong>awesome</strong>. They can encapsulate our <strong>HTML</strong>, <strong>JavaScript</strong> and <strong>CSS</strong> into reusable, tested and packaged code.</p>
 
-<p>New features of JavaScript allow us to do some real awesome things these days. I got so excited about them I pulled together a slide deck and started to teach others. Hopefully it can help you too.</p>
+<p>A problem with components is that they can be <strong>opinionated</strong>.  What I class as a component might not be what you would class as a component and vice versa.</p>
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/bEFUkeduXR233" width="595" height="485" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="border:1px solid #CCC; border-width:1px; margin-bottom:5px; max-width: 100%;" allowfullscreen=""> </iframe>
-<div style="margin-bottom:5px"> <strong> <a href="//www.slideshare.net/boyney123/introduction-into-es6-javascript" title="Introduction into ES6 JavaScript." target="_blank">Introduction into ES6 JavaScript.</a> </strong> from <strong><a href="//www.slideshare.net/boyney123" target="_blank">boyney123</a></strong> </div>
+<p>When working in a team, sharing <strong>ideas</strong> and <strong>knowledge</strong> is important. So how do we make sure we are on the same page when it comes to building components as a team?</p>
 
-<p><br />
-If you have any questions just <a href="https://twitter.com/boyney123">tweet me</a>, or leave a comment.</p>
+<p>In this post we will look into the thought process  when we break our applications down into components, and how we bridge the gap between our thoughts and the thoughts of other developers around us.</p>
+
+<p>So lets get started.</p>
+
+<h2 id="breaking-down-applications">Breaking down applications</h2>
+
+<p>When building any type of application its common practice that we break down our application into smaller parts. This 
+allows us to understand how our application will be built.</p>
+
+<p><code>React</code> gives us the ability to create components and components allow us to break down our applications very easily.</p>
+
+<p>Lets take a look at how we could break down my <a href="https://twitter.com/boyney123">Twitter profile page</a> into components.</p>
+
+<p><img src="../../../images/twitter/profile.png" /></p>
+
+<p>Take a minute to think, if you were to build this page out of components how would <strong>you</strong> do it?</p>
+
+<p>Here are some of my initial thoughts:</p>
+
+<p><img src="../../../images/twitter/profile-components.png" /></p>
+
+<p>Components:</p>
+
+<div class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;CoverPage</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;ProfileSideBar</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;Navigation</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;GlobalSearch</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;ProfileNav</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;TimeLine</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;Tweet</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;Trends</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;Button</span> <span class="nt">/&gt;</span></code></pre></div>
+
+<p>When looking at my components I can almost guarantee one of two thoughts might of crossed your mind:</p>
+
+<ul>
+  <li>You agree with the components I have highlighted</li>
+  <li>You disagree with the components I have highlighted</li>
+</ul>
+
+<p>Regardless if you <strong>agree</strong> or <strong>disagree</strong> I think this highlights an interesting problem 
+we can have when designing and creating components with other people.</p>
+
+<p>Components are <strong>opinionated</strong>.</p>
+
+<p>Its the same when we do almost any kind of work in teams, we are always in agreement or disagreeing. But the key is we work together to find a common ground and move forward together
+as a team.</p>
+
+<p>I have been working on a <code>React</code> training course and an exercise from the course can help you and your team start thinking of components
+together and collaboratively.</p>
+
+<p>Lets take a look at the simple exercise.</p>
+
+<h2 id="team-exercise">Team exercise</h2>
+
+<ol>
+  <li>
+    <p>Print out an existing web application or create some wireframes of a new application  <em>(like my Twitter example above)</em>.</p>
+
+    <p><em>The application could be a real example from your business or maybe a random website.</em></p>
+
+    <p><em>Either way you want to provide an example where your team can break down the given application into components.</em></p>
+  </li>
+  <li>
+    <p>Gather your team together and hand everybody a print out of the example application and a pen or highlighter.</p>
+  </li>
+  <li>
+    <p>Give your team time and ask them to highlight or write down any components they might see on the page.</p>
+  </li>
+  <li>
+    <p>Once they have completed the task, go around the room and ask them to individually talk through their 
+components and their thought process.</p>
+  </li>
+</ol>
+
+<p>Thats it.</p>
+
+<p><em>Told you it was simple ;)</em></p>
+
+<h2 id="outcome">Outcome</h2>
+
+<p>This exercise should provide you with a few outcomes:</p>
+
+<ul>
+  <li>Insight into how the team define and build components</li>
+  <li>Insight into the teams thought process</li>
+  <li>Open up communication between the team</li>
+  <li>Collaboration across the team</li>
+</ul>
+
+<h2 id="conclusion">Conclusion</h2>
+
+<p>When we look at <strong>Art</strong> we all see something <strong>different</strong>.</p>
+
+<p>When we build <strong>applications</strong> we will all build them slightly <strong>different</strong>.</p>
+
+<p>When we build <strong>components</strong> we will all build them slightly <strong>different</strong>.</p>
+
+<p>Team collaboration is key for a successful team. When your team is collaborating and on the same page you will be able to move faster than ever.</p>
+
+<p>As I mentioned earlier in this post. Components are <strong>awesome</strong>. But if we build components in isolation, without our team or
+ without basic documentation then they can potentially become painful.</p>
+
+<p><em>Check out my post on <a href="http://davidboyne.co.uk/2016/05/26/automating-react-documentation.html">Automating documentation for your React Components</a></em></p>
+
+<p>The exercise I have shared in the post will not be enough, but its a good start.</p>
+
+<p>Its up to you and your team to continue to build your <strong>relationships</strong> and work <strong>together</strong> to define your applications and your components.</p>
+
+<p>I would love to hear how you are working with <code>React</code> in your team?</p>
+
+<p>If you have any questions just <a href="https://twitter.com/boyney123">tweet me</a>, or leave a comment.</p>
 
 
                 
@@ -97,7 +206,7 @@ If you have any questions just <a href="https://twitter.com/boyney123">tweet me<
 
                 <div class="post-share">
                     <h5>SHARE</h5>
-                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-title="Introduction to ES6/7 by @boyney123">
+                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-title="Developing components as a team by @boyney123">
                         <a class="a2a_button_facebook"></a>
                         <a class="a2a_button_twitter"></a>
                         <a class="a2a_button_linkedin "></a>
@@ -128,13 +237,6 @@ If you have any questions just <a href="https://twitter.com/boyney123">tweet me<
                     <ul>
 
                         
-                            
-                                <li>
-                                    <a href="/2016/05/30/react-exercise-for-components.html">
-                                        <h3>Developing components as a team</h3>
-                                        <span>Posted on <time pubdate datetime="2016-30-May" title="May 30, 2016">May 30, 2016</time></span>
-                                    </a>
-                                </li>
                             
                         
                             

@@ -6,9 +6,139 @@
     <atom:link href="http://www.davidboyne.co.uk/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Sun, 29 May 2016 19:40:40 +0000</pubDate>
-    <lastBuildDate>Sun, 29 May 2016 19:40:40 +0000</lastBuildDate>
+    <pubDate>Tue, 31 May 2016 07:51:51 +0000</pubDate>
+    <lastBuildDate>Tue, 31 May 2016 07:51:51 +0000</lastBuildDate>
 
+    
+    
+    <item>
+      <title>Developing components as a team</title>
+      <link>http://www.davidboyne.co.uk/2016/05/30/react-exercise-for-components.html</link>
+      <pubDate>Mon, 30 May 2016 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://www.davidboyne.co.uk/2016/05/30/react-exercise-for-components</guid>
+      <description>&lt;p&gt;Components are &lt;strong&gt;awesome&lt;/strong&gt;. They can encapsulate our &lt;strong&gt;HTML&lt;/strong&gt;, &lt;strong&gt;JavaScript&lt;/strong&gt; and &lt;strong&gt;CSS&lt;/strong&gt; into reusable, tested and packaged code.&lt;/p&gt;
+
+&lt;p&gt;A problem with components is that they can be &lt;strong&gt;opinionated&lt;/strong&gt;.  What I class as a component might not be what you would class as a component and vice versa.&lt;/p&gt;
+
+&lt;p&gt;When working in a team, sharing &lt;strong&gt;ideas&lt;/strong&gt; and &lt;strong&gt;knowledge&lt;/strong&gt; is important. So how do we make sure we are on the same page when it comes to building components as a team?&lt;/p&gt;
+
+&lt;p&gt;In this post we will look into the thought process  when we break our applications down into components, and how we bridge the gap between our thoughts and the thoughts of other developers around us.&lt;/p&gt;
+
+&lt;p&gt;So lets get started.&lt;/p&gt;
+
+&lt;h2 id=&quot;breaking-down-applications&quot;&gt;Breaking down applications&lt;/h2&gt;
+
+&lt;p&gt;When building any type of application its common practice that we break down our application into smaller parts. This 
+allows us to understand how our application will be built.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;React&lt;/code&gt; gives us the ability to create components and components allow us to break down our applications very easily.&lt;/p&gt;
+
+&lt;p&gt;Lets take a look at how we could break down my &lt;a href=&quot;https://twitter.com/boyney123&quot;&gt;Twitter profile page&lt;/a&gt; into components.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../images/twitter/profile.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Take a minute to think, if you were to build this page out of components how would &lt;strong&gt;you&lt;/strong&gt; do it?&lt;/p&gt;
+
+&lt;p&gt;Here are some of my initial thoughts:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../../../images/twitter/profile-components.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Components:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;CoverPage&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ProfileSideBar&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;Navigation&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;GlobalSearch&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;ProfileNav&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;TimeLine&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;Tweet&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;Trends&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;Button&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;When looking at my components I can almost guarantee one of two thoughts might of crossed your mind:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You agree with the components I have highlighted&lt;/li&gt;
+  &lt;li&gt;You disagree with the components I have highlighted&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Regardless if you &lt;strong&gt;agree&lt;/strong&gt; or &lt;strong&gt;disagree&lt;/strong&gt; I think this highlights an interesting problem 
+we can have when designing and creating components with other people.&lt;/p&gt;
+
+&lt;p&gt;Components are &lt;strong&gt;opinionated&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Its the same when we do almost any kind of work in teams, we are always in agreement or disagreeing. But the key is we work together to find a common ground and move forward together
+as a team.&lt;/p&gt;
+
+&lt;p&gt;I have been working on a &lt;code&gt;React&lt;/code&gt; training course and an exercise from the course can help you and your team start thinking of components
+together and collaboratively.&lt;/p&gt;
+
+&lt;p&gt;Lets take a look at the simple exercise.&lt;/p&gt;
+
+&lt;h2 id=&quot;team-exercise&quot;&gt;Team exercise&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;Print out an existing web application or create some wireframes of a new application  &lt;em&gt;(like my Twitter example above)&lt;/em&gt;.&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;The application could be a real example from your business or maybe a random website.&lt;/em&gt;&lt;/p&gt;
+
+    &lt;p&gt;&lt;em&gt;Either way you want to provide an example where your team can break down the given application into components.&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Gather your team together and hand everybody a print out of the example application and a pen or highlighter.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Give your team time and ask them to highlight or write down any components they might see on the page.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Once they have completed the task, go around the room and ask them to individually talk through their 
+components and their thought process.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Thats it.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Told you it was simple ;)&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;outcome&quot;&gt;Outcome&lt;/h2&gt;
+
+&lt;p&gt;This exercise should provide you with a few outcomes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Insight into how the team define and build components&lt;/li&gt;
+  &lt;li&gt;Insight into the teams thought process&lt;/li&gt;
+  &lt;li&gt;Open up communication between the team&lt;/li&gt;
+  &lt;li&gt;Collaboration across the team&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;When we look at &lt;strong&gt;Art&lt;/strong&gt; we all see something &lt;strong&gt;different&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;When we build &lt;strong&gt;applications&lt;/strong&gt; we will all build them slightly &lt;strong&gt;different&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;When we build &lt;strong&gt;components&lt;/strong&gt; we will all build them slightly &lt;strong&gt;different&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Team collaboration is key for a successful team. When your team is collaborating and on the same page you will be able to move faster than ever.&lt;/p&gt;
+
+&lt;p&gt;As I mentioned earlier in this post. Components are &lt;strong&gt;awesome&lt;/strong&gt;. But if we build components in isolation, without our team or
+ without basic documentation then they can potentially become painful.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Check out my post on &lt;a href=&quot;http://davidboyne.co.uk/2016/05/26/automating-react-documentation.html&quot;&gt;Automating documentation for your React Components&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The exercise I have shared in the post will not be enough, but its a good start.&lt;/p&gt;
+
+&lt;p&gt;Its up to you and your team to continue to build your &lt;strong&gt;relationships&lt;/strong&gt; and work &lt;strong&gt;together&lt;/strong&gt; to define your applications and your components.&lt;/p&gt;
+
+&lt;p&gt;I would love to hear how you are working with &lt;code&gt;React&lt;/code&gt; in your team?&lt;/p&gt;
+
+&lt;p&gt;If you have any questions just &lt;a href=&quot;https://twitter.com/boyney123&quot;&gt;tweet me&lt;/a&gt;, or leave a comment.&lt;/p&gt;
+
+</description>
+    </item>
+    
     
     
     <item>
