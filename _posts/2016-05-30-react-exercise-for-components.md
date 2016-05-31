@@ -5,7 +5,8 @@ title: Developing components as a team
 
 subtitle: "Simple exercise to help component consistency between developers"
 
-excerpt: "In this post we will cover why you might need to document your components and how you can easily achieve this with React..."
+excerpt: "A problem with components is that they can be opinionated. What I class as a component might not be what you would class as a component and vice versa. 
+Take a look at this simple exercise that can help you and your team define components and start working together."
 
 author:
   name: David Boyne
