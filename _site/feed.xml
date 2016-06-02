@@ -6,8 +6,8 @@
     <atom:link href="http://www.davidboyne.co.uk/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Tue, 31 May 2016 12:59:43 +0000</pubDate>
-    <lastBuildDate>Tue, 31 May 2016 12:59:43 +0000</lastBuildDate>
+    <pubDate>Thu, 02 Jun 2016 07:16:45 +0000</pubDate>
+    <lastBuildDate>Thu, 02 Jun 2016 07:16:45 +0000</lastBuildDate>
 
     
     
@@ -347,7 +347,7 @@ our components as &lt;code&gt;strings&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;This is fine… but it can get boring.&lt;/p&gt;
 
-&lt;p&gt;I recently came across some WebStorm templates and thought I would share my React templates with you.&lt;/p&gt;
+&lt;p&gt;I recently came across some WebStorm templates thanks to (Cory House)[https://twitter.com/housecor] and his (pluralsight course)[https://www.pluralsight.com/courses/react-redux-react-router-es6] and thought I would share some of the React templates mentioned in the course with you.&lt;/p&gt;
 
 &lt;p&gt;Firstly we need to be able to add templates.&lt;/p&gt;
 
@@ -443,7 +443,7 @@ our components as &lt;code&gt;strings&lt;/code&gt;.&lt;/p&gt;
 	&lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;nx&quot;&gt;$NAME&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PropTypes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;$NAME&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;propTypes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 
 &lt;span class=&quot;kr&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;$NAME&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -463,7 +463,7 @@ our components as &lt;code&gt;strings&lt;/code&gt;.&lt;/p&gt;
     &lt;span class=&quot;p&quot;&gt;);&lt;/span&gt;
 &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
 
-&lt;span class=&quot;nx&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;PropTypes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;Button&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;propTypes&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{}&lt;/span&gt;
 
 &lt;span class=&quot;kr&quot;&gt;export&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;default&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;Button&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
@@ -472,6 +472,8 @@ our components as &lt;code&gt;strings&lt;/code&gt;.&lt;/p&gt;
 &lt;p&gt;Automating the boring and repetitive tasks is key. It allows us to spend more time being creative.&lt;/p&gt;
 
 &lt;p&gt;I know this could form a small part of your React workflow, but everything counts.&lt;/p&gt;
+
+&lt;p&gt;Thanks to (Cory House)[https://twitter.com/housecor] for sharing his React templates.&lt;/p&gt;
 
 &lt;p&gt;If you have any questions just &lt;a href=&quot;https://twitter.com/boyney123&quot;&gt;tweet me&lt;/a&gt;, or leave a comment.&lt;/p&gt;
 
