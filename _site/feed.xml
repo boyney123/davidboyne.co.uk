@@ -6,8 +6,8 @@
     <atom:link href="http://www.davidboyne.co.uk/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Thu, 02 Jun 2016 07:16:45 +0000</pubDate>
-    <lastBuildDate>Thu, 02 Jun 2016 07:16:45 +0000</lastBuildDate>
+    <pubDate>Thu, 02 Jun 2016 07:19:38 +0000</pubDate>
+    <lastBuildDate>Thu, 02 Jun 2016 07:19:38 +0000</lastBuildDate>
 
     
     
@@ -347,7 +347,9 @@ our components as &lt;code&gt;strings&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;This is fine… but it can get boring.&lt;/p&gt;
 
-&lt;p&gt;I recently came across some WebStorm templates thanks to (Cory House)[https://twitter.com/housecor] and his (pluralsight course)[https://www.pluralsight.com/courses/react-redux-react-router-es6] and thought I would share some of the React templates mentioned in the course with you.&lt;/p&gt;
+&lt;p&gt;I recently came across some WebStorm templates thanks to &lt;a href=&quot;https://twitter.com/housecor&quot;&gt;Cory House&lt;/a&gt; and his mention of React templates in his  &lt;a href=&quot;https://www.pluralsight.com/courses/react-redux-react-router-es6&quot;&gt;Pluralsight course&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I thought I would share some of the React templates mentioned in the course with you.&lt;/p&gt;
 
 &lt;p&gt;Firstly we need to be able to add templates.&lt;/p&gt;
 
@@ -473,7 +475,7 @@ our components as &lt;code&gt;strings&lt;/code&gt;.&lt;/p&gt;
 
 &lt;p&gt;I know this could form a small part of your React workflow, but everything counts.&lt;/p&gt;
 
-&lt;p&gt;Thanks to (Cory House)[https://twitter.com/housecor] for sharing his React templates.&lt;/p&gt;
+&lt;p&gt;Thanks to &lt;a href=&quot;https://twitter.com/housecor]&quot;&gt;Cory House&lt;/a&gt; for sharing his &lt;code&gt;React&lt;/code&gt; templates.&lt;/p&gt;
 
 &lt;p&gt;If you have any questions just &lt;a href=&quot;https://twitter.com/boyney123&quot;&gt;tweet me&lt;/a&gt;, or leave a comment.&lt;/p&gt;
 
