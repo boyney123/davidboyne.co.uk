@@ -18,7 +18,7 @@ When working with React you will often find yourself creating a number of compon
 
 This is fine... but it can get boring.
  
-I recently came across some WebStorm templates and thought I would share my React templates with you.
+I recently came across some WebStorm templates thanks to (Cory House)[https://twitter.com/housecor] and his (pluralsight course)[https://www.pluralsight.com/courses/react-redux-react-router-es6] and thought I would share some of the React templates mentioned in the course with you.
 
 Firstly we need to be able to add templates.
 
@@ -126,7 +126,7 @@ const $NAME = (props) => {
 	);
 }
 
-$NAME .PropTypes = {}
+$NAME .propTypes = {}
 
 export default $NAME
 
@@ -150,7 +150,7 @@ const Button = (props) => {
     );
 }
 
-Button.PropTypes = {}
+Button.propTypes = {}
 
 export default Button
 
@@ -161,6 +161,8 @@ export default Button
 Automating the boring and repetitive tasks is key. It allows us to spend more time being creative. 
 
 I know this could form a small part of your React workflow, but everything counts.
+
+Thanks to (Cory House)[https://twitter.com/housecor] for sharing his React templates.
 
 If you have any questions just [tweet me](https://twitter.com/boyney123), or leave a comment.
  
