@@ -6,8 +6,8 @@
     <atom:link href="http://www.davidboyne.co.uk/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Thu, 02 Jun 2016 07:19:38 +0000</pubDate>
-    <lastBuildDate>Thu, 02 Jun 2016 07:19:38 +0000</lastBuildDate>
+    <pubDate>Wed, 03 Aug 2016 08:19:29 +0000</pubDate>
+    <lastBuildDate>Wed, 03 Aug 2016 08:19:29 +0000</lastBuildDate>
 
     
     
@@ -1150,6 +1150,12 @@ schemas to validate our form for us.&lt;/p&gt;
 &lt;p&gt;As you can see, we no longer have to import our components using &lt;code&gt;../../&lt;/code&gt;, we can now directly use &lt;code&gt;/components/&lt;/code&gt; which webpack will understand and mount to our src directory for us.&lt;/p&gt;
 
 &lt;p&gt;Give it ago. Hopefully this gem can help you like it has me.&lt;/p&gt;
+
+&lt;h4 id=&quot;demo&quot;&gt;Demo&lt;/h4&gt;
+
+&lt;p&gt;Here is a quick tutorial of the examples I have shown in this blog post.&lt;/p&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/M1lgzvyUhg4&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;If you have any questions just &lt;a href=&quot;https://twitter.com/boyney123&quot;&gt;tweet me&lt;/a&gt;, or leave a comment.&lt;/p&gt;
 

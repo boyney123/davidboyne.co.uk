@@ -14,6 +14,9 @@ author:
   image: ks.jpg
 ---
 
+
+
+
 I have recently been writing a [React](https://facebook.github.io/react/) application and ran into a little webpack gem I thought I would share. 
 
 First lets look at the problem.
@@ -147,6 +150,12 @@ export default ContactUs;
 As you can see, we no longer have to import our components using <code>../../</code>, we can now directly use <code>/components/</code> which webpack will understand and mount to our src directory for us.
 
 Give it ago. Hopefully this gem can help you like it has me.
+
+#### Demo
+
+Here is a quick tutorial of the examples I have shown in this blog post.
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M1lgzvyUhg4" frameborder="0" allowfullscreen></iframe>
 
 If you have any questions just [tweet me](https://twitter.com/boyney123), or leave a comment.
  
