@@ -5,7 +5,7 @@ title: Build a simple component to handle media queries in ReactJS
 
 subtitle: "Using media queries and a wrapper component to handle media queries in ReactJS"
 
-excerpt: "I have been exploring a quick and easy way to add **Media queries** in **React** using styles and a simple wrapper component. Together we will quickly explore and create a simple to use MediaQuery component."
+excerpt: "I have been exploring a quick and easy way to add Media queries in React using styles and a simple wrapper component. Together we will quickly explore and create a simple to use MediaQuery component."
 
 author:
   name: David Boyne
