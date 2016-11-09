@@ -6,17 +6,17 @@
     <atom:link href="http://www.davidboyne.co.uk/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Wed, 09 Nov 2016 20:47:11 +0000</pubDate>
-    <lastBuildDate>Wed, 09 Nov 2016 20:47:11 +0000</lastBuildDate>
+    <pubDate>Wed, 09 Nov 2016 20:50:05 +0000</pubDate>
+    <lastBuildDate>Wed, 09 Nov 2016 20:50:05 +0000</lastBuildDate>
 
     
     
     <item>
       <title>Build a simple component to handle media queries in ReactJS</title>
-      <link>http://www.davidboyne.co.uk/2016/05/30/react-exercise-for-components0.html</link>
-      <pubDate>Mon, 30 May 2016 00:00:00 +0000</pubDate>
+      <link>http://www.davidboyne.co.uk/2016/11/07/building-a-media-query-component-in-react.html</link>
+      <pubDate>Mon, 07 Nov 2016 00:00:00 +0000</pubDate>
       <author></author>
-      <guid>http://www.davidboyne.co.uk/2016/05/30/react-exercise-for-components0</guid>
+      <guid>http://www.davidboyne.co.uk/2016/11/07/building-a-media-query-component-in-react</guid>
       <description>&lt;p&gt;I have been exploring a quick and easy way to add &lt;strong&gt;Media queries&lt;/strong&gt; in &lt;strong&gt;React&lt;/strong&gt; using styles and a simple wrapper component.&lt;/p&gt;
 
 &lt;p&gt;I looked a solutions online, but did not want to implement a JavaScript solution. If your interested in pure JavaScript solutions check out these projects:&lt;/p&gt;
