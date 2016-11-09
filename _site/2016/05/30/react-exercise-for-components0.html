@@ -3,26 +3,26 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Moving from Client-side logic to Server-side logic with AngularJS, Node.js and Express.js &mdash; Boyney</title>
+    <title>Build a simple component to handle media queries in ReactJS &mdash; Boyney</title>
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/assets/main.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/images/logo.png"/>
     <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="Boyney" />
-    <meta name="title" content="Moving from Client-side logic to Server-side logic with AngularJS, Node.js and Express.js ">
-    <link rel="canonical" href="http://www.davidboyne.co.uk/2015/02/04/angular-serverside.html">
+    <meta name="title" content="Build a simple component to handle media queries in ReactJS ">
+    <link rel="canonical" href="http://www.davidboyne.co.uk/2016/05/30/react-exercise-for-components0.html">
 
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
 
      
            
-    <meta property="og:title" content="Moving from Client-side logic to Server-side logic with AngularJS, Node.js and Express.js "/>
-    <meta property="og:url" content="http://www.davidboyne.co.uk/2015/02/04/angular-serverside.html"/>
+    <meta property="og:title" content="Build a simple component to handle media queries in ReactJS "/>
+    <meta property="og:url" content="http://www.davidboyne.co.uk/2016/05/30/react-exercise-for-components0.html"/>
     
     
-    <meta property="og:description" content="Three weeks into a new project, I had written some testable, decoupled and modular JavaScript code for a web application I was creating. Using AngularJS I created directives, controllers and modules that were reusable and most importantly using dependency injection they were easily testable..."/>
-    <meta name="description" content="Three weeks into a new project, I had written some testable, decoupled and modular JavaScript code for a web application I was creating. Using AngularJS I created directives, controllers and modules that were reusable and most importantly using dependency injection they were easily testable..."/>
+    <meta property="og:description" content="I have been exploring a quick and easy way to add **Media queries** in **React** using styles and a simple wrapper component. Together we will quickly explore and create a simple to use MediaQuery component."/>
+    <meta name="description" content="I have been exploring a quick and easy way to add **Media queries** in **React** using styles and a simple wrapper component. Together we will quickly explore and create a simple to use MediaQuery component."/>
     
     <meta property="og:site_name" content="Boyney">     
 </head>
@@ -73,58 +73,81 @@
             <header>
                 <div class="meta">
                     By <address><a rel="author" href="" title="David Boyne" target="_blank">David Boyne</a></address> &mdash;
-                    <time pubdate datetime="2015-04-February" title="February 04, 2015">February 04, 2015</time>
+                    <time pubdate datetime="2016-30-May" title="May 30, 2016">May 30, 2016</time>
                 </div>
-                <h1 class="title">Moving from Client-side logic to Server-side logic with AngularJS, Node.js and Express.js</h1>
-                
+                <h1 class="title">Build a simple component to handle media queries in ReactJS</h1>
+                <h2 class="subtitle">Using media queries and a wrapper component to handle media queries in ReactJS</h2>
             </header>
 
 
             <section>
-                <p>Three weeks into a new project, I had written some testable, decoupled and modular JavaScript code for a web application I was creating. Using AngularJS I created directives, controllers and modules that were reusable and most importantly using dependency injection they were easily testable.</p>
+                <p>I have been exploring a quick and easy way to add <strong>Media queries</strong> in <strong>React</strong> using styles and a simple wrapper component.</p>
 
-<blockquote>
-  <p>”..I removed AngularJS from the project and deleted all the JavaScript…”</p>
-</blockquote>
+<p>I looked a solutions online, but did not want to implement a JavaScript solution. If your interested in pure JavaScript solutions check out these projects:</p>
 
-<p>At the end of the third week I was proud of the JavaScript code that was written in such a short amount of time. With around 1000 lines of JavaScript the application was fully tested and working as expected. The following Monday I removed AngularJS from the project and deleted all the JavaScript I had written over the past few weeks. In this post blog I will explain my thoughts and why it was removed.</p>
+<p><a href="https://github.com/contra/react-responsive">https://github.com/contra/react-responsive</a>
+<a href="https://www.npmjs.com/package/match-media">https://www.npmjs.com/package/match-media</a>
+<a href="https://github.com/viruschidai/react-match-media">https://github.com/viruschidai/react-match-media</a>
+<a href="http://d6u.github.io/react-container-query/">http://d6u.github.io/react-container-query/</a></p>
 
-<h3 id="tunnel-vision">Tunnel Vision</h3>
+<p>The problem I found with these solutions were the lack of browser support. So I explored using CSS and Wrapper Components to do something similar.</p>
 
-<p>Recently I was given the opportunity to work on a new project at work, which was great and exciting. I got told that a web application needed to be written and being somewhat a JavaScript enthusiast I wanted to use a framework. In the past I have used Backbone.js, KnockoutJS and AngularJS. From experience with all these frameworks I choose to write the web application using AngularJS. Within no time at all I had my project setup with Karma, PhantomJS and AngularJS. With the aid of <a href="https://docs.angularjs.org/api/ngMock" title="angular-mocks">angular-mocks</a> I was able to write testable Angular code fast!</p>
+<p>The solution is quite simple and might be helpful if you are exploring media queries and <strong>React</strong>.</p>
 
-<blockquote>
-  <p>”..I was proud of what was achieved after a couple of weeks.”</p>
-</blockquote>
+<p>So lets dive in, first we need to create a component.</p>
 
-<p>I spent time drawing the applications architecture down on paper then coding it up. Most things worked as expected and a couple of weeks later I had the web applications basics done. Everything was modular, decoupled and testable. I followed the SOLID and DRY principles and I was proud of what was achieved after a couple of weeks. I naturally wanted the web application to be a single page application and I used angular-router to load in different views. The only issue I found was the client would have to ask the server where the user should get directed to when the application launched. Which wasn’t too much of an issue but it felt dirty. Although the application was in working condition, certain parts of it seemed to have this layer of unnecessary complexity.</p>
+<h2 id="mediaquery-component">MediaQuery Component</h2>
 
-<blockquote>
-  <p>“…using a server side templating language could dramatically decrease the complexity of the application…”</p>
-</blockquote>
+<script src="https://gist.github.com/boyney123/1cd4adfbd3466704a4f63050f859fef9.js?file=MediaQuery.js"></script>
 
-<p>Node.js was used for the backend and I was serving up static HTML, JS and CSS. Everything seemed to be working fine until I had a conversation with a colleague of mine and he asked what server side tempting language I was using. I told him I was just serving static HTML and he asked me why, and I replied I just needed HTML and AngularJS for the web application but that night on the way home I realised what I had done… I realised that a server side templating language could dramatically decrease the complexity of the application and remove the need or requirement of a front end framework such as AngularJS.</p>
+<p>This component behaves as a <strong>wrapper</strong> component for child components.</p>
 
-<h3 id="refactoring">Refactoring</h3>
+<p>When using this component you pass the <strong>size</strong> (defined by you, in our example mobile and desktop) you want your child components to render in. These are defined in your <code>propTypes</code>.</p>
 
-<p>I went back to work on Monday with them thoughts in mind and tested out some theory’s using express.js and node.js and I was right. In theory I could remove all client side JavaScript code and make the application structure simple. So I did. Using express.js (routing and middleware) with jade templating I was able to do everything I wanted from server-side. Most the requirements for the project could be delivered using server-side templating.</p>
+<p>You can add any size you like on the <code>propTypes</code> as long as you write the matching class names in your css (we will see more of this later).</p>
 
-<h3 id="lessons-learnt">Lessons Learnt</h3>
+<p>As you can see in our example we have two sizes defined <code>mobile</code> and <code>desktop</code>. When the component renders it will wrap our children with a class of <code>MediaQuery-mobile</code> or <code>MediaQuery-desktop</code> class name.</p>
 
-<p>When I started the project I was so excited to get on board and I naturally thought a frontend framework would be best for the web application but I realised due to the nature of the web application (its requirements) I was able to do what was required server-side which greatly reduced the applications complexity.</p>
+<p>Now all we have to do is write some css to match the class names. So lets take a look at that.</p>
 
-<blockquote>
-  <p>“…think about all possible scenarios even if it’s a different technology stack…”</p>
-</blockquote>
+<h2 id="adding-media-queries">Adding media queries</h2>
 
-<p>I understand that some people might read this and think it’s a rookie mistake to make, but I learnt that when starting a new project to really think about all possible scenarios even if it’s a different technology stack, because there might be something that is simpler and easier to implement.</p>
+<script src="https://gist.github.com/boyney123/1cd4adfbd3466704a4f63050f859fef9.js?file=styles.scss"></script>
+
+<p>This part is initially up to you.</p>
+
+<p>This file just supports our examples we made in our <code>MediaQuery</code> component.</p>
+
+<p>As you can see we have <code>mobile</code> and <code>desktop</code> media query support. You can add any media query you like, just make sure you match the class name up to your <code>propTypes</code> in your <code>MediaQuery</code> component.</p>
+
+<p>Now lets use our component in action.</p>
+
+<h2 id="using-the-component">Using the component</h2>
+
+<script src="https://gist.github.com/boyney123/1cd4adfbd3466704a4f63050f859fef9.js?file=Example.js"></script>
+
+<p>That’s all have to do.</p>
+
+<p>The header <strong>‘Mobile View’</strong> will get rendered on mobile.</p>
+
+<p>The header <strong>‘Desktop View’</strong> will get rendered on desktop.</p>
+
+<h2 id="wrap-up">Wrap up</h2>
+
+<p>This was just a quick experiment I come up with when exploring Media queries in React. I haven’t created a demo as its super easy to copy this code and try it out for yourself.</p>
+
+<p>You can checkout the whole gist below.</p>
+
+<p><a href="https://gist.github.com/boyney123/1cd4adfbd3466704a4f63050f859fef9">https://gist.github.com/boyney123/1cd4adfbd3466704a4f63050f859fef9</a></p>
+
+<p>If you have any questions just <a href="https://twitter.com/boyney123">tweet me</a>, or leave a comment.</p>
 
                 
 
 
                 <div class="post-share">
                     <h5>SHARE</h5>
-                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-title="Moving from Client-side logic to Server-side logic with AngularJS, Node.js and Express.js by @boyney123">
+                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-title="Build a simple component to handle media queries in ReactJS by @boyney123">
                         <a class="a2a_button_facebook"></a>
                         <a class="a2a_button_twitter"></a>
                         <a class="a2a_button_linkedin "></a>
@@ -155,13 +178,6 @@
                     <ul>
 
                         
-                            
-                                <li>
-                                    <a href="/2016/05/30/react-exercise-for-components0.html">
-                                        <h3>Build a simple component to handle media queries in ReactJS</h3>
-                                        <span>Posted on <time pubdate datetime="2016-30-May" title="May 30, 2016">May 30, 2016</time></span>
-                                    </a>
-                                </li>
                             
                         
                             
