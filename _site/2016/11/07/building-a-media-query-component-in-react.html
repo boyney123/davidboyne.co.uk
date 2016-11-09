@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build a simple component to handle media queries in ReactJS &mdash; Boyney</title>
+    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" href="/assets/main.css">
+    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" href="/images/logo.png"/>
+    <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="Boyney" />
+    <meta name="title" content="Build a simple component to handle media queries in ReactJS ">
+    <link rel="canonical" href="http://www.davidboyne.co.uk/2016/11/07/building-a-media-query-component-in-react.html">
+
+    <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
+
+     
+           
+    <meta property="og:title" content="Build a simple component to handle media queries in ReactJS "/>
+    <meta property="og:url" content="http://www.davidboyne.co.uk/2016/11/07/building-a-media-query-component-in-react.html"/>
+    
+    
+    <meta property="og:description" content="I have been exploring a quick and easy way to add Media queries in React using styles and a simple wrapper component. Together we will quickly explore and create a simple to use MediaQuery component."/>
+    <meta name="description" content="I have been exploring a quick and easy way to add Media queries in React using styles and a simple wrapper component. Together we will quickly explore and create a simple to use MediaQuery component."/>
+    
+    <meta property="og:site_name" content="Boyney">     
+</head>
+<body>
+
+<div class="blog-cover" >
+
+
+    <section>
+        <div class="container">
+
+
+            
+            <div class="profile">
+                <img class="ProfileAvatar-image " src="https://pbs.twimg.com/profile_images/660943257795457030/igA_joVD_400x400.jpg" alt="David Boyne"/>
+            </div>
+            
+
+                <p class="profile-blurb" >
+                    Technical Lead <a href="http://www.comparethemarket.com/">@Comparethemarket</a>.
+                    Organiser of <a href="http://www.meetup.com/Agile-Peterborough/">WhatTheHTML</a>. Speaker & evangelist of web development, agile principles and helping others.</p>
+
+
+            <a class="twitter-follow-button" href="https://twitter.com/boyney123" data-show-count="false"></a>
+
+        </div>
+    </section>
+</div>
+
+
+<div class="container">
+    <div class="site-nav">
+            <nav id="navigation">
+                <a href="/" class="home">Posts</a>
+                <a href="/about" class="home">About</a>
+                <a href="http://eepurl.com/b3D-Z1" target="_blank" >Sign up</a>
+            </nav>
+    </div>
+</div>
+    
+
+
+<article class="post container">
+
+    <article>
+
+        <div class="container">
+            <header>
+                <div class="meta">
+                    By <address><a rel="author" href="" title="David Boyne" target="_blank">David Boyne</a></address> &mdash;
+                    <time pubdate datetime="2016-07-November" title="November 07, 2016">November 07, 2016</time>
+                </div>
+                <h1 class="title">Build a simple component to handle media queries in ReactJS</h1>
+                <h2 class="subtitle">Using media queries and a wrapper component to handle media queries in ReactJS</h2>
+            </header>
+
+
+            <section>
+                <p>I have been exploring a quick and easy way to add <strong>Media queries</strong> in <strong>React</strong> using styles and a simple wrapper component.</p>
+
+<p>I looked a solutions online, but did not want to implement a JavaScript solution. If your interested in pure JavaScript solutions check out these projects:</p>
+
+<p><a href="https://github.com/contra/react-responsive">https://github.com/contra/react-responsive</a>
+<a href="https://www.npmjs.com/package/match-media">https://www.npmjs.com/package/match-media</a>
+<a href="https://github.com/viruschidai/react-match-media">https://github.com/viruschidai/react-match-media</a>
+<a href="http://d6u.github.io/react-container-query/">http://d6u.github.io/react-container-query/</a></p>
+
+<p>The problem I found with these solutions were the lack of browser support. So I explored using CSS and Wrapper Components to do something similar.</p>
+
+<p>The solution is quite simple and might be helpful if you are exploring media queries and <strong>React</strong>.</p>
+
+<p>So lets dive in, first we need to create a component.</p>
+
+<h2 id="mediaquery-component">MediaQuery Component</h2>
+
+<script src="https://gist.github.com/boyney123/1cd4adfbd3466704a4f63050f859fef9.js?file=MediaQuery.js"></script>
+
+<p>This component behaves as a <strong>wrapper</strong> component for child components.</p>
+
+<p>When using this component you pass the <strong>size</strong> (defined by you, in our example mobile and desktop) you want your child components to render in. These are defined in your <code>propTypes</code>.</p>
+
+<p>You can add any size you like on the <code>propTypes</code> as long as you write the matching class names in your css (we will see more of this later).</p>
+
+<p>As you can see in our example we have two sizes defined <code>mobile</code> and <code>desktop</code>. When the component renders it will wrap our children with a class of <code>MediaQuery-mobile</code> or <code>MediaQuery-desktop</code> class name.</p>
+
+<p>Now all we have to do is write some css to match the class names. So lets take a look at that.</p>
+
+<h2 id="adding-media-queries">Adding media queries</h2>
+
+<script src="https://gist.github.com/boyney123/1cd4adfbd3466704a4f63050f859fef9.js?file=styles.scss"></script>
+
+<p>This part is initially up to you.</p>
+
+<p>This file just supports our examples we made in our <code>MediaQuery</code> component.</p>
+
+<p>As you can see we have <code>mobile</code> and <code>desktop</code> media query support. You can add any media query you like, just make sure you match the class name up to your <code>propTypes</code> in your <code>MediaQuery</code> component.</p>
+
+<p>Now lets use our component in action.</p>
+
+<h2 id="using-the-component">Using the component</h2>
+
+<script src="https://gist.github.com/boyney123/1cd4adfbd3466704a4f63050f859fef9.js?file=Example.js"></script>
+
+<p>That’s all have to do.</p>
+
+<p>The header <strong>‘Mobile View’</strong> will get rendered on mobile.</p>
+
+<p>The header <strong>‘Desktop View’</strong> will get rendered on desktop.</p>
+
+<h2 id="wrap-up">Wrap up</h2>
+
+<p>This was just a quick experiment I come up with when exploring Media queries in React. I haven’t created a demo as its super easy to copy this code and try it out for yourself.</p>
+
+<p>You can checkout the whole gist below.</p>
+
+<p><a href="https://gist.github.com/boyney123/1cd4adfbd3466704a4f63050f859fef9">https://gist.github.com/boyney123/1cd4adfbd3466704a4f63050f859fef9</a></p>
+
+<p>If you have any questions just <a href="https://twitter.com/boyney123">tweet me</a>, or leave a comment.</p>
+
+                
+
+
+                <div class="post-share">
+                    <h5>SHARE</h5>
+                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-title="Build a simple component to handle media queries in ReactJS by @boyney123">
+                        <a class="a2a_button_facebook"></a>
+                        <a class="a2a_button_twitter"></a>
+                        <a class="a2a_button_linkedin "></a>
+                        <a class="a2a_button_google_plus "></a>
+                    </div>
+                    <script async src="https://static.addtoany.com/menu/page.js"></script>
+                </div>
+
+
+            </section>
+
+            <footer>
+                <address>
+                   <img src="/images/ks.jpg">
+                    <p>Written by <strong><a rel="author" href="https://twitter.com/boyney123" title="" target="_blank">David Boyne</a></strong><br>
+                    <span class="muted">Just another developer</span>
+                    </p>
+                </address>
+
+            </footer>
+
+
+
+
+            <div class="other__posts">
+                <section>
+                    <h2>Other Posts</h2>
+                    <ul>
+
+                        
+                            
+                        
+                            
+                                <li>
+                                    <a href="/2016/05/30/react-exercise-for-components.html">
+                                        <h3>Developing components as a team</h3>
+                                        <span>Posted on <time pubdate datetime="2016-30-May" title="May 30, 2016">May 30, 2016</time></span>
+                                    </a>
+                                </li>
+                            
+                        
+                            
+                                <li>
+                                    <a href="/2016/05/26/automating-react-documentation.html">
+                                        <h3>Automating documentation for your React components</h3>
+                                        <span>Posted on <time pubdate datetime="2016-26-May" title="May 26, 2016">May 26, 2016</time></span>
+                                    </a>
+                                </li>
+                            
+                        
+                            
+                                <li>
+                                    <a href="/2016/05/24/react-templates-in-webstorm.html">
+                                        <h3>Creating React templates in WebStorm</h3>
+                                        <span>Posted on <time pubdate datetime="2016-24-May" title="May 24, 2016">May 24, 2016</time></span>
+                                    </a>
+                                </li>
+                            
+                        
+                            
+                                <li>
+                                    <a href="/2016/04/29/redux-form-validation-with-yup.html">
+                                        <h3>Using schemas to validate redux-forms</h3>
+                                        <span>Posted on <time pubdate datetime="2016-29-April" title="April 29, 2016">April 29, 2016</time></span>
+                                    </a>
+                                </li>
+                            
+                        
+
+                    </ul>
+                </section>
+
+            </div>
+
+            <div class="signup">
+
+                    <h3 class="signup__title">Sign up for the latest articles!</h3>
+
+                    <p class="signup__sub">Get the latest posts straight to your inbox!</p>
+
+                    <a href="http://eepurl.com/b3D-Z1" target="_blank" class="button button-primary">Sign up</a>
+                </form>
+            </div>
+
+            <section>
+                <div id="disqus_thread"></div>
+<script>
+    /**
+     * RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+     * LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+     */
+    /*
+     var disqus_config = function () {
+     this.page.url = PAGE_URL; // Replace PAGE_URL with your page's canonical URL variable
+     this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+     };
+     */
+    (function() { // DON'T EDIT BELOW THIS LINE
+        var d = document, s = d.createElement('script');
+
+        s.src = '//boyney123.disqus.com/embed.js';
+
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+            </section>
+        </div>
+    </article>
+</article>
+
+
+
+<footer class="site-footer">
+    <div class="container">
+        &copy; 2016 
+        
+        <nav>
+            <a href="/">Posts</a>
+            <a href="/about">About</a>
+        </nav>
+        
+        <nav class="social">
+            
+            <a href="https://twitter.com/boyney123" title="Follow on Twitter" target="_blank"><i class="icon icon-twitter black"></i></a>
+            
+            <a href="/feed.xml" title="RSS Feed">
+                <i class="icon icon-rss black"></i>
+            </a>
+        </nav>
+    </div>
+</footer>
+
+<script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script src="/assets/main.js"></script>
+
+
+
+
+
+<script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-73070461-1', 'auto');
+    ga('send', 'pageview');
+
+</script>
+
+<script id="dsq-count-scr" src="//boyney123.disqus.com/count.js" async></script>
+
+<script>window.twttr = (function(d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0],
+            t = window.twttr || {};
+    if (d.getElementById(id)) return t;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "https://platform.twitter.com/widgets.js";
+    fjs.parentNode.insertBefore(js, fjs);
+
+    t._e = [];
+    t.ready = function(f) {
+        t._e.push(f);
+    };
+
+    return t;
+}(document, "script", "twitter-wjs"));</script>
+
+
+</body>
+</html>
