@@ -6,9 +6,102 @@
     <atom:link href="http://www.davidboyne.co.uk/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Wed, 09 Nov 2016 20:50:48 +0000</pubDate>
-    <lastBuildDate>Wed, 09 Nov 2016 20:50:48 +0000</lastBuildDate>
+    <pubDate>Mon, 21 Nov 2016 20:33:29 +0000</pubDate>
+    <lastBuildDate>Mon, 21 Nov 2016 20:33:29 +0000</lastBuildDate>
 
+    
+    
+    <item>
+      <title>Test and share your localhost React applications for any device or person for fast feedback.</title>
+      <link>http://www.davidboyne.co.uk/2016/11/21/ReactJS-and-ngrok.html</link>
+      <pubDate>Mon, 21 Nov 2016 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://www.davidboyne.co.uk/2016/11/21/ReactJS-and-ngrok</guid>
+      <description>&lt;p&gt;Does any of this sound familiar?&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;You have an app hosted locally and you want to test it on a physical device, but there is no easy way to do this without investing over 5 minutes?&lt;/li&gt;
+  &lt;li&gt;You want to show your boss or colleague some work you been working on, but getting it on their machine or device is a nightmare?&lt;/li&gt;
+  &lt;li&gt;You want fast feedback on something you are working on, you want to give somebody a url so they can view your application, but you have to deploy it first and wait…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If any of this sounds familiar then I might have a tool I have come across that could help out in &lt;strong&gt;less than a 5 minutes of effort.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In this post I will share with you the tool to solve these problems and ways it could help with not only your React applications but &lt;strong&gt;any app hosted locally.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;So lets not waste any time, lets dive in.&lt;/p&gt;
+
+&lt;h2 id=&quot;the-tool&quot;&gt;The tool&lt;/h2&gt;
+
+&lt;h3 id=&quot;what-is-it&quot;&gt;What is it?&lt;/h3&gt;
+
+&lt;p&gt;The tool is called &lt;a href=&quot;https://ngrok.com/&quot;&gt;ngrok&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;code&gt;ngrok&lt;/code&gt; is a secure tunnel to your localhost. This allows connections to applications running locally on our machines.&lt;/p&gt;
+
+&lt;p&gt;Heres some features from ngrok’s website&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Don’t constantly redeploy your in-progress work to get feedback from clients. ngrok creates a secure public URL (https://yourapp.ngrok.io) to a local webserver on your machine. Iterate quickly with immediate feedback without interrupting flow.&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;&lt;em&gt;Test mobile apps against a development backend running on your machine. Point ngrok at your local dev server and then configure your app to use the ngrok URL. It won’t change, even when you change networks.&lt;/em&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;So what this means for us is &lt;strong&gt;we can host our React application locally and have anybody or device access it for fast feedback.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Lets take a quick look at how to get setup.&lt;/p&gt;
+
+&lt;h3 id=&quot;getting-setup&quot;&gt;Getting setup&lt;/h3&gt;
+
+&lt;p&gt;Getting setup is super easy. In fact its two basic steps.&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Install &lt;code&gt;ngrok&lt;/code&gt;&lt;/li&gt;
+  &lt;li&gt;Run &lt;em&gt;ngrok http {port}&lt;/em&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Thats it.&lt;/p&gt;
+
+&lt;p&gt;You can configure &lt;code&gt;ngrok&lt;/code&gt; to do more than this, so go check out their &lt;a href=&quot;https://ngrok.com/docs&quot;&gt; documentation&lt;/a&gt; for more information.&lt;/p&gt;
+
+&lt;h4 id=&quot;quick-example&quot;&gt;Quick example&lt;/h4&gt;
+
+&lt;p&gt;Lets say we have our React application running on &lt;a href=&quot;http://localhost:3000&quot;&gt;http://localhost:3000&lt;/a&gt; then all you have to do is run this command from your terminal.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;ngrok&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;http&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3000&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;code&gt;ngrok&lt;/code&gt; will boot up and return you a hashed url. For example &lt;strong&gt;http://92832de0.ngrok.io&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;That’s it.&lt;/p&gt;
+
+&lt;p&gt;The url is the entry point to your application. &lt;strong&gt;Share this with anybody or any device to get access to your localhost application.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;So lets quickly look at reasons how this might help you in your &lt;strong&gt;development workflow&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h2 id=&quot;how-can-ngrok-help-you&quot;&gt;How can ngrok help you?&lt;/h2&gt;
+
+&lt;p&gt;Here are just some quick reasons why something like &lt;code&gt;ngrok&lt;/code&gt; could be useful:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Ability to quickly test your application on &lt;strong&gt;any device&lt;/strong&gt;. Just go to the &lt;code&gt;ngrok&lt;/code&gt; hashed url they
+provide and your away.&lt;/li&gt;
+  &lt;li&gt;Share your application to &lt;strong&gt;stakeholders&lt;/strong&gt;. Does your boss quickly need to see something? Just give them the url&lt;/li&gt;
+  &lt;li&gt;Share your application to any &lt;strong&gt;tester&lt;/strong&gt; to get quick feedback&lt;/li&gt;
+  &lt;li&gt;Share your application for &lt;strong&gt;customer testing&lt;/strong&gt;. Do you need fast feedback for a prototype idea?&lt;/li&gt;
+  &lt;li&gt;The list goes on…&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I have only just started to use this tool, if you find it useful or have any recommendations or questions get in touch.&lt;/p&gt;
+
+&lt;p&gt;If you found it useful feel free to share with others in our community.&lt;/p&gt;
+
+&lt;p&gt;Hope it helps and can add value to your development workflow.&lt;/p&gt;
+</description>
+    </item>
+    
     
     
     <item>
