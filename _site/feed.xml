@@ -6,9 +6,76 @@
     <atom:link href="http://www.davidboyne.co.uk/feed.xml" rel="self" type="application/rss+xml" />
     <description></description>
     <language>en-us</language>
-    <pubDate>Sat, 08 Jul 2017 22:39:51 +0000</pubDate>
-    <lastBuildDate>Sat, 08 Jul 2017 22:39:51 +0000</lastBuildDate>
+    <pubDate>Tue, 15 Aug 2017 19:53:26 +0000</pubDate>
+    <lastBuildDate>Tue, 15 Aug 2017 19:53:26 +0000</lastBuildDate>
 
+    
+    
+    <item>
+      <title>How to build and host a React application faster than making yourself a hot drink...</title>
+      <link>http://www.davidboyne.co.uk/2017/08/15/React-static-site-in-60-seconds.html</link>
+      <pubDate>Tue, 15 Aug 2017 00:00:00 +0000</pubDate>
+      <author></author>
+      <guid>http://www.davidboyne.co.uk/2017/08/15/React-static-site-in-60-seconds</guid>
+      <description>&lt;p&gt;&lt;strong&gt;It will take you longer to make a hot drink that it will to create a new React application and host it in the cloud…&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;…OK. Well maybe thats asking for abit too much, but once you get passed the setup required, you can create and host your React application within seconds!&lt;/p&gt;
+
+&lt;p&gt;Before you run and put the kettle on lets take a look at some ground work you will need to setup first.&lt;/p&gt;
+
+&lt;h2 id=&quot;getting-prepared&quot;&gt;Getting prepared&lt;/h2&gt;
+
+&lt;p&gt;We will be using &lt;a href=&quot;https://github.com/facebookincubator/create-react-app&quot;&gt;create-react-app&lt;/a&gt; to create our new application and &lt;a href=&quot;https://zeit.co/now&quot;&gt;now&lt;/a&gt; to deploy it.&lt;/p&gt;
+
+&lt;p&gt;Run the following to get both installed on your machine.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;install&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;g&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;now&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;NOTE: This command will install &lt;code&gt;now&lt;/code&gt; cli globally as npm package. Another (or suggested) approach is to install &lt;a href=&quot;https://zeit.co/download&quot;&gt;Now Desktop&lt;/a&gt; to ensure automatic updates of now cli.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Once your install has completed its time to create our new React application.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Go turn on the kettle.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Hopefully by the time its boiled our website will be ready and hosted in the cloud.&lt;/p&gt;
+
+&lt;h2 id=&quot;setting-up-your-project&quot;&gt;Setting up your project&lt;/h2&gt;
+
+&lt;p&gt;First thing we do is create our new application.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;create&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;react&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;my&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Great. We have setup our new project and got the basics in place.&lt;/p&gt;
+
+&lt;p&gt;Time to host our application somewhere…&lt;/p&gt;
+
+&lt;h2 id=&quot;authenticate--host-your-application&quot;&gt;Authenticate &amp;amp; Host your application&lt;/h2&gt;
+
+&lt;p&gt;Next thing we want to do is use &lt;code&gt;now&lt;/code&gt; to host our application. Run these commands inside your &lt;code&gt;my-app&lt;/code&gt; directory.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-js&quot; data-lang=&quot;js&quot;&gt;&lt;span class=&quot;nx&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;my&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;app&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;npm&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;build&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;build&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;
+&lt;span class=&quot;nx&quot;&gt;now&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;em&gt;You might need to sign in with your email to deploy your application using now.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Now will run and host your application.&lt;/p&gt;
+
+&lt;p&gt;Once you are authenticated (you may need to provide and authenticate your email) your application has successfully deployed you will be given a url in the command prompt which might look something like this &lt;a href=&quot;https://build-lrgvixfeev.now.sh&quot;&gt;https://build-lrgvixfeev.now.sh&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Click on your url, and you can now view your application running in the cloud.&lt;/p&gt;
+
+&lt;h2 id=&quot;thats-a-wrap---time-for-a-hot-drink&quot;&gt;Thats a wrap - Time for a hot drink&lt;/h2&gt;
+
+&lt;p&gt;Thats it we are done.&lt;/p&gt;
+
+&lt;p&gt;We have created a new React application and hosted it using now’s real time and immutable deployments.&lt;/p&gt;
+
+&lt;p&gt;Hopefully your kettle has now boiled and you can make yourself that refreshing hot drink.&lt;/p&gt;
+</description>
+    </item>
+    
     
     
     <item>

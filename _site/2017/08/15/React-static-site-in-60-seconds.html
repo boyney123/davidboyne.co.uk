@@ -3,14 +3,14 @@
 <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Value in Code &mdash; Boyney</title>
+    <title>How to build and host a React application faster than making yourself a hot drink... &mdash; Boyney</title>
     <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="/assets/main.css">
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" href="/images/logo.png"/>
     <link href="/feed.xml" rel="alternate" type="application/rss+xml" title="Boyney" />
-    <meta name="title" content="Value in Code ">
-    <link rel="canonical" href="http://www.davidboyne.co.uk/2015/06/20/value-in-code.html">
+    <meta name="title" content="How to build and host a React application faster than making yourself a hot drink... ">
+    <link rel="canonical" href="http://www.davidboyne.co.uk/2017/08/15/React-static-site-in-60-seconds.html">
 
     <link href='https://fonts.googleapis.com/css?family=Montserrat' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Lora' rel='stylesheet' type='text/css'>
@@ -19,16 +19,12 @@
 
      
            
-    <meta property="og:title" content="Value in Code "/>
-    <meta property="og:url" content="http://www.davidboyne.co.uk/2015/06/20/value-in-code.html"/>
-    
-    <meta property="og:image" content="http://www.davidboyne.co.uk/images/blog-covers/js-code.jpg"/>
-    
-    <meta property="og:image" content="http://www.davidboyne.co.uk/images/logo.png"/>   
+    <meta property="og:title" content="How to build and host a React application faster than making yourself a hot drink... "/>
+    <meta property="og:url" content="http://www.davidboyne.co.uk/2017/08/15/React-static-site-in-60-seconds.html"/>
     
     
-    <meta property="og:description" content="Question the requirement. Keep it simple. So many people make this mistake..."/>
-    <meta name="description" content="Question the requirement. Keep it simple. So many people make this mistake..."/>
+    <meta property="og:description" content="Turn on the kettle, and make and host your React application. Your application will be up and hosted before your hot drink is ready..."/>
+    <meta name="description" content="Turn on the kettle, and make and host your React application. Your application will be up and hosted before your hot drink is ready..."/>
     
     <meta property="og:site_name" content="Boyney">     
 </head>
@@ -78,31 +74,78 @@
 
         <div class="container">
             <header>
-                <h1 class="title">Value in Code</h1>
-                <!---->
+                <h1 class="title">How to build and host a React application faster than making yourself a hot drink...</h1>
+                <!--<h2 class="subtitle">Build and host your application within seconds</h2>-->
                 <div class="meta">
-                    <time pubdate datetime="2015-20-June" title="June 20, 2015">June 20, 2015</time>
+                    <time pubdate datetime="2017-15-August" title="August 15, 2017">August 15, 2017</time>
                 </div>
             </header>
 
 
             <section>
-                <blockquote>
-  <p>Question the requirement. Keep it simple</p>
-</blockquote>
+                <p><strong>It will take you longer to make a hot drink that it will to create a new React application and host it in the cloud…</strong></p>
 
-<p>I heard this quote today and its something that sounds very obvious for every developer but I always see the same mistakes happen throughout my career.</p>
+<p>…OK. Well maybe thats asking for abit too much, but once you get passed the setup required, you can create and host your React application within seconds!</p>
 
-<p>On a day to day basis developers are always asked to do something and most the time its not a problem. But at times the cost for a specific requirement outweighs its return value. If this happens I believe the requirement should be questioned. I have learnt that if you question these type of requirements that 60% of the time the requirement will be dropped from scope and 40% of the time it will remain in scope but people will be aware of the cost.</p>
+<p>Before you run and put the kettle on lets take a look at some ground work you will need to setup first.</p>
 
-<p>If you end up in this situation, try and question its value and I think you will be amazed from the outcome.</p>
+<h2 id="getting-prepared">Getting prepared</h2>
+
+<p>We will be using <a href="https://github.com/facebookincubator/create-react-app">create-react-app</a> to create our new application and <a href="https://zeit.co/now">now</a> to deploy it.</p>
+
+<p>Run the following to get both installed on your machine.</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">npm</span> <span class="nx">install</span> <span class="o">-</span><span class="nx">g</span> <span class="nx">create</span><span class="o">-</span><span class="nx">react</span><span class="o">-</span><span class="nx">app</span> <span class="nx">now</span></code></pre></div>
+
+<p><em>NOTE: This command will install <code>now</code> cli globally as npm package. Another (or suggested) approach is to install <a href="https://zeit.co/download">Now Desktop</a> to ensure automatic updates of now cli.</em></p>
+
+<p>Once your install has completed its time to create our new React application.</p>
+
+<p><strong>Go turn on the kettle.</strong></p>
+
+<p>Hopefully by the time its boiled our website will be ready and hosted in the cloud.</p>
+
+<h2 id="setting-up-your-project">Setting up your project</h2>
+
+<p>First thing we do is create our new application.</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">create</span><span class="o">-</span><span class="nx">react</span><span class="o">-</span><span class="nx">app</span> <span class="nx">my</span><span class="o">-</span><span class="nx">app</span></code></pre></div>
+
+<p>Great. We have setup our new project and got the basics in place.</p>
+
+<p>Time to host our application somewhere…</p>
+
+<h2 id="authenticate--host-your-application">Authenticate &amp; Host your application</h2>
+
+<p>Next thing we want to do is use <code>now</code> to host our application. Run these commands inside your <code>my-app</code> directory.</p>
+
+<div class="highlight"><pre><code class="language-js" data-lang="js"><span class="nx">cd</span> <span class="nx">my</span><span class="o">-</span><span class="nx">app</span>
+<span class="nx">npm</span> <span class="nx">build</span>
+<span class="nx">cd</span> <span class="nx">build</span><span class="o">/</span>
+<span class="nx">now</span></code></pre></div>
+
+<p><em>You might need to sign in with your email to deploy your application using now.</em></p>
+
+<p>Now will run and host your application.</p>
+
+<p>Once you are authenticated (you may need to provide and authenticate your email) your application has successfully deployed you will be given a url in the command prompt which might look something like this <a href="https://build-lrgvixfeev.now.sh">https://build-lrgvixfeev.now.sh</a>.</p>
+
+<p>Click on your url, and you can now view your application running in the cloud.</p>
+
+<h2 id="thats-a-wrap---time-for-a-hot-drink">Thats a wrap - Time for a hot drink</h2>
+
+<p>Thats it we are done.</p>
+
+<p>We have created a new React application and hosted it using now’s real time and immutable deployments.</p>
+
+<p>Hopefully your kettle has now boiled and you can make yourself that refreshing hot drink.</p>
 
                 
 
 
                 <div class="post-share">
                     <h5>SHARE</h5>
-                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-title="Value in Code by @boyney123">
+                    <div class="a2a_kit a2a_kit_size_32 a2a_default_style" data-a2a-title="How to build and host a React application faster than making yourself a hot drink... by @boyney123">
                         <a class="a2a_button_facebook"></a>
                         <a class="a2a_button_twitter"></a>
                         <a class="a2a_button_linkedin "></a>
@@ -133,13 +176,6 @@
                     <ul>
 
                         
-                            
-                                <li>
-                                    <a href="/2017/08/15/React-static-site-in-60-seconds.html">
-                                        <h3>How to build and host a React application faster than making yourself a hot drink...</h3>
-                                        <span>Posted on <time pubdate datetime="2017-15-August" title="August 15, 2017">August 15, 2017</time></span>
-                                    </a>
-                                </li>
                             
                         
                             
